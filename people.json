@@ -51,9 +51,7 @@
       ],
       "gender": "male",
       "spouses": [],
-      "children": [
-        4
-      ],
+      "children": [],
       "father": 0,
       "mother": 1
     },
@@ -67,7 +65,7 @@
       "children": [
         5
       ],
-      "father": 3
+      "father": 2
     },
     {
       "names": [

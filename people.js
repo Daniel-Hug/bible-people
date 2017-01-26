@@ -28,7 +28,7 @@ var peopleData = {
       names: ['Abel'],
       gender: 'male',
       spouses: [],
-      children: [4]
+      children: []
     },
     {// 4
       names: ['Enoch'],
