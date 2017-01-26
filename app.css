@@ -1,0 +1,40 @@
+body {
+	font-family: sans-serif;
+	margin: 0;
+	padding-top: 80px;
+}
+
+.familytree-node {
+	z-index: 1;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-weight: normal;
+}
+
+.card {
+	width: 600px;
+	margin: 0 auto;
+	background: white;
+	padding: 40px;
+	box-shadow: 0 9px 24px #aaa;
+	border-top: 14px solid black;
+}
+
+.card.male {
+	border-top-color: blue;
+}
+
+.card.female {
+	border-top-color: pink;
+}
+
+.card > :first-child {
+	margin-top: 0;
+	margin-bottom: 40px;
+	font-size: 2em;
+}
+
+.card li {
+    line-height: 1.4;
+}

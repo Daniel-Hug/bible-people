@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>DOM Builder demo</title>
+
+	<style>
+	* {
+		font-size: 60px;
+	}
+
+	input[type=checkbox] {
+		transform: scale(3.5);
+		margin: 0 37px 0 30px;
+		vertical-align: middle;
+	}
+
+	button {
+		cursor: pointer;
+		padding: 0.1875em 0.375em;
+		border-width: 0.125em;
+		background: orange;
+		border-color: hsl(39, 100%, 60%);
+	}
+
+	.green {
+		background: green;
+		border-color: hsl(120, 100%, 35%);
+	}
+	</style>
+</head>
+<body>
+	<script src="bower_components/snoopy/snoopy.js"></script>
+	<script src="dom.js"></script>
+
+	<script>
+	// setup observable data
+	var counter = new Snoopy({count: 0});
+
+	// counter.even subscribes to counter.count
+	counter.snoop('count', function(val) {
+		counter.set('even', val % 2 === 0);
+	});
+
+	// <button>0</button>
+	var buttonModule = dom([
+		{
+			el: 'button',
+			text: counter.snoop('count'),
+			class_green: counter.snoop('even'),
+			on_click: function() {
+				counter.set('count', counter.count + 1);
+			}
+		},
+		{
+			el: 'label',
+			kids: [
+				' ',
+				{
+					el: 'input',
+					type: 'checkbox',
+					_checked: counter.snoop('even'),
+					_disabled: true
+				},
+				counter.snoop('count'), ' is ',
+				counter.snoop('even', function(even) {
+					return even ? 'even.' : 'not even.';
+				})
+			]
+		}
+	]);
+
+	// equivalent to: document.body.appendChild(buttonModule);
+	dom({
+		el: document.body,
+		kids: [buttonModule]
+	});
+	</script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+{
+  "name": "bible-people",
+  "homepage": "https://github.com/Daniel-Hug/bible-people",
+  "authors": [
+    "Daniel Hug <daniel@hugwebdesign.com>"
+  ],
+  "description": "Genealogy data of people in the Bible",
+  "main": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "navigo": "krasimir/navigo#^4.0.0",
+    "DOM-Builder": "Daniel-Hug/DOM-Builder#^1.5.1"
+  }
+}
