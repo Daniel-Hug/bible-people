@@ -159,36 +159,42 @@ var peopleData = {
     {// Irad
       names: ['Gen 4:18'],
       gender: 'Gen 4:18',
+      married: 'Gen 4:18',
       spouses: [],
       children: ['Gen 4:18']
     },
     {// Mehujael
       names: ['Gen 4:18'],
       gender: 'Gen 4:18',
+      married: 'Gen 4:18',
       spouses: [],
       children: ['Gen 4:18']
     },
     {// Methushael
       names: ['Gen 4:18'],
       gender: 'Gen 4:18',
+      married: 'Gen 4:18',
       spouses: [],
       children: ['Gen 4:18']
     },
     {// Lamech
       names: ['Gen 4:18'],
       gender: 'Gen 4:18',
+      married: 'Gen 4:19',
       spouses: ['Gen 4:19', 'Gen 4:19'],
       children: ['Gen 4:20','Gen 4:21','Gen 4:22','Gen 4:22']
     },
     {// Adah
       names: ['Gen 4:19'],
       gender: 'Gen 4:19',
+      married: 'Gen 4:19',
       spouses: ['Gen 4:19'],
       children: ['Gen 4:20','Gen 4:20-21']
     },
     {// Zillah
       names: ['Gen 4:19'],
       gender: 'Gen 4:19',
+      married: 'Gen 4:19',
       spouses: ['Gen 4:19'],
       children: ['Gen 4:22','Gen 4:22']
     },

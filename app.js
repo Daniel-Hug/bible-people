@@ -125,6 +125,11 @@ function addParents(people) {
 
   // loop through people
   people.forEach(function(parent, parentIndex) {
+    // ensure properties in reference object match those in the person object
+    if (!haveSameProperties(parent, references[parentIndex])) {
+      console.error(parent.names[0] + ': different properties on reference object');
+    }
+
     // ensure right number of references for children
     if (parent.children.length !== references[parentIndex].children.length) {
       console.error(parent.names[0] + ': children references do not line up');
@@ -152,6 +157,18 @@ function addParents(people) {
 
   window.json = JSON.stringify(app, null, 2);
   console.log('run this: copy(json)');
+}
+
+function haveSameProperties(a, b) {
+  return JSON.stringify(getProperties(a)) === JSON.stringify(getProperties(b));
+}
+
+function getProperties(obj) {
+  var newObj = {};
+  for (var key in obj) {
+    newObj[key] = true;
+  }
+  return newObj;
 }
 
 function getGraphData(people) {
