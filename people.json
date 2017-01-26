@@ -1,0 +1,388 @@
+{
+  "people": [
+    {
+      "names": [
+        "Man",
+        "Adam"
+      ],
+      "gender": "male",
+      "married": true,
+      "spouses": [
+        1
+      ],
+      "children": [
+        2,
+        3,
+        15
+      ]
+    },
+    {
+      "names": [
+        "Woman",
+        "Eve"
+      ],
+      "gender": "female",
+      "married": true,
+      "spouses": [
+        0
+      ],
+      "children": [
+        2,
+        3,
+        15
+      ]
+    },
+    {
+      "names": [
+        "Cain"
+      ],
+      "gender": "male",
+      "married": true,
+      "spouses": [],
+      "children": [
+        4
+      ]
+    },
+    {
+      "names": [
+        "Abel"
+      ],
+      "gender": "male",
+      "spouses": [],
+      "children": [
+        4
+      ]
+    },
+    {
+      "names": [
+        "Enoch"
+      ],
+      "gender": "male",
+      "married": true,
+      "spouses": [],
+      "children": [
+        5
+      ]
+    },
+    {
+      "names": [
+        "Irad"
+      ],
+      "gender": "male",
+      "married": true,
+      "spouses": [],
+      "children": [
+        6
+      ]
+    },
+    {
+      "names": [
+        "Mehujael"
+      ],
+      "gender": "male",
+      "married": true,
+      "spouses": [],
+      "children": [
+        7
+      ]
+    },
+    {
+      "names": [
+        "Methushael"
+      ],
+      "gender": "male",
+      "married": true,
+      "spouses": [],
+      "children": [
+        8
+      ]
+    },
+    {
+      "names": [
+        "Lamech"
+      ],
+      "gender": "male",
+      "married": true,
+      "spouses": [
+        9,
+        10
+      ],
+      "children": [
+        11,
+        12,
+        13,
+        14
+      ]
+    },
+    {
+      "names": [
+        "Adah"
+      ],
+      "gender": "female",
+      "married": true,
+      "spouses": [
+        8
+      ],
+      "children": [
+        11,
+        12
+      ]
+    },
+    {
+      "names": [
+        "Zillah"
+      ],
+      "gender": "female",
+      "married": true,
+      "spouses": [
+        8
+      ],
+      "children": [
+        13,
+        14
+      ]
+    },
+    {
+      "names": [
+        "Jabal"
+      ],
+      "gender": "male",
+      "married": true,
+      "spouses": [],
+      "children": []
+    },
+    {
+      "names": [
+        "Jubal"
+      ],
+      "gender": "male",
+      "married": true,
+      "spouses": [],
+      "children": []
+    },
+    {
+      "names": [
+        "Tubal-cain"
+      ],
+      "gender": "male",
+      "spouses": [],
+      "children": []
+    },
+    {
+      "names": [
+        "Naamah"
+      ],
+      "gender": "female",
+      "spouses": [],
+      "children": []
+    },
+    {
+      "names": [
+        "Seth"
+      ],
+      "gender": "male",
+      "married": true,
+      "spouses": [],
+      "children": [
+        16
+      ]
+    },
+    {
+      "names": [
+        "Enosh"
+      ],
+      "gender": "male",
+      "spouses": [],
+      "children": []
+    }
+  ],
+  "references": [
+    {
+      "names": [
+        "Gen 2:23",
+        "Gen 2:20"
+      ],
+      "gender": "Gen 3:20",
+      "married": "Gen 3:20",
+      "spouses": [
+        "Gen 3:20"
+      ],
+      "children": [
+        "Gen 4:1",
+        "Gen 4:2",
+        "Gen 4:25"
+      ]
+    },
+    {
+      "names": [
+        "Gen 2:23",
+        "Gen 3:20"
+      ],
+      "gender": "Gen 3:20",
+      "married": "Gen 3:20",
+      "spouses": [
+        "Gen 3:20"
+      ],
+      "children": [
+        "Gen 4:1",
+        "Gen 4:2",
+        "Gen 4:25"
+      ]
+    },
+    {
+      "names": [
+        "Gen 4:1"
+      ],
+      "gender": "Gen 4:1",
+      "married": "Gen 4:17",
+      "spouses": [],
+      "children": [
+        "Gen 4:17"
+      ]
+    },
+    {
+      "names": [
+        "Gen 4:2"
+      ],
+      "gender": "Gen 4:2",
+      "spouses": [],
+      "children": []
+    },
+    {
+      "names": [
+        "Gen 4:17"
+      ],
+      "gender": "Gen 4:17",
+      "married": "Gen 4:18",
+      "spouses": [],
+      "children": [
+        "Gen 4:18"
+      ]
+    },
+    {
+      "names": [
+        "Gen 4:18"
+      ],
+      "gender": "Gen 4:18",
+      "spouses": [],
+      "children": [
+        "Gen 4:18"
+      ]
+    },
+    {
+      "names": [
+        "Gen 4:18"
+      ],
+      "gender": "Gen 4:18",
+      "spouses": [],
+      "children": [
+        "Gen 4:18"
+      ]
+    },
+    {
+      "names": [
+        "Gen 4:18"
+      ],
+      "gender": "Gen 4:18",
+      "spouses": [],
+      "children": [
+        "Gen 4:18"
+      ]
+    },
+    {
+      "names": [
+        "Gen 4:18"
+      ],
+      "gender": "Gen 4:18",
+      "spouses": [
+        "Gen 4:19",
+        "Gen 4:19"
+      ],
+      "children": [
+        "Gen 4:20",
+        "Gen 4:21",
+        "Gen 4:22",
+        "Gen 4:22"
+      ]
+    },
+    {
+      "names": [
+        "Gen 4:19"
+      ],
+      "gender": "Gen 4:19",
+      "spouses": [
+        "Gen 4:19"
+      ],
+      "children": [
+        "Gen 4:20",
+        "Gen 4:20-21"
+      ]
+    },
+    {
+      "names": [
+        "Gen 4:19"
+      ],
+      "gender": "Gen 4:19",
+      "spouses": [
+        "Gen 4:19"
+      ],
+      "children": [
+        "Gen 4:22",
+        "Gen 4:22"
+      ]
+    },
+    {
+      "names": [
+        "Gen 4:20"
+      ],
+      "gender": "Gen 4:20",
+      "married": "Gen 4:20",
+      "spouses": [],
+      "children": []
+    },
+    {
+      "names": [
+        "Gen 4:21"
+      ],
+      "gender": "Gen 4:21",
+      "married": "Gen 4:21",
+      "spouses": [],
+      "children": []
+    },
+    {
+      "names": [
+        "Gen 4:22"
+      ],
+      "gender": "Gen 4:22",
+      "spouses": [],
+      "children": []
+    },
+    {
+      "names": [
+        "Gen 4:22"
+      ],
+      "gender": "Gen 4:22",
+      "spouses": [],
+      "children": []
+    },
+    {
+      "names": [
+        "Gen 4:25"
+      ],
+      "gender": "Gen 3:20",
+      "married": "Gen 2:26",
+      "spouses": [
+        "Gen 3:20"
+      ],
+      "children": []
+    },
+    {
+      "names": [
+        "Gen 2:26"
+      ],
+      "gender": "Gen 2:26",
+      "spouses": [],
+      "children": []
+    }
+  ]
+}
