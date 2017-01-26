@@ -256,7 +256,9 @@
       "spouses": [],
       "children": [
         "Gen 4:17"
-      ]
+      ],
+      "father": "Gen 4:1",
+      "mother": "Gen 4:1"
     },
     {
       "names": [
@@ -264,7 +266,9 @@
       ],
       "gender": "Gen 4:2",
       "spouses": [],
-      "children": []
+      "children": [],
+      "father": "Gen 4:2",
+      "mother": "Gen 4:2"
     },
     {
       "names": [
@@ -275,7 +279,8 @@
       "spouses": [],
       "children": [
         "Gen 4:18"
-      ]
+      ],
+      "father": "Gen 4:17"
     },
     {
       "names": [
@@ -285,7 +290,8 @@
       "spouses": [],
       "children": [
         "Gen 4:18"
-      ]
+      ],
+      "father": "Gen 4:18"
     },
     {
       "names": [
@@ -295,7 +301,8 @@
       "spouses": [],
       "children": [
         "Gen 4:18"
-      ]
+      ],
+      "father": "Gen 4:18"
     },
     {
       "names": [
@@ -305,7 +312,8 @@
       "spouses": [],
       "children": [
         "Gen 4:18"
-      ]
+      ],
+      "father": "Gen 4:18"
     },
     {
       "names": [
@@ -321,7 +329,8 @@
         "Gen 4:21",
         "Gen 4:22",
         "Gen 4:22"
-      ]
+      ],
+      "father": "Gen 4:18"
     },
     {
       "names": [
@@ -356,7 +365,9 @@
       "gender": "Gen 4:20",
       "married": "Gen 4:20",
       "spouses": [],
-      "children": []
+      "children": [],
+      "father": "Gen 4:20",
+      "mother": "Gen 4:20"
     },
     {
       "names": [
@@ -365,7 +376,9 @@
       "gender": "Gen 4:21",
       "married": "Gen 4:21",
       "spouses": [],
-      "children": []
+      "children": [],
+      "father": "Gen 4:21",
+      "mother": "Gen 4:20-21"
     },
     {
       "names": [
@@ -373,7 +386,9 @@
       ],
       "gender": "Gen 4:22",
       "spouses": [],
-      "children": []
+      "children": [],
+      "father": "Gen 4:22",
+      "mother": "Gen 4:22"
     },
     {
       "names": [
@@ -381,7 +396,9 @@
       ],
       "gender": "Gen 4:22",
       "spouses": [],
-      "children": []
+      "children": [],
+      "father": "Gen 4:22",
+      "mother": "Gen 4:22"
     },
     {
       "names": [
@@ -392,7 +409,9 @@
       "spouses": [],
       "children": [
         "Gen 4:26"
-      ]
+      ],
+      "father": "Gen 4:25",
+      "mother": "Gen 4:25"
     },
     {
       "names": [
@@ -400,7 +419,8 @@
       ],
       "gender": "Gen 4:26",
       "spouses": [],
-      "children": []
+      "children": [],
+      "father": "Gen 4:26"
     }
   ]
 }

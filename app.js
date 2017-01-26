@@ -121,22 +121,32 @@ function removeChilds(el) {
 }
 
 function addParents(people) {
+  var references = app.references;
+
+  // loop through people
   people.forEach(function(parent, parentIndex) {
     // ensure right number of references for children
-    if (parent.children.length !== app.references[parentIndex].children.length) {
+    if (parent.children.length !== references[parentIndex].children.length) {
       console.error(parent.names[0] + ': children references do not line up');
     }
     // ensure right number of references for names
-    if (parent.names.length !== app.references[parentIndex].names.length) {
+    if (parent.names.length !== references[parentIndex].names.length) {
       console.error(parent.names[0] + ': names references do not line up');
     }
     // ensure right number of references for spouses
-    if (parent.spouses.length !== app.references[parentIndex].spouses.length) {
+    if (parent.spouses.length !== references[parentIndex].spouses.length) {
       console.error(parent.names[0] + ': spouses references do not line up');
     }
+
+    // loop through children
     parent.children.forEach(function(childIndex) {
+      // add father and mother properties to each child
       var relation = parent.gender === 'male' ? 'father' : 'mother';
       people[childIndex][relation] = parentIndex;
+
+      // copy parent's respective child reference as the father or mother reference for the child
+      var siblingIndex = parent.children.indexOf(childIndex);
+      references[childIndex][relation] = references[parentIndex].children[siblingIndex];
     });
   });
 
