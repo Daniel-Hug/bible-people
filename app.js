@@ -122,13 +122,26 @@ function removeChilds(el) {
 
 function addParents(people) {
   people.forEach(function(parent, parentIndex) {
+    // ensure right number of references for children
+    if (parent.children.length !== app.references[parentIndex].children.length) {
+      console.error(parent.names[0] + ': children references do not line up');
+    }
+    // ensure right number of references for names
+    if (parent.names.length !== app.references[parentIndex].names.length) {
+      console.error(parent.names[0] + ': names references do not line up');
+    }
+    // ensure right number of references for spouses
+    if (parent.spouses.length !== app.references[parentIndex].spouses.length) {
+      console.error(parent.names[0] + ': spouses references do not line up');
+    }
     parent.children.forEach(function(childIndex) {
       var relation = parent.gender === 'male' ? 'father' : 'mother';
       people[childIndex][relation] = parentIndex;
     });
   });
 
-  console.log(window.json = JSON.stringify(app, null, 2));
+  window.json = JSON.stringify(app, null, 2);
+  console.log('run this: copy(json)');
 }
 
 function getGraphData(people) {

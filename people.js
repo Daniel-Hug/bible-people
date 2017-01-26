@@ -220,14 +220,14 @@ var peopleData = {
     },
     {// Seth
       names: ['Gen 4:25'],
-      gender: 'Gen 3:20',
-      married: 'Gen 2:26',
-      spouses: ['Gen 3:20'],
-      children: []
+      gender: 'Gen 4:25',
+      married: 'Gen 4:26',
+      spouses: [],
+      children: ['Gen 4:26']
     },
     {// Enosh
-      names: ['Gen 2:26'],
-      gender: 'Gen 2:26',
+      names: ['Gen 4:26'],
+      gender: 'Gen 4:26',
       spouses: [],
       children: []
     }
