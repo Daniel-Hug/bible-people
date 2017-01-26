@@ -1,17 +1,17 @@
-{
+var peopleData = {
   //  - People are listed in the order they're mentioned in Genesis.
   //  - Each number in a 'spouses' or 'children' array is the index of another person.
   //  - If a property (e.g. 'married') is not set, the attribute is not specified in the Bible.
   people: [
     {// 0
-      names: ['Man', 'Adam'],
+      names: ['Adam', 'Man'],
       gender: 'male',
       married: true,
       spouses: [1],
       children: [2,3,15]
     },
     {// 1
-      names: ['Woman', 'Eve'],
+      names: ['Eve', 'Woman'],
       gender: 'female',
       married: true,
       spouses: [0],
@@ -232,4 +232,4 @@
       children: []
     }
   ]
-}
+};

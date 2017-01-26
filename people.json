@@ -2,8 +2,8 @@
   "people": [
     {
       "names": [
-        "Man",
-        "Adam"
+        "Adam",
+        "Man"
       ],
       "gender": "male",
       "married": true,
@@ -18,8 +18,8 @@
     },
     {
       "names": [
-        "Woman",
-        "Eve"
+        "Eve",
+        "Woman"
       ],
       "gender": "female",
       "married": true,
