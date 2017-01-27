@@ -21,6 +21,7 @@ var handlePeople = (function() {
   url: 'people.json',
   success: handlePeople
 });*/
+initReftagger();
 handlePeople(peopleData);
 
 function setupRoutes() {
@@ -41,6 +42,7 @@ function setupRoutes() {
       Math.floor(personIndex) === personIndex
     ) {
       displayCard(personIndex);
+      if (refTagger.tag) refTagger.tag();
     } else {
       console.error('Invalid person index: ' + personIndex + '.');
       location.hash = 0;
@@ -68,19 +70,25 @@ function displayCard(personIndex) {
 function renderCard(personIndex) {
   var people = app.people;
   var person = people[personIndex];
+  var personReferences = app.references[personIndex]
 
 
   var detailItems = [
     // father
     { el: 'li', kids: [
-      { el: 'strong', text: 'Father:' }, ' ',
-      typeof person.father === 'number' ? renderPersonLink(person.father) : 'None named.'
+      { el: 'strong', text: 'Father:' }, ' ', typeof person.father === 'number' ? [
+        renderPersonLink(person.father),
+        renderReference(personReferences.father)
+      ] : 'None named.'
     ]},
 
     // mother
     { el: 'li', kids: [
       { el: 'strong', text: 'Mother:' }, ' ',
-      typeof person.mother === 'number' ? renderPersonLink(person.mother) : 'None named.'
+      typeof person.mother === 'number' ? [
+        renderPersonLink(person.mother),
+        renderReference(personReferences.mother)
+      ] : 'None named.'
     ]},
 
     // spouses
@@ -101,8 +109,14 @@ function renderCard(personIndex) {
   return card;
 }
 
+function renderReference(referenceString) {
+  var sup = dom({ el: 'sup', text: '[' + referenceString + ']' });
+  return sup;
+}
+
 function renderSpousesItem(personIndex) {
   var person = app.people[personIndex];
+  var personReferences = app.references[personIndex]
   var spouseName = person.spouses.length <= 1 ?
     person.gender === 'male' ? 'Wife' : 'Husband' :
     person.gender === 'male' ? 'Wives' : 'Husbands';
@@ -117,12 +131,18 @@ function renderSpousesItem(personIndex) {
     spousesItem.kids.push('None named.');
   }
   else if (person.spouses.length === 1) {
-    spousesItem.kids.push(renderPersonLink(person.spouses[0]));
+    spousesItem.kids.push(
+      renderPersonLink(person.spouses[0]),
+      renderReference(personReferences.spouses[0])
+    );
   } else {
     spousesItem.kids.push(
       person.spouses.length + ' named.',
-      { el: 'ul', kids: person.spouses.map(function(spouseIndex) {
-        return { el: 'li', kids: [renderPersonLink(spouseIndex)]};
+      { el: 'ul', kids: person.spouses.map(function(indexInPeople, indexInSpouses) {
+        return { el: 'li', kids: [
+          renderPersonLink(indexInPeople),
+          renderReference(personReferences.spouses[indexInSpouses])
+        ]};
       })}
     );
   }
@@ -132,6 +152,7 @@ function renderSpousesItem(personIndex) {
 
 function renderChildrenItem(personIndex) {
   var person = app.people[personIndex];
+  var personReferences = app.references[personIndex]
   var numChildren = person.children.length;
 
   var childrenItem = { el: 'li', kids: [
@@ -140,8 +161,11 @@ function renderChildrenItem(personIndex) {
   ]};
   if (numChildren) {
     childrenItem.kids.push(
-      { el: 'ul', kids: person.children.map(function(childIndex) {
-        return { el: 'li', kids: [renderPersonLink(childIndex)]};
+      { el: 'ul', kids: person.children.map(function(indexInPeople, indexInChildren) {
+        return { el: 'li', kids: [
+          renderPersonLink(indexInPeople),
+          renderReference(personReferences.children[indexInChildren])
+        ]};
       })}
     );
   }
@@ -207,6 +231,26 @@ function getProperties(obj) {
     newObj[key] = true;
   }
   return newObj;
+}
+
+function initReftagger() {
+  // config
+  window.refTagger = {
+      settings: {
+          noSearchClassNames: ['editor-content', 'navbar'],           
+          tagChapters: true
+      }
+  };
+
+  // create <script>
+  var refTaggerScript = document.createElement('script');
+  refTaggerScript.src = '//api.reftagger.com/v2/RefTagger.js';
+
+  // append <script>
+  var firstScript = document.getElementsByTagName('script')[0];
+  firstScript.parentNode.insertBefore(refTaggerScript, firstScript);
+
+  // call refTagger.tag() whenever references are added to page
 }
 
 function getGraphData(people) {

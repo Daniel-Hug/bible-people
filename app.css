@@ -3,12 +3,21 @@ body {
 	margin: 0;
 }
 
-.familytree-node {
-	z-index: 1;
-}
-
 h1, h2, h3, h4, h5, h6 {
 	font-weight: normal;
+}
+
+sup, sub {
+  vertical-align: baseline;
+  position: relative;
+  top: -0.4em;
+}
+sub { 
+  top: 0.4em; 
+}
+
+.familytree-node {
+	z-index: 1;
 }
 
 .card {
@@ -33,7 +42,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .card li {
-    line-height: 1.4;
+    line-height: 1.7;
 }
 
 @media (min-width: 840px) {
