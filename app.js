@@ -68,35 +68,26 @@ function displayCard(personIndex) {
 function renderCard(personIndex) {
   var people = app.people;
   var person = people[personIndex];
-  var numChildren = person.children.length;
 
-  // children
-  var childrenItem = { el: 'li', kids: [
-    { el: 'strong', text: 'Children:' },
-    ' ' + (numChildren ? numChildren : 'None') +  ' mentioned.'
-  ]};
-  if (numChildren) {
-    childrenItem.kids.push(
-      { el: 'ul', kids: person.children.map(function(childIndex) {
-        return { el: 'li', kids: [renderPersonLink(childIndex)]};
-      })}
-    );
-  }
 
   var detailItems = [
     // father
     { el: 'li', kids: [
       { el: 'strong', text: 'Father:' }, ' ',
-      typeof person.father === 'number' ? renderPersonLink(person.father) : 'None mentioned.'
+      typeof person.father === 'number' ? renderPersonLink(person.father) : 'None named.'
     ]},
 
     // mother
     { el: 'li', kids: [
       { el: 'strong', text: 'Mother:' }, ' ',
-      typeof person.mother === 'number' ? renderPersonLink(person.mother) : 'None mentioned.'
+      typeof person.mother === 'number' ? renderPersonLink(person.mother) : 'None named.'
     ]},
 
-    childrenItem
+    // spouses
+    renderSpousesItem(personIndex),
+
+    // children
+    renderChildrenItem(personIndex)
   ];
 
   var card = dom({ el: 'article', class_card: true, kids: [
@@ -108,6 +99,53 @@ function renderCard(personIndex) {
   ]});
   card.classList.add(person.gender);
   return card;
+}
+
+function renderSpousesItem(personIndex) {
+  var person = app.people[personIndex];
+  var spouseName = person.spouses.length <= 1 ?
+    person.gender === 'male' ? 'Wife' : 'Husband' :
+    person.gender === 'male' ? 'Wives' : 'Husbands';
+
+  var spousesItem = { el: 'li', kids: [
+    { el: 'strong', text: spouseName + ':' }, ' '
+  ]}
+  if (person.married === false) {
+    spousesItem.kids.push('None.');
+  }
+  else if (person.spouses.length === 0) {
+    spousesItem.kids.push('None named.');
+  }
+  else if (person.spouses.length === 1) {
+    spousesItem.kids.push(renderPersonLink(person.spouses[0]));
+  } else {
+    spousesItem.kids.push(
+      person.spouses.length + ' named.',
+      { el: 'ul', kids: person.spouses.map(function(spouseIndex) {
+        return { el: 'li', kids: [renderPersonLink(spouseIndex)]};
+      })}
+    );
+  }
+
+  return spousesItem;
+}
+
+function renderChildrenItem(personIndex) {
+  var person = app.people[personIndex];
+  var numChildren = person.children.length;
+
+  var childrenItem = { el: 'li', kids: [
+    { el: 'strong', text: 'Children:' },
+    ' ' + (numChildren ? numChildren : 'None') +  ' named.'
+  ]};
+  if (numChildren) {
+    childrenItem.kids.push(
+      { el: 'ul', kids: person.children.map(function(childIndex) {
+        return { el: 'li', kids: [renderPersonLink(childIndex)]};
+      })}
+    );
+  }
+  return childrenItem;
 }
 
 function renderPersonLink(personIndex) {
