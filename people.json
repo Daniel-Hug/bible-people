@@ -14,7 +14,27 @@
         2,
         3,
         15
-      ]
+      ],
+      "yearsLived": 930,
+      "otherChildren": true,
+      "references": {
+        "names": [
+          "Gen 2:23",
+          "Gen 2:20"
+        ],
+        "gender": "Gen 3:20",
+        "married": "Gen 3:20",
+        "spouses": [
+          "Gen 3:20"
+        ],
+        "children": [
+          "Gen 4:1",
+          "Gen 4:2",
+          "Gen 4:25"
+        ],
+        "yearsLived": "Gen 5:5",
+        "otherChildren": "Gen 5:4"
+      }
     },
     {
       "names": [
@@ -30,7 +50,25 @@
         2,
         3,
         15
-      ]
+      ],
+      "otherChildren": true,
+      "references": {
+        "names": [
+          "Gen 2:23",
+          "Gen 3:20"
+        ],
+        "gender": "Gen 3:20",
+        "married": "Gen 3:20",
+        "spouses": [
+          "Gen 3:20"
+        ],
+        "children": [
+          "Gen 4:1",
+          "Gen 4:2",
+          "Gen 4:25"
+        ],
+        "otherChildren": "Gen 5:4"
+      }
     },
     {
       "names": [
@@ -42,6 +80,19 @@
       "children": [
         4
       ],
+      "references": {
+        "names": [
+          "Gen 4:1"
+        ],
+        "gender": "Gen 4:1",
+        "married": "Gen 4:17",
+        "spouses": [],
+        "children": [
+          "Gen 4:17"
+        ],
+        "father": "Gen 4:1",
+        "mother": "Gen 4:1"
+      },
       "father": 0,
       "mother": 1
     },
@@ -52,6 +103,16 @@
       "gender": "male",
       "spouses": [],
       "children": [],
+      "references": {
+        "names": [
+          "Gen 4:2"
+        ],
+        "gender": "Gen 4:2",
+        "spouses": [],
+        "children": [],
+        "father": "Gen 4:2",
+        "mother": "Gen 4:2"
+      },
       "father": 0,
       "mother": 1
     },
@@ -65,6 +126,18 @@
       "children": [
         5
       ],
+      "references": {
+        "names": [
+          "Gen 4:17"
+        ],
+        "gender": "Gen 4:17",
+        "married": "Gen 4:18",
+        "spouses": [],
+        "children": [
+          "Gen 4:18"
+        ],
+        "father": "Gen 4:17"
+      },
       "father": 2
     },
     {
@@ -77,6 +150,18 @@
       "children": [
         6
       ],
+      "references": {
+        "names": [
+          "Gen 4:18"
+        ],
+        "gender": "Gen 4:18",
+        "married": "Gen 4:18",
+        "spouses": [],
+        "children": [
+          "Gen 4:18"
+        ],
+        "father": "Gen 4:18"
+      },
       "father": 4
     },
     {
@@ -89,6 +174,18 @@
       "children": [
         7
       ],
+      "references": {
+        "names": [
+          "Gen 4:18"
+        ],
+        "gender": "Gen 4:18",
+        "married": "Gen 4:18",
+        "spouses": [],
+        "children": [
+          "Gen 4:18"
+        ],
+        "father": "Gen 4:18"
+      },
       "father": 5
     },
     {
@@ -101,6 +198,18 @@
       "children": [
         8
       ],
+      "references": {
+        "names": [
+          "Gen 4:18"
+        ],
+        "gender": "Gen 4:18",
+        "married": "Gen 4:18",
+        "spouses": [],
+        "children": [
+          "Gen 4:18"
+        ],
+        "father": "Gen 4:18"
+      },
       "father": 6
     },
     {
@@ -119,6 +228,24 @@
         13,
         14
       ],
+      "references": {
+        "names": [
+          "Gen 4:18"
+        ],
+        "gender": "Gen 4:18",
+        "married": "Gen 4:19",
+        "spouses": [
+          "Gen 4:19",
+          "Gen 4:19"
+        ],
+        "children": [
+          "Gen 4:20",
+          "Gen 4:21",
+          "Gen 4:22",
+          "Gen 4:22"
+        ],
+        "father": "Gen 4:18"
+      },
       "father": 7
     },
     {
@@ -133,7 +260,21 @@
       "children": [
         11,
         12
-      ]
+      ],
+      "references": {
+        "names": [
+          "Gen 4:19"
+        ],
+        "gender": "Gen 4:19",
+        "married": "Gen 4:19",
+        "spouses": [
+          "Gen 4:19"
+        ],
+        "children": [
+          "Gen 4:20",
+          "Gen 4:20-21"
+        ]
+      }
     },
     {
       "names": [
@@ -147,7 +288,21 @@
       "children": [
         13,
         14
-      ]
+      ],
+      "references": {
+        "names": [
+          "Gen 4:19"
+        ],
+        "gender": "Gen 4:19",
+        "married": "Gen 4:19",
+        "spouses": [
+          "Gen 4:19"
+        ],
+        "children": [
+          "Gen 4:22",
+          "Gen 4:22"
+        ]
+      }
     },
     {
       "names": [
@@ -157,6 +312,17 @@
       "married": true,
       "spouses": [],
       "children": [],
+      "references": {
+        "names": [
+          "Gen 4:20"
+        ],
+        "gender": "Gen 4:20",
+        "married": "Gen 4:20",
+        "spouses": [],
+        "children": [],
+        "father": "Gen 4:20",
+        "mother": "Gen 4:20"
+      },
       "father": 8,
       "mother": 9
     },
@@ -168,6 +334,17 @@
       "married": true,
       "spouses": [],
       "children": [],
+      "references": {
+        "names": [
+          "Gen 4:21"
+        ],
+        "gender": "Gen 4:21",
+        "married": "Gen 4:21",
+        "spouses": [],
+        "children": [],
+        "father": "Gen 4:21",
+        "mother": "Gen 4:20-21"
+      },
       "father": 8,
       "mother": 9
     },
@@ -178,6 +355,16 @@
       "gender": "male",
       "spouses": [],
       "children": [],
+      "references": {
+        "names": [
+          "Gen 4:22"
+        ],
+        "gender": "Gen 4:22",
+        "spouses": [],
+        "children": [],
+        "father": "Gen 4:22",
+        "mother": "Gen 4:22"
+      },
       "father": 8,
       "mother": 10
     },
@@ -188,6 +375,16 @@
       "gender": "female",
       "spouses": [],
       "children": [],
+      "references": {
+        "names": [
+          "Gen 4:22"
+        ],
+        "gender": "Gen 4:22",
+        "spouses": [],
+        "children": [],
+        "father": "Gen 4:22",
+        "mother": "Gen 4:22"
+      },
       "father": 8,
       "mother": 10
     },
@@ -201,6 +398,25 @@
       "children": [
         16
       ],
+      "ageOfFatherAtBirth": 130,
+      "otherChildren": true,
+      "yearsLived": 912,
+      "references": {
+        "names": [
+          "Gen 4:25"
+        ],
+        "gender": "Gen 4:25",
+        "married": "Gen 4:26",
+        "spouses": [],
+        "children": [
+          "Gen 4:26"
+        ],
+        "ageOfFatherAtBirth": "Gen 5:3",
+        "otherChildren": "Gen 5:7",
+        "yearsLived": "Gen 5:8",
+        "father": "Gen 4:25",
+        "mother": "Gen 4:25"
+      },
       "father": 0,
       "mother": 1
     },
@@ -210,223 +426,271 @@
       ],
       "gender": "male",
       "spouses": [],
-      "children": [],
+      "children": [
+        17
+      ],
+      "ageOfFatherAtBirth": 105,
+      "otherChildren": true,
+      "yearsLived": 905,
+      "references": {
+        "names": [
+          "Gen 4:26"
+        ],
+        "gender": "Gen 4:26",
+        "spouses": [],
+        "children": [
+          "Gen 5:9"
+        ],
+        "ageOfFatherAtBirth": "Gen 5:6",
+        "otherChildren": "Gen 5:10",
+        "yearsLived": "Gen 5:11",
+        "father": "Gen 4:26"
+      },
       "father": 15
-    }
-  ],
-  "references": [
-    {
-      "names": [
-        "Gen 2:23",
-        "Gen 2:20"
-      ],
-      "gender": "Gen 3:20",
-      "married": "Gen 3:20",
-      "spouses": [
-        "Gen 3:20"
-      ],
-      "children": [
-        "Gen 4:1",
-        "Gen 4:2",
-        "Gen 4:25"
-      ]
     },
     {
       "names": [
-        "Gen 2:23",
-        "Gen 3:20"
+        "Kenan"
       ],
-      "gender": "Gen 3:20",
-      "married": "Gen 3:20",
-      "spouses": [
-        "Gen 3:20"
-      ],
-      "children": [
-        "Gen 4:1",
-        "Gen 4:2",
-        "Gen 4:25"
-      ]
-    },
-    {
-      "names": [
-        "Gen 4:1"
-      ],
-      "gender": "Gen 4:1",
-      "married": "Gen 4:17",
+      "gender": "male",
       "spouses": [],
       "children": [
-        "Gen 4:17"
+        18
       ],
-      "father": "Gen 4:1",
-      "mother": "Gen 4:1"
+      "ageOfFatherAtBirth": 90,
+      "otherChildren": true,
+      "yearsLived": 910,
+      "references": {
+        "names": [
+          "Gen 5:9"
+        ],
+        "gender": "Gen 5:12",
+        "spouses": [],
+        "children": [
+          "Gen 5:12"
+        ],
+        "ageOfFatherAtBirth": "Gen 5:9",
+        "otherChildren": "Gen 5:13",
+        "yearsLived": "Gen 5:14",
+        "father": "Gen 5:9"
+      },
+      "father": 16
     },
     {
       "names": [
-        "Gen 4:2"
+        "Mahalalel"
       ],
-      "gender": "Gen 4:2",
-      "spouses": [],
-      "children": [],
-      "father": "Gen 4:2",
-      "mother": "Gen 4:2"
-    },
-    {
-      "names": [
-        "Gen 4:17"
-      ],
-      "gender": "Gen 4:17",
-      "married": "Gen 4:18",
-      "spouses": [],
-      "children": [
-        "Gen 4:18"
-      ],
-      "father": "Gen 4:17"
-    },
-    {
-      "names": [
-        "Gen 4:18"
-      ],
-      "gender": "Gen 4:18",
-      "married": "Gen 4:18",
+      "gender": "male",
       "spouses": [],
       "children": [
-        "Gen 4:18"
+        19
       ],
-      "father": "Gen 4:18"
+      "ageOfFatherAtBirth": 70,
+      "otherChildren": true,
+      "yearsLived": 895,
+      "references": {
+        "names": [
+          "Gen 5:12"
+        ],
+        "gender": "Gen 5:15",
+        "spouses": [],
+        "children": [
+          "Gen 5:15"
+        ],
+        "ageOfFatherAtBirth": "Gen 5:12",
+        "otherChildren": "Gen 5:16",
+        "yearsLived": "Gen 5:17",
+        "father": "Gen 5:12"
+      },
+      "father": 17
     },
     {
       "names": [
-        "Gen 4:18"
+        "Jared"
       ],
-      "gender": "Gen 4:18",
-      "married": "Gen 4:18",
+      "gender": "male",
       "spouses": [],
       "children": [
-        "Gen 4:18"
+        20
       ],
-      "father": "Gen 4:18"
+      "ageOfFatherAtBirth": 65,
+      "otherChildren": true,
+      "yearsLived": 962,
+      "references": {
+        "names": [
+          "Gen 5:15"
+        ],
+        "gender": "Gen 5:18",
+        "spouses": [],
+        "children": [
+          "Gen 5:18"
+        ],
+        "ageOfFatherAtBirth": "Gen 5:15",
+        "otherChildren": "Gen 5:19",
+        "yearsLived": "Gen 5:20",
+        "father": "Gen 5:15"
+      },
+      "father": 18
     },
     {
       "names": [
-        "Gen 4:18"
+        "Enoch"
       ],
-      "gender": "Gen 4:18",
-      "married": "Gen 4:18",
+      "gender": "male",
       "spouses": [],
       "children": [
-        "Gen 4:18"
+        21
       ],
-      "father": "Gen 4:18"
+      "ageOfFatherAtBirth": 62,
+      "otherChildren": true,
+      "yearsLived": 365,
+      "references": {
+        "names": [
+          "Gen 5:18"
+        ],
+        "gender": "Gen 5:21",
+        "spouses": [],
+        "children": [
+          "Gen 5:21"
+        ],
+        "ageOfFatherAtBirth": "Gen 5:18",
+        "otherChildren": "Gen 5:22",
+        "yearsLived": "Gen 5:23",
+        "father": "Gen 5:18"
+      },
+      "father": 19
     },
     {
       "names": [
-        "Gen 4:18"
+        "Methuselah"
       ],
-      "gender": "Gen 4:18",
-      "married": "Gen 4:19",
-      "spouses": [
-        "Gen 4:19",
-        "Gen 4:19"
-      ],
-      "children": [
-        "Gen 4:20",
-        "Gen 4:21",
-        "Gen 4:22",
-        "Gen 4:22"
-      ],
-      "father": "Gen 4:18"
-    },
-    {
-      "names": [
-        "Gen 4:19"
-      ],
-      "gender": "Gen 4:19",
-      "married": "Gen 4:19",
-      "spouses": [
-        "Gen 4:19"
-      ],
-      "children": [
-        "Gen 4:20",
-        "Gen 4:20-21"
-      ]
-    },
-    {
-      "names": [
-        "Gen 4:19"
-      ],
-      "gender": "Gen 4:19",
-      "married": "Gen 4:19",
-      "spouses": [
-        "Gen 4:19"
-      ],
-      "children": [
-        "Gen 4:22",
-        "Gen 4:22"
-      ]
-    },
-    {
-      "names": [
-        "Gen 4:20"
-      ],
-      "gender": "Gen 4:20",
-      "married": "Gen 4:20",
-      "spouses": [],
-      "children": [],
-      "father": "Gen 4:20",
-      "mother": "Gen 4:20"
-    },
-    {
-      "names": [
-        "Gen 4:21"
-      ],
-      "gender": "Gen 4:21",
-      "married": "Gen 4:21",
-      "spouses": [],
-      "children": [],
-      "father": "Gen 4:21",
-      "mother": "Gen 4:20-21"
-    },
-    {
-      "names": [
-        "Gen 4:22"
-      ],
-      "gender": "Gen 4:22",
-      "spouses": [],
-      "children": [],
-      "father": "Gen 4:22",
-      "mother": "Gen 4:22"
-    },
-    {
-      "names": [
-        "Gen 4:22"
-      ],
-      "gender": "Gen 4:22",
-      "spouses": [],
-      "children": [],
-      "father": "Gen 4:22",
-      "mother": "Gen 4:22"
-    },
-    {
-      "names": [
-        "Gen 4:25"
-      ],
-      "gender": "Gen 4:25",
-      "married": "Gen 4:26",
+      "gender": "male",
       "spouses": [],
       "children": [
-        "Gen 4:26"
+        22
       ],
-      "father": "Gen 4:25",
-      "mother": "Gen 4:25"
+      "ageOfFatherAtBirth": 65,
+      "otherChildren": true,
+      "yearsLived": 969,
+      "references": {
+        "names": [
+          "Gen 5:21"
+        ],
+        "gender": "Gen 5:25",
+        "spouses": [],
+        "children": [
+          "Gen 5:25"
+        ],
+        "ageOfFatherAtBirth": "Gen 5:21",
+        "otherChildren": "Gen 5:26",
+        "yearsLived": "Gen 5:27",
+        "father": "Gen 5:21"
+      },
+      "father": 20
     },
     {
       "names": [
-        "Gen 4:26"
+        "Lamech"
       ],
-      "gender": "Gen 4:26",
+      "gender": "male",
       "spouses": [],
-      "children": [],
-      "father": "Gen 4:26"
+      "children": [
+        23
+      ],
+      "ageOfFatherAtBirth": 187,
+      "otherChildren": true,
+      "yearsLived": 777,
+      "references": {
+        "names": [
+          "Gen 5:25"
+        ],
+        "gender": "Gen 5:28",
+        "spouses": [],
+        "children": [
+          "Gen 5:28-29"
+        ],
+        "ageOfFatherAtBirth": "Gen 5:25",
+        "otherChildren": "Gen 5:30",
+        "yearsLived": "Gen 5:31",
+        "father": "Gen 5:25"
+      },
+      "father": 21
+    },
+    {
+      "names": [
+        "Noah"
+      ],
+      "gender": "male",
+      "spouses": [],
+      "children": [
+        24,
+        25,
+        26
+      ],
+      "ageOfFatherAtBirth": 182,
+      "references": {
+        "names": [
+          "Gen 5:28-29"
+        ],
+        "gender": "Gen 5:28-29",
+        "spouses": [],
+        "children": [
+          "Gen 5:32",
+          "Gen 5:32",
+          "Gen 5:32"
+        ],
+        "ageOfFatherAtBirth": "Gen 5:28-29",
+        "father": "Gen 5:28-29"
+      },
+      "father": 22
+    },
+    {
+      "names": [
+        "Shem"
+      ],
+      "gender": "male",
+      "ageOfFatherAtBirth": 500,
+      "references": {
+        "names": [
+          "Gen 5:32"
+        ],
+        "gender": "Gen 6:10",
+        "ageOfFatherAtBirth": "Gen 5:32",
+        "father": "Gen 5:32"
+      },
+      "father": 23
+    },
+    {
+      "names": [
+        "Ham"
+      ],
+      "gender": "male",
+      "ageOfFatherAtBirth": 500,
+      "references": {
+        "names": [
+          "Gen 5:32"
+        ],
+        "gender": "Gen 6:10",
+        "ageOfFatherAtBirth": "Gen 5:32",
+        "father": "Gen 5:32"
+      },
+      "father": 23
+    },
+    {
+      "names": [
+        "Japheth"
+      ],
+      "gender": "male",
+      "ageOfFatherAtBirth": 500,
+      "references": {
+        "names": [
+          "Gen 5:32"
+        ],
+        "gender": "Gen 6:10",
+        "ageOfFatherAtBirth": "Gen 5:32",
+        "father": "Gen 5:32"
+      },
+      "father": 23
     }
   ]
 }

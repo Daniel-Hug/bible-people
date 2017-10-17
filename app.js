@@ -70,7 +70,7 @@ function displayCard(personIndex) {
 function renderCard(personIndex) {
   var people = app.people;
   var person = people[personIndex];
-  var personReferences = app.references[personIndex]
+  var references = person.references;
 
 
   var detailItems = [
@@ -78,7 +78,7 @@ function renderCard(personIndex) {
     { el: 'li', kids: [
       { el: 'strong', text: 'Father:' }, ' ', typeof person.father === 'number' ? [
         renderPersonLink(person.father),
-        renderReference(personReferences.father)
+        renderReference(references.father)
       ] : 'None named.'
     ]},
 
@@ -87,21 +87,17 @@ function renderCard(personIndex) {
       { el: 'strong', text: 'Mother:' }, ' ',
       typeof person.mother === 'number' ? [
         renderPersonLink(person.mother),
-        renderReference(personReferences.mother)
+        renderReference(references.mother)
       ] : 'None named.'
-    ]},
-
-    // spouses
-    renderSpousesItem(personIndex),
-
-    // children
-    renderChildrenItem(personIndex)
+    ]}
   ];
+  if (person.spouses) detailItems.push(renderSpousesItem(personIndex));
+  if (person.children) detailItems.push(renderChildrenItem(personIndex));
 
   var card = dom({ el: 'article', class_card: true, kids: [
     { el: 'h2', kids: [
-      'What the Bible says about ',
-      { el: 'strong', class_name: true, text: person.names[0] }
+      { el: 'strong', class_name: true, text: person.names[0] },
+      ' in the Bible'
     ]},
     { el: 'ul', kids: detailItems}
   ]});
@@ -116,7 +112,7 @@ function renderReference(referenceString) {
 
 function renderSpousesItem(personIndex) {
   var person = app.people[personIndex];
-  var personReferences = app.references[personIndex]
+  var references = person.references;
   var spouseName = person.spouses.length <= 1 ?
     person.gender === 'male' ? 'Wife' : 'Husband' :
     person.gender === 'male' ? 'Wives' : 'Husbands';
@@ -133,7 +129,7 @@ function renderSpousesItem(personIndex) {
   else if (person.spouses.length === 1) {
     spousesItem.kids.push(
       renderPersonLink(person.spouses[0]),
-      renderReference(personReferences.spouses[0])
+      renderReference(references.spouses[0])
     );
   } else {
     spousesItem.kids.push(
@@ -141,7 +137,7 @@ function renderSpousesItem(personIndex) {
       { el: 'ul', kids: person.spouses.map(function(indexInPeople, indexInSpouses) {
         return { el: 'li', kids: [
           renderPersonLink(indexInPeople),
-          renderReference(personReferences.spouses[indexInSpouses])
+          renderReference(references.spouses[indexInSpouses])
         ]};
       })}
     );
@@ -152,22 +148,31 @@ function renderSpousesItem(personIndex) {
 
 function renderChildrenItem(personIndex) {
   var person = app.people[personIndex];
-  var personReferences = app.references[personIndex]
+  var references = person.references;
   var numChildren = person.children.length;
 
   var childrenItem = { el: 'li', kids: [
     { el: 'strong', text: 'Children:' },
     ' ' + (numChildren ? numChildren : 'None') +  ' named.'
   ]};
+  var ul;
+  if (numChildren || person.otherChildren) {
+    ul = { el: 'ul', kids: []};
+    childrenItem.kids.push(ul);
+  }
   if (numChildren) {
-    childrenItem.kids.push(
-      { el: 'ul', kids: person.children.map(function(indexInPeople, indexInChildren) {
-        return { el: 'li', kids: [
-          renderPersonLink(indexInPeople),
-          renderReference(personReferences.children[indexInChildren])
-        ]};
-      })}
-    );
+    [].push.apply(ul.kids, person.children.map(function(indexInPeople, indexInChildren) {
+      return { el: 'li', kids: [
+        renderPersonLink(indexInPeople),
+        renderReference(references.children[indexInChildren])
+      ]};
+    }));
+  }
+  if (person.otherChildren) {
+    ul.kids.push({ el: 'li', kids: [
+      'Some children went unnamed.',
+      renderReference(references.otherChildren)
+    ]});
   }
   return childrenItem;
 }
@@ -183,37 +188,68 @@ function removeChilds(el) {
 }
 
 function addParents(people) {
-  var references = app.references;
-
   // loop through people
   people.forEach(function(parent, parentIndex) {
+    var references = parent.references;
     // ensure properties in reference object match those in the person object
-    if (!haveSameProperties(parent, references[parentIndex])) {
-      console.error(parent.names[0] + ': different properties on reference object');
+    var personProperties = ['references', 'names', 'gender', 'married', 'spouses', 'children', 'father', 'mother', 'ageOfFatherAtBirth', 'yearsLived', 'otherChildren'];
+    for (var prop in parent) {
+      if (personProperties.indexOf(prop) < 0) {
+        console.error(parent.names[0] + ': property ' + prop + ' on person not allowed');
+      }
+      if (
+        prop !== 'references' &&
+        typeof references[prop] !== 'string' &&
+        !Array.isArray(references[prop])
+      ) {
+        console.error(parent.names[0] + ': property ' + prop + ' needs a reference');
+      }
+      if (Array.isArray(parent[prop])) {
+        if (Array.isArray(references[prop])) {
+          if (parent[prop].length !== references[prop].length) {
+            console.error(parent.names[0] + ': property ' + prop + ' needs references to match'); 
+          }
+        } else {
+          console.error(parent.names[0] + ': property ' + prop + ' needs references to match');
+        }
+      }
+      else if (Array.isArray(references[prop])) {
+        console.error(parent.names[0] + ': property ' + prop + ' needs references to match');
+      }
+    }
+
+    var referenceProperties = ['names', 'gender', 'married', 'spouses', 'children', 'father', 'mother', 'ageOfFatherAtBirth', 'yearsLived', 'otherChildren'];
+    for (prop in references) {
+      if (referenceProperties.indexOf(prop) < 0) {
+        console.error(parent.names[0] + ': property ' + prop + ' not allowed on reference object');
+      }
+      if (typeof parent[prop] === 'undefined') {
+        console.error(parent.names[0] + ': reference for property ' + prop + ' not found in person');
+      }
     }
 
     // ensure right number of references for children
-    if (parent.children.length !== references[parentIndex].children.length) {
+    if (parent.children && parent.children.length !== references.children.length) {
       console.error(parent.names[0] + ': children references do not line up');
     }
     // ensure right number of references for names
-    if (parent.names.length !== references[parentIndex].names.length) {
+    if (parent.names && parent.names.length !== references.names.length) {
       console.error(parent.names[0] + ': names references do not line up');
     }
     // ensure right number of references for spouses
-    if (parent.spouses.length !== references[parentIndex].spouses.length) {
+    if (parent.spouses && parent.spouses.length !== references.spouses.length) {
       console.error(parent.names[0] + ': spouses references do not line up');
     }
 
     // loop through children
-    parent.children.forEach(function(childIndex) {
+    (parent.children || []).forEach(function(childIndex) {
       // add father and mother properties to each child
       var relation = parent.gender === 'male' ? 'father' : 'mother';
       people[childIndex][relation] = parentIndex;
 
       // copy parent's respective child reference as the father or mother reference for the child
       var siblingIndex = parent.children.indexOf(childIndex);
-      references[childIndex][relation] = references[parentIndex].children[siblingIndex];
+      people[childIndex].references[relation] = references.children[siblingIndex];
     });
   });
 
