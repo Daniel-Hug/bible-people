@@ -8,8 +8,8 @@ var handlePeople = (function() {
     addParents(people);
     // graphTree(getGraphData(people))
 
-    // if ( (personIndex = getRoute()) ) {
-    //   displayCard(personIndex);
+    // if ( (personKey = getRoute()) ) {
+    //   displayCard(personKey);
     // }
 
     setupRoutes();
@@ -32,20 +32,14 @@ function setupRoutes() {
   router
   .on('*', function (params) {
     var hash = location.hash.slice(1);
-    var personIndex = +hash;
-    if (
-      // number
-      typeof personIndex === 'number' &&
-      // > 0
-      personIndex >= 0 &&
-      // integer
-      Math.floor(personIndex) === personIndex
-    ) {
-      displayCard(personIndex);
+    var personKey = hash.slice(1);
+    if (personKey && app.people[personKey]) {
+      displayCard(personKey);
       if (refTagger.tag) refTagger.tag();
+    } else if (!personKey) {
+      location.hash = '#!adam';
     } else {
-      console.error('Invalid person index: ' + personIndex + '.');
-      location.hash = 0;
+      console.error('Invalid person key: ' + personKey + '.');
     }
   })
   .resolve();
@@ -58,45 +52,49 @@ function setupRoutes() {
   helper function declarations
 */
 
-function displayCard(personIndex) {
+function displayCard(personKey) {
   var cardParent = document.querySelector('#card-parent');
   removeChilds(cardParent);
   dom({
     el: cardParent,
-    kids: [renderCard(personIndex)]
+    kids: [renderCard(personKey)]
   });
 }
 
-function renderCard(personIndex) {
+function renderCard(personKey) {
   var people = app.people;
-  var person = people[personIndex];
+  var person = people[personKey];
   var references = person.references;
 
 
   var detailItems = [
     // father
     { el: 'li', kids: [
-      { el: 'strong', text: 'Father:' }, ' ', typeof person.father === 'number' ? [
+      { el: 'strong', text: 'Father:' }, ' ', person.father !== undefined ? [
         renderPersonLink(person.father),
         renderReference(references.father)
-      ] : 'None named.'
+      ] : 'Not named'
     ]},
 
     // mother
     { el: 'li', kids: [
       { el: 'strong', text: 'Mother:' }, ' ',
-      typeof person.mother === 'number' ? [
+      person.mother !== undefined ? [
         renderPersonLink(person.mother),
         renderReference(references.mother)
-      ] : 'None named.'
-    ]}
+      ] : 'Not named'
+    ]},
+
+    renderSpousesItem(personKey),
+    renderChildrenItem(personKey)
   ];
-  if (person.spouses) detailItems.push(renderSpousesItem(personIndex));
-  if (person.children) detailItems.push(renderChildrenItem(personIndex));
+  //if (person.spouses) detailItems.push(renderSpousesItem(personKey));
+  //if (person.children) detailItems.push(renderChildrenItem(personKey));
+  if (!person.names) detailItems.unshift({ el: 'li', text: 'No name mentioned' });
 
   var card = dom({ el: 'article', class_card: true, kids: [
     { el: 'h2', kids: [
-      { el: 'strong', class_name: true, text: person.names[0] },
+      { el: 'strong', class_name: true, text: getName(personKey) },
       ' in the Bible'
     ]},
     { el: 'ul', kids: detailItems}
@@ -110,21 +108,21 @@ function renderReference(referenceString) {
   return sup;
 }
 
-function renderSpousesItem(personIndex) {
-  var person = app.people[personIndex];
+function renderSpousesItem(personKey) {
+  var person = app.people[personKey];
   var references = person.references;
-  var spouseName = person.spouses.length <= 1 ?
+  var spouseName = !person.spouses || person.spouses.length <= 1 ?
     person.gender === 'male' ? 'Wife' : 'Husband' :
     person.gender === 'male' ? 'Wives' : 'Husbands';
 
   var spousesItem = { el: 'li', kids: [
     { el: 'strong', text: spouseName + ':' }, ' '
   ]}
-  if (person.married === false) {
-    spousesItem.kids.push('None.');
+  if (!person.spouses) {
+    spousesItem.kids.push('None named');
   }
   else if (person.spouses.length === 0) {
-    spousesItem.kids.push('None named.');
+    spousesItem.kids.push('None');
   }
   else if (person.spouses.length === 1) {
     spousesItem.kids.push(
@@ -133,7 +131,7 @@ function renderSpousesItem(personIndex) {
     );
   } else {
     spousesItem.kids.push(
-      person.spouses.length + ' named.',
+      person.spouses.length + ' named',
       { el: 'ul', kids: person.spouses.map(function(indexInPeople, indexInSpouses) {
         return { el: 'li', kids: [
           renderPersonLink(indexInPeople),
@@ -146,21 +144,21 @@ function renderSpousesItem(personIndex) {
   return spousesItem;
 }
 
-function renderChildrenItem(personIndex) {
-  var person = app.people[personIndex];
+function renderChildrenItem(personKey) {
+  var person = app.people[personKey];
   var references = person.references;
-  var numChildren = person.children.length;
+  var numChildrenNamed = (person.children || []).length;
 
   var childrenItem = { el: 'li', kids: [
     { el: 'strong', text: 'Children:' },
-    ' ' + (numChildren ? numChildren : 'None') +  ' named.'
+    ' ' + (person.children ? (person.children.length + ' named' || 'None') : 'None named')
   ]};
   var ul;
-  if (numChildren || person.otherChildren) {
+  if (numChildrenNamed || person.otherChildren) {
     ul = { el: 'ul', kids: []};
     childrenItem.kids.push(ul);
   }
-  if (numChildren) {
+  if (numChildrenNamed) {
     [].push.apply(ul.kids, person.children.map(function(indexInPeople, indexInChildren) {
       return { el: 'li', kids: [
         renderPersonLink(indexInPeople),
@@ -177,8 +175,22 @@ function renderChildrenItem(personIndex) {
   return childrenItem;
 }
 
-function renderPersonLink(personIndex) {
-  return dom({ el: 'a', text: app.people[personIndex].names[0], _href: '#' + personIndex });
+function getName(personKey) {
+  var person = app.people[personKey];
+  if (person.names) return person.names[0];
+  if (person.title) return person.title;
+  if (person.gender && person.spouses.length === 1) {
+    var spouse = app.people[person.spouses[0]];
+    if (spouse.names) {
+      var title = givePossession(spouse.names[0]) + ' ' +
+      (person.gender === 'male' ? 'husband' : 'wife');
+      return title;
+    }
+  }
+}
+
+function renderPersonLink(personKey) {
+  return dom({ el: 'a', text: getName(personKey), _href: '#!' + personKey });
 }
 
 // removes all of an element's childNodes
@@ -187,71 +199,78 @@ function removeChilds(el) {
   while ((last = el.lastChild)) el.removeChild(last);
 }
 
+function validatePersonData(personKey) {
+  var parent = app.people[personKey];
+  var references = parent.references;
+  var name = getName(personKey);
+  // ensure properties in reference object match those in the person object
+  var personProperties = ['references', 'names', 'gender', 'spouses', 'children', 'father', 'mother', 'ageOfFatherAtBirth', 'yearsLived', 'otherChildren', 'title'];
+  for (var prop in parent) {
+    if (personProperties.indexOf(prop) < 0) {
+      console.error(name + ': property ' + prop + ' on person not allowed');
+    }
+    if (
+      prop !== 'references' &&
+      typeof references[prop] !== 'string' &&
+      !Array.isArray(references[prop])
+    ) {
+      console.error(name + ': property ' + prop + ' needs a reference');
+    }
+    if (Array.isArray(parent[prop])) {
+      if (Array.isArray(references[prop])) {
+        if (parent[prop].length !== references[prop].length) {
+          console.error(name + ': property ' + prop + ' needs references to match'); 
+        }
+      } else {
+        console.error(name + ': property ' + prop + ' needs references to match');
+      }
+    }
+    else if (Array.isArray(references[prop])) {
+      console.error(name + ': property ' + prop + ' needs references to match');
+    }
+  }
+
+  var referenceProperties = ['names', 'gender', 'spouses', 'children', 'father', 'mother', 'ageOfFatherAtBirth', 'yearsLived', 'otherChildren', 'title'];
+  for (prop in references) {
+    if (referenceProperties.indexOf(prop) < 0) {
+      console.error(name + ': property ' + prop + ' not allowed on reference object');
+    }
+    if (typeof parent[prop] === 'undefined') {
+      console.error(name + ': reference for property ' + prop + ' not found in person');
+    }
+  }
+
+  // ensure right number of references for children
+  if (parent.children && parent.children.length !== references.children.length) {
+    console.error(name + ': children references do not line up');
+  }
+  // ensure right number of references for names
+  if (parent.names && parent.names.length !== references.names.length) {
+    console.error(name + ': names references do not line up');
+  }
+  // ensure right number of references for spouses
+  if (parent.spouses && parent.spouses.length !== references.spouses.length) {
+    console.error(name + ': spouses references do not line up');
+  }
+}
+
 function addParents(people) {
   // loop through people
-  people.forEach(function(parent, parentIndex) {
+  for (var personKey in people) {
+    var parent = people[personKey];
     var references = parent.references;
-    // ensure properties in reference object match those in the person object
-    var personProperties = ['references', 'names', 'gender', 'married', 'spouses', 'children', 'father', 'mother', 'ageOfFatherAtBirth', 'yearsLived', 'otherChildren'];
-    for (var prop in parent) {
-      if (personProperties.indexOf(prop) < 0) {
-        console.error(parent.names[0] + ': property ' + prop + ' on person not allowed');
-      }
-      if (
-        prop !== 'references' &&
-        typeof references[prop] !== 'string' &&
-        !Array.isArray(references[prop])
-      ) {
-        console.error(parent.names[0] + ': property ' + prop + ' needs a reference');
-      }
-      if (Array.isArray(parent[prop])) {
-        if (Array.isArray(references[prop])) {
-          if (parent[prop].length !== references[prop].length) {
-            console.error(parent.names[0] + ': property ' + prop + ' needs references to match'); 
-          }
-        } else {
-          console.error(parent.names[0] + ': property ' + prop + ' needs references to match');
-        }
-      }
-      else if (Array.isArray(references[prop])) {
-        console.error(parent.names[0] + ': property ' + prop + ' needs references to match');
-      }
-    }
-
-    var referenceProperties = ['names', 'gender', 'married', 'spouses', 'children', 'father', 'mother', 'ageOfFatherAtBirth', 'yearsLived', 'otherChildren'];
-    for (prop in references) {
-      if (referenceProperties.indexOf(prop) < 0) {
-        console.error(parent.names[0] + ': property ' + prop + ' not allowed on reference object');
-      }
-      if (typeof parent[prop] === 'undefined') {
-        console.error(parent.names[0] + ': reference for property ' + prop + ' not found in person');
-      }
-    }
-
-    // ensure right number of references for children
-    if (parent.children && parent.children.length !== references.children.length) {
-      console.error(parent.names[0] + ': children references do not line up');
-    }
-    // ensure right number of references for names
-    if (parent.names && parent.names.length !== references.names.length) {
-      console.error(parent.names[0] + ': names references do not line up');
-    }
-    // ensure right number of references for spouses
-    if (parent.spouses && parent.spouses.length !== references.spouses.length) {
-      console.error(parent.names[0] + ': spouses references do not line up');
-    }
-
+    validatePersonData(personKey);
     // loop through children
-    (parent.children || []).forEach(function(childIndex) {
+    (parent.children || []).forEach(function(childKey) {
       // add father and mother properties to each child
       var relation = parent.gender === 'male' ? 'father' : 'mother';
-      people[childIndex][relation] = parentIndex;
+      people[childKey][relation] = personKey;
 
       // copy parent's respective child reference as the father or mother reference for the child
-      var siblingIndex = parent.children.indexOf(childIndex);
-      people[childIndex].references[relation] = references.children[siblingIndex];
+      var siblingIndex = parent.children.indexOf(childKey);
+      people[childKey].references[relation] = references.children[siblingIndex];
     });
-  });
+  }
 
   window.json = JSON.stringify(app, null, 2);
   console.log('run this: copy(json)');
@@ -356,4 +375,8 @@ function graphTree(graphData) {
 
   // focus on this person
   ], 4);
+}
+
+function givePossession(nounStr) {
+  return nounStr + (nounStr[nounStr.length - 1] === 's' ? '\'' : '\'s');
 }

@@ -1,19 +1,18 @@
 {
-  "people": [
-    {
+  "people": {
+    "adam": {
       "names": [
         "Adam",
         "Man"
       ],
       "gender": "male",
-      "married": true,
       "spouses": [
-        1
+        "eve"
       ],
       "children": [
-        2,
-        3,
-        15
+        "cain",
+        "abel",
+        "seth"
       ],
       "yearsLived": 930,
       "otherChildren": true,
@@ -23,7 +22,6 @@
           "Gen 2:20"
         ],
         "gender": "Gen 3:20",
-        "married": "Gen 3:20",
         "spouses": [
           "Gen 3:20"
         ],
@@ -36,20 +34,19 @@
         "otherChildren": "Gen 5:4"
       }
     },
-    {
+    "eve": {
       "names": [
         "Eve",
         "Woman"
       ],
       "gender": "female",
-      "married": true,
       "spouses": [
-        0
+        "adam"
       ],
       "children": [
-        2,
-        3,
-        15
+        "cain",
+        "abel",
+        "seth"
       ],
       "otherChildren": true,
       "references": {
@@ -58,7 +55,6 @@
           "Gen 3:20"
         ],
         "gender": "Gen 3:20",
-        "married": "Gen 3:20",
         "spouses": [
           "Gen 3:20"
         ],
@@ -70,170 +66,158 @@
         "otherChildren": "Gen 5:4"
       }
     },
-    {
+    "cain": {
       "names": [
         "Cain"
       ],
       "gender": "male",
-      "married": true,
-      "spouses": [],
+      "spouses": [
+        "wife_of_cain"
+      ],
       "children": [
-        4
+        "enoch"
       ],
       "references": {
         "names": [
           "Gen 4:1"
         ],
         "gender": "Gen 4:1",
-        "married": "Gen 4:17",
-        "spouses": [],
+        "spouses": [
+          "Gen 4:17"
+        ],
         "children": [
           "Gen 4:17"
         ],
         "father": "Gen 4:1",
         "mother": "Gen 4:1"
       },
-      "father": 0,
-      "mother": 1
+      "father": "adam",
+      "mother": "eve"
     },
-    {
+    "abel": {
       "names": [
         "Abel"
       ],
       "gender": "male",
-      "spouses": [],
       "children": [],
       "references": {
         "names": [
           "Gen 4:2"
         ],
         "gender": "Gen 4:2",
-        "spouses": [],
         "children": [],
         "father": "Gen 4:2",
         "mother": "Gen 4:2"
       },
-      "father": 0,
-      "mother": 1
+      "father": "adam",
+      "mother": "eve"
     },
-    {
+    "enoch": {
       "names": [
         "Enoch"
       ],
       "gender": "male",
-      "married": true,
-      "spouses": [],
       "children": [
-        5
+        "methuselah"
       ],
+      "ageOfFatherAtBirth": 62,
+      "otherChildren": true,
+      "yearsLived": 365,
       "references": {
         "names": [
-          "Gen 4:17"
+          "Gen 5:18"
         ],
-        "gender": "Gen 4:17",
-        "married": "Gen 4:18",
-        "spouses": [],
+        "gender": "Gen 5:21",
         "children": [
-          "Gen 4:18"
+          "Gen 5:21"
         ],
-        "father": "Gen 4:17"
+        "ageOfFatherAtBirth": "Gen 5:18",
+        "otherChildren": "Gen 5:22",
+        "yearsLived": "Gen 5:23",
+        "father": "Gen 5:18",
+        "mother": "Gen 4:17"
       },
-      "father": 2
+      "father": "jared",
+      "mother": "wife_of_cain"
     },
-    {
+    "irad": {
       "names": [
         "Irad"
       ],
       "gender": "male",
-      "married": true,
-      "spouses": [],
       "children": [
-        6
+        "mehujael"
       ],
       "references": {
         "names": [
           "Gen 4:18"
         ],
         "gender": "Gen 4:18",
-        "married": "Gen 4:18",
-        "spouses": [],
         "children": [
           "Gen 4:18"
-        ],
-        "father": "Gen 4:18"
-      },
-      "father": 4
+        ]
+      }
     },
-    {
+    "mehujael": {
       "names": [
         "Mehujael"
       ],
       "gender": "male",
-      "married": true,
-      "spouses": [],
       "children": [
-        7
+        "methushael"
       ],
       "references": {
         "names": [
           "Gen 4:18"
         ],
         "gender": "Gen 4:18",
-        "married": "Gen 4:18",
-        "spouses": [],
         "children": [
           "Gen 4:18"
         ],
         "father": "Gen 4:18"
       },
-      "father": 5
+      "father": "irad"
     },
-    {
+    "methushael": {
       "names": [
         "Methushael"
       ],
       "gender": "male",
-      "married": true,
-      "spouses": [],
       "children": [
-        8
+        "lamech"
       ],
       "references": {
         "names": [
           "Gen 4:18"
         ],
         "gender": "Gen 4:18",
-        "married": "Gen 4:18",
-        "spouses": [],
         "children": [
           "Gen 4:18"
         ],
         "father": "Gen 4:18"
       },
-      "father": 6
+      "father": "mehujael"
     },
-    {
+    "lamech": {
       "names": [
         "Lamech"
       ],
       "gender": "male",
-      "married": true,
       "spouses": [
-        9,
-        10
+        "adah",
+        "zillah"
       ],
       "children": [
-        11,
-        12,
-        13,
-        14
+        "jabal",
+        "jubal",
+        "tubal",
+        "naamah"
       ],
       "references": {
         "names": [
           "Gen 4:18"
         ],
         "gender": "Gen 4:18",
-        "married": "Gen 4:19",
         "spouses": [
           "Gen 4:19",
           "Gen 4:19"
@@ -246,27 +230,25 @@
         ],
         "father": "Gen 4:18"
       },
-      "father": 7
+      "father": "methushael"
     },
-    {
+    "adah": {
       "names": [
         "Adah"
       ],
       "gender": "female",
-      "married": true,
       "spouses": [
-        8
+        "lamech"
       ],
       "children": [
-        11,
-        12
+        "jabal",
+        "jubal"
       ],
       "references": {
         "names": [
           "Gen 4:19"
         ],
         "gender": "Gen 4:19",
-        "married": "Gen 4:19",
         "spouses": [
           "Gen 4:19"
         ],
@@ -276,25 +258,23 @@
         ]
       }
     },
-    {
+    "zillah": {
       "names": [
         "Zillah"
       ],
       "gender": "female",
-      "married": true,
       "spouses": [
-        8
+        "lamech"
       ],
       "children": [
-        13,
-        14
+        "tubal",
+        "naamah"
       ],
       "references": {
         "names": [
           "Gen 4:19"
         ],
         "gender": "Gen 4:19",
-        "married": "Gen 4:19",
         "spouses": [
           "Gen 4:19"
         ],
@@ -304,99 +284,77 @@
         ]
       }
     },
-    {
+    "jabal": {
       "names": [
         "Jabal"
       ],
       "gender": "male",
-      "married": true,
-      "spouses": [],
-      "children": [],
       "references": {
         "names": [
           "Gen 4:20"
         ],
         "gender": "Gen 4:20",
-        "married": "Gen 4:20",
-        "spouses": [],
-        "children": [],
         "father": "Gen 4:20",
         "mother": "Gen 4:20"
       },
-      "father": 8,
-      "mother": 9
+      "father": "lamech",
+      "mother": "adah"
     },
-    {
+    "jubal": {
       "names": [
         "Jubal"
       ],
       "gender": "male",
-      "married": true,
-      "spouses": [],
-      "children": [],
       "references": {
         "names": [
           "Gen 4:21"
         ],
         "gender": "Gen 4:21",
-        "married": "Gen 4:21",
-        "spouses": [],
-        "children": [],
         "father": "Gen 4:21",
         "mother": "Gen 4:20-21"
       },
-      "father": 8,
-      "mother": 9
+      "father": "lamech",
+      "mother": "adah"
     },
-    {
+    "tubal": {
       "names": [
         "Tubal-cain"
       ],
       "gender": "male",
-      "spouses": [],
-      "children": [],
       "references": {
         "names": [
           "Gen 4:22"
         ],
         "gender": "Gen 4:22",
-        "spouses": [],
-        "children": [],
         "father": "Gen 4:22",
         "mother": "Gen 4:22"
       },
-      "father": 8,
-      "mother": 10
+      "father": "lamech",
+      "mother": "zillah"
     },
-    {
+    "naamah": {
       "names": [
         "Naamah"
       ],
       "gender": "female",
-      "spouses": [],
-      "children": [],
       "references": {
         "names": [
           "Gen 4:22"
         ],
         "gender": "Gen 4:22",
-        "spouses": [],
-        "children": [],
         "father": "Gen 4:22",
         "mother": "Gen 4:22"
       },
-      "father": 8,
-      "mother": 10
+      "father": "lamech",
+      "mother": "zillah"
     },
-    {
+    "seth": {
       "names": [
         "Seth"
       ],
       "gender": "male",
-      "married": true,
-      "spouses": [],
       "children": [
-        16
+        "enosh"
       ],
       "ageOfFatherAtBirth": 130,
       "otherChildren": true,
@@ -406,8 +364,6 @@
           "Gen 4:25"
         ],
         "gender": "Gen 4:25",
-        "married": "Gen 4:26",
-        "spouses": [],
         "children": [
           "Gen 4:26"
         ],
@@ -417,17 +373,16 @@
         "father": "Gen 4:25",
         "mother": "Gen 4:25"
       },
-      "father": 0,
-      "mother": 1
+      "father": "adam",
+      "mother": "eve"
     },
-    {
+    "enosh": {
       "names": [
         "Enosh"
       ],
       "gender": "male",
-      "spouses": [],
       "children": [
-        17
+        "kenan"
       ],
       "ageOfFatherAtBirth": 105,
       "otherChildren": true,
@@ -437,7 +392,6 @@
           "Gen 4:26"
         ],
         "gender": "Gen 4:26",
-        "spouses": [],
         "children": [
           "Gen 5:9"
         ],
@@ -446,16 +400,15 @@
         "yearsLived": "Gen 5:11",
         "father": "Gen 4:26"
       },
-      "father": 15
+      "father": "seth"
     },
-    {
+    "kenan": {
       "names": [
         "Kenan"
       ],
       "gender": "male",
-      "spouses": [],
       "children": [
-        18
+        "mahalalel"
       ],
       "ageOfFatherAtBirth": 90,
       "otherChildren": true,
@@ -465,7 +418,6 @@
           "Gen 5:9"
         ],
         "gender": "Gen 5:12",
-        "spouses": [],
         "children": [
           "Gen 5:12"
         ],
@@ -474,16 +426,15 @@
         "yearsLived": "Gen 5:14",
         "father": "Gen 5:9"
       },
-      "father": 16
+      "father": "enosh"
     },
-    {
+    "mahalalel": {
       "names": [
         "Mahalalel"
       ],
       "gender": "male",
-      "spouses": [],
       "children": [
-        19
+        "jared"
       ],
       "ageOfFatherAtBirth": 70,
       "otherChildren": true,
@@ -493,7 +444,6 @@
           "Gen 5:12"
         ],
         "gender": "Gen 5:15",
-        "spouses": [],
         "children": [
           "Gen 5:15"
         ],
@@ -502,16 +452,15 @@
         "yearsLived": "Gen 5:17",
         "father": "Gen 5:12"
       },
-      "father": 17
+      "father": "kenan"
     },
-    {
+    "jared": {
       "names": [
         "Jared"
       ],
       "gender": "male",
-      "spouses": [],
       "children": [
-        20
+        "enoch"
       ],
       "ageOfFatherAtBirth": 65,
       "otherChildren": true,
@@ -521,7 +470,6 @@
           "Gen 5:15"
         ],
         "gender": "Gen 5:18",
-        "spouses": [],
         "children": [
           "Gen 5:18"
         ],
@@ -530,44 +478,15 @@
         "yearsLived": "Gen 5:20",
         "father": "Gen 5:15"
       },
-      "father": 18
+      "father": "mahalalel"
     },
-    {
-      "names": [
-        "Enoch"
-      ],
-      "gender": "male",
-      "spouses": [],
-      "children": [
-        21
-      ],
-      "ageOfFatherAtBirth": 62,
-      "otherChildren": true,
-      "yearsLived": 365,
-      "references": {
-        "names": [
-          "Gen 5:18"
-        ],
-        "gender": "Gen 5:21",
-        "spouses": [],
-        "children": [
-          "Gen 5:21"
-        ],
-        "ageOfFatherAtBirth": "Gen 5:18",
-        "otherChildren": "Gen 5:22",
-        "yearsLived": "Gen 5:23",
-        "father": "Gen 5:18"
-      },
-      "father": 19
-    },
-    {
+    "methuselah": {
       "names": [
         "Methuselah"
       ],
       "gender": "male",
-      "spouses": [],
       "children": [
-        22
+        "lamech2"
       ],
       "ageOfFatherAtBirth": 65,
       "otherChildren": true,
@@ -577,7 +496,6 @@
           "Gen 5:21"
         ],
         "gender": "Gen 5:25",
-        "spouses": [],
         "children": [
           "Gen 5:25"
         ],
@@ -586,16 +504,15 @@
         "yearsLived": "Gen 5:27",
         "father": "Gen 5:21"
       },
-      "father": 20
+      "father": "enoch"
     },
-    {
+    "lamech2": {
       "names": [
         "Lamech"
       ],
       "gender": "male",
-      "spouses": [],
       "children": [
-        23
+        "noah"
       ],
       "ageOfFatherAtBirth": 187,
       "otherChildren": true,
@@ -605,7 +522,6 @@
           "Gen 5:25"
         ],
         "gender": "Gen 5:28",
-        "spouses": [],
         "children": [
           "Gen 5:28-29"
         ],
@@ -614,18 +530,20 @@
         "yearsLived": "Gen 5:31",
         "father": "Gen 5:25"
       },
-      "father": 21
+      "father": "methuselah"
     },
-    {
+    "noah": {
       "names": [
         "Noah"
       ],
       "gender": "male",
-      "spouses": [],
+      "spouses": [
+        "wife_of_noah"
+      ],
       "children": [
-        24,
-        25,
-        26
+        "shem",
+        "ham",
+        "japheth"
       ],
       "ageOfFatherAtBirth": 182,
       "references": {
@@ -633,7 +551,9 @@
           "Gen 5:28-29"
         ],
         "gender": "Gen 5:28-29",
-        "spouses": [],
+        "spouses": [
+          "Gen 6:18"
+        ],
         "children": [
           "Gen 5:32",
           "Gen 5:32",
@@ -642,55 +562,165 @@
         "ageOfFatherAtBirth": "Gen 5:28-29",
         "father": "Gen 5:28-29"
       },
-      "father": 22
+      "father": "lamech2"
     },
-    {
+    "shem": {
       "names": [
         "Shem"
       ],
       "gender": "male",
+      "spouses": [
+        "wife_of_shem"
+      ],
       "ageOfFatherAtBirth": 500,
       "references": {
         "names": [
           "Gen 5:32"
         ],
         "gender": "Gen 6:10",
+        "spouses": [
+          "Gen 6:18"
+        ],
         "ageOfFatherAtBirth": "Gen 5:32",
-        "father": "Gen 5:32"
+        "father": "Gen 5:32",
+        "mother": "Gen 5:32"
       },
-      "father": 23
+      "father": "noah",
+      "mother": "wife_of_noah"
     },
-    {
+    "ham": {
       "names": [
         "Ham"
       ],
       "gender": "male",
+      "spouses": [
+        "wife_of_ham"
+      ],
       "ageOfFatherAtBirth": 500,
       "references": {
         "names": [
           "Gen 5:32"
         ],
         "gender": "Gen 6:10",
+        "spouses": [
+          "Gen 6:18"
+        ],
         "ageOfFatherAtBirth": "Gen 5:32",
-        "father": "Gen 5:32"
+        "father": "Gen 5:32",
+        "mother": "Gen 5:32"
       },
-      "father": 23
+      "father": "noah",
+      "mother": "wife_of_noah"
     },
-    {
+    "japheth": {
       "names": [
         "Japheth"
       ],
       "gender": "male",
+      "spouses": [
+        "wife_of_japheth"
+      ],
       "ageOfFatherAtBirth": 500,
       "references": {
         "names": [
           "Gen 5:32"
         ],
         "gender": "Gen 6:10",
+        "spouses": [
+          "Gen 6:18"
+        ],
         "ageOfFatherAtBirth": "Gen 5:32",
-        "father": "Gen 5:32"
+        "father": "Gen 5:32",
+        "mother": "Gen 5:32"
       },
-      "father": 23
+      "father": "noah",
+      "mother": "wife_of_noah"
+    },
+    "wife_of_cain": {
+      "title": "Cain's wife",
+      "gender": "female",
+      "spouses": [
+        "cain"
+      ],
+      "children": [
+        "enoch"
+      ],
+      "references": {
+        "title": "Gen 4:17",
+        "gender": "Gen 4:17",
+        "spouses": [
+          "Gen 4:17"
+        ],
+        "children": [
+          "Gen 4:17"
+        ]
+      }
+    },
+    "wife_of_noah": {
+      "title": "Noah's wife",
+      "gender": "female",
+      "spouses": [
+        "noah"
+      ],
+      "children": [
+        "shem",
+        "ham",
+        "japheth"
+      ],
+      "references": {
+        "title": "Gen 6:18",
+        "gender": "Gen 6:18",
+        "spouses": [
+          "Gen 6:18"
+        ],
+        "children": [
+          "Gen 5:32",
+          "Gen 5:32",
+          "Gen 5:32"
+        ]
+      }
+    },
+    "wife_of_shem": {
+      "title": "Shem's wife",
+      "gender": "female",
+      "spouses": [
+        "shem"
+      ],
+      "references": {
+        "title": "Gen 6:18",
+        "gender": "Gen 6:18",
+        "spouses": [
+          "Gen 6:18"
+        ]
+      }
+    },
+    "wife_of_ham": {
+      "title": "Ham's wife",
+      "gender": "female",
+      "spouses": [
+        "ham"
+      ],
+      "references": {
+        "title": "Gen 6:18",
+        "gender": "Gen 6:18",
+        "spouses": [
+          "Gen 6:18"
+        ]
+      }
+    },
+    "wife_of_japheth": {
+      "title": "Japheth's wife",
+      "gender": "female",
+      "spouses": [
+        "japheth"
+      ],
+      "references": {
+        "title": "Gen 6:18",
+        "gender": "Gen 6:18",
+        "spouses": [
+          "Gen 6:18"
+        ]
+      }
     }
-  ]
+  }
 }

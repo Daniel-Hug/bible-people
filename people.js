@@ -12,8 +12,8 @@
     every person mentioned under a "children" property in this file.
     - So these are all the properties which can appear in a person object in people.json:
       - names: array of strings
+      - title: string
       - gender: string
-      - married: boolean
       - spouses: array of person indices
       - children: array of person indices
       - father: person index
@@ -25,406 +25,398 @@
 */
 
 var peopleData = {
-  people: [
-    {// 0
+  people: {
+    adam: {
       names: ['Adam', 'Man'],
       gender: 'male',
-      married: true,
-      spouses: [1],
-      children: [2,3,15],
+      spouses: ['eve'],
+      children: ['cain','abel','seth'],
       yearsLived: 930,
       otherChildren: true,
       references: {
         names: ['Gen 2:23', 'Gen 2:20'],
         gender: 'Gen 3:20',
-        married: 'Gen 3:20',
         spouses: ['Gen 3:20'],
         children: ['Gen 4:1', 'Gen 4:2', 'Gen 4:25'],
         yearsLived: 'Gen 5:5',
         otherChildren: 'Gen 5:4'
       }
     },
-    {// 1
+    eve: {
       names: ['Eve', 'Woman'],
       gender: 'female',
-      married: true,
-      spouses: [0],
-      children: [2,3,15],
+      spouses: ['adam'],
+      children: ['cain','abel','seth'],
       otherChildren: true,
       references: {
         names: ['Gen 2:23', 'Gen 3:20'],
         gender: 'Gen 3:20',
-        married: 'Gen 3:20',
         spouses: ['Gen 3:20'],
         children: ['Gen 4:1', 'Gen 4:2', 'Gen 4:25'],
         otherChildren: 'Gen 5:4'
       }
     },
-    {// 2
+    cain: {
       names: ['Cain'],
       gender: 'male',
-      married: true,
-      spouses: [],
-      children: [4],
+      spouses: ['wife_of_cain'],
+      children: ['enoch'],
       references: {
         names: ['Gen 4:1'],
         gender: 'Gen 4:1',
-        married: 'Gen 4:17',
-        spouses: [],
+        spouses: ['Gen 4:17'],
         children: ['Gen 4:17']
       }
     },
-    {// 3
+    abel: {
       names: ['Abel'],
       gender: 'male',
-      spouses: [],
       children: [],
       references: {
         names: ['Gen 4:2'],
         gender: 'Gen 4:2',
-        spouses: [],
         children: []
       }
     },
-    {// 4
+    enoch: {
       names: ['Enoch'],
       gender: 'male',
-      married: true,
-      spouses: [],
-      children: [5],
+      children: ['irad'],
       references: {
         names: ['Gen 4:17'],
         gender: 'Gen 4:17',
-        married: 'Gen 4:18',
-        spouses: [],
         children: ['Gen 4:18']
       }
     },
-    {// 5
+    irad: {
       names: ['Irad'],
       gender: 'male',
-      married: true,
-      spouses: [],
-      children: [6],
+      children: ['mehujael'],
       references: {
         names: ['Gen 4:18'],
         gender: 'Gen 4:18',
-        married: 'Gen 4:18',
-        spouses: [],
         children: ['Gen 4:18']
       }
     },
-    {// 6
+    mehujael: {
       names: ['Mehujael'],
       gender: 'male',
-      married: true,
-      spouses: [],
-      children: [7],
+      children: ['methushael'],
       references: {
         names: ['Gen 4:18'],
         gender: 'Gen 4:18',
-        married: 'Gen 4:18',
-        spouses: [],
         children: ['Gen 4:18']
       }
     },
-    {// 7
+    methushael: {
       names: ['Methushael'],
       gender: 'male',
-      married: true,
-      spouses: [],
-      children: [8],
+      children: ['lamech'],
       references: {
         names: ['Gen 4:18'],
         gender: 'Gen 4:18',
-        married: 'Gen 4:18',
-        spouses: [],
         children: ['Gen 4:18']
       }
     },
-    {// 8
+    lamech: {
       names: ['Lamech'],
       gender: 'male',
-      married: true,
-      spouses: [9,10],
-      children: [11,12,13,14],
+      spouses: ['adah','zillah'],
+      children: ['jabal','jubal','tubal','naamah'],
       references: {
         names: ['Gen 4:18'],
         gender: 'Gen 4:18',
-        married: 'Gen 4:19',
         spouses: ['Gen 4:19', 'Gen 4:19'],
         children: ['Gen 4:20','Gen 4:21','Gen 4:22','Gen 4:22']
       }
     },
-    {// 9
+    adah: {
       names: ['Adah'],
       gender: 'female',
-      married: true,
-      spouses: [8],
-      children: [11,12],
+      spouses: ['lamech'],
+      children: ['jabal','jubal'],
       references: {
         names: ['Gen 4:19'],
         gender: 'Gen 4:19',
-        married: 'Gen 4:19',
         spouses: ['Gen 4:19'],
         children: ['Gen 4:20','Gen 4:20-21']
       }
     },
-    {// 10
+    zillah: {
       names: ['Zillah'],
       gender: 'female',
-      married: true,
-      spouses: [8],
-      children: [13,14],
+      spouses: ['lamech'],
+      children: ['tubal','naamah'],
       references: {
         names: ['Gen 4:19'],
         gender: 'Gen 4:19',
-        married: 'Gen 4:19',
         spouses: ['Gen 4:19'],
         children: ['Gen 4:22','Gen 4:22']
       }
     },
-    {// 11
+    jabal: {
       names: ['Jabal'],
       gender: 'male',
-      married: true,
-      spouses: [],
-      children: [],
       references: {
         names: ['Gen 4:20'],
-        gender: 'Gen 4:20',
-        married: 'Gen 4:20',
-        spouses: [],
-        children: []
+        gender: 'Gen 4:20'
       }
     },
-    {// 12
+    jubal: {
       names: ['Jubal'],
       gender: 'male',
-      married: true,
-      spouses: [],
-      children: [],
       references: {
         names: ['Gen 4:21'],
-        gender: 'Gen 4:21',
-        married: 'Gen 4:21',
-        spouses: [],
-        children: []
+        gender: 'Gen 4:21'
       }
     },
-    {// 13
+    tubal: {
       names: ['Tubal-cain'],
       gender: 'male',
-      spouses: [],
-      children: [],
       references: {
         names: ['Gen 4:22'],
-        gender: 'Gen 4:22',
-        spouses: [],
-        children: []
+        gender: 'Gen 4:22'
       }
     },
-    {// 14
+    naamah: {
       names: ['Naamah'],
       gender: 'female',
-      spouses: [],
-      children: [],
       references: {
         names: ['Gen 4:22'],
-        gender: 'Gen 4:22',
-        spouses: [],
-        children: []
+        gender: 'Gen 4:22'
       }
     },
-    {// 15
+    seth: {
       names: ['Seth'],
       gender: 'male',
-      married: true,
-      spouses: [],
-      children: [16],
+      children: ['enosh'],
       ageOfFatherAtBirth: 130,
       otherChildren: true,
       yearsLived: 912,
       references: {
         names: ['Gen 4:25'],
         gender: 'Gen 4:25',
-        married: 'Gen 4:26',
-        spouses: [],
         children: ['Gen 4:26'],
         ageOfFatherAtBirth: 'Gen 5:3',
         otherChildren: 'Gen 5:7',
         yearsLived: 'Gen 5:8'
       }
     },
-    {// 16
+    enosh: {
       names: ['Enosh'],
       gender: 'male',
-      spouses: [],
-      children: [17],
+      children: ['kenan'],
       ageOfFatherAtBirth: 105,
       otherChildren: true,
       yearsLived: 905,
       references: {
         names: ['Gen 4:26'],
         gender: 'Gen 4:26',
-        spouses: [],
         children: ['Gen 5:9'],
         ageOfFatherAtBirth: 'Gen 5:6',
         otherChildren: 'Gen 5:10',
         yearsLived: 'Gen 5:11'
       }
     },
-    {// 17
+    kenan: {
       names: ['Kenan'],
       gender: 'male',
-      spouses: [],
-      children: [18],
+      children: ['mahalalel'],
       ageOfFatherAtBirth: 90,
       otherChildren: true,
       yearsLived: 910,
       references: {
         names: ['Gen 5:9'],
         gender: 'Gen 5:12',
-        spouses: [],
         children: ['Gen 5:12'],
         ageOfFatherAtBirth: 'Gen 5:9',
         otherChildren: 'Gen 5:13',
         yearsLived: 'Gen 5:14'
       }
     },
-    {// 18
+    mahalalel: {
       names: ['Mahalalel'],
       gender: 'male',
-      spouses: [],
-      children: [19],
+      children: ['jared'],
       ageOfFatherAtBirth: 70,
       otherChildren: true,
       yearsLived: 895,
       references: {
         names: ['Gen 5:12'],
         gender: 'Gen 5:15',
-        spouses: [],
         children: ['Gen 5:15'],
         ageOfFatherAtBirth: 'Gen 5:12',
         otherChildren: 'Gen 5:16',
         yearsLived: 'Gen 5:17'
       }
     },
-    {// 19
+    jared: {
       names: ['Jared'],
       gender: 'male',
-      spouses: [],
-      children: [20],
+      children: ['enoch'],
       ageOfFatherAtBirth: 65,
       otherChildren: true,
       yearsLived: 962,
       references: {
         names: ['Gen 5:15'],
         gender: 'Gen 5:18',
-        spouses: [],
         children: ['Gen 5:18'],
         ageOfFatherAtBirth: 'Gen 5:15',
         otherChildren: 'Gen 5:19',
         yearsLived: 'Gen 5:20'
       }
     },
-    {// 20
+    enoch: {
       names: ['Enoch'],
       gender: 'male',
-      spouses: [],
-      children: [21],
+      children: ['methuselah'],
       ageOfFatherAtBirth: 62,
       otherChildren: true,
       yearsLived: 365,
       references: {
         names: ['Gen 5:18'],
         gender: 'Gen 5:21',
-        spouses: [],
         children: ['Gen 5:21'],
         ageOfFatherAtBirth: 'Gen 5:18',
         otherChildren: 'Gen 5:22',
         yearsLived: 'Gen 5:23'
       }
     },
-    {// 21
+    methuselah: {
       names: ['Methuselah'],
       gender: 'male',
-      spouses: [],
-      children: [22],
+      children: ['lamech2'],
       ageOfFatherAtBirth: 65,
       otherChildren: true,
       yearsLived: 969,
       references: {
         names: ['Gen 5:21'],
         gender: 'Gen 5:25',
-        spouses: [],
         children: ['Gen 5:25'],
         ageOfFatherAtBirth: 'Gen 5:21',
         otherChildren: 'Gen 5:26',
         yearsLived: 'Gen 5:27'
       }
     },
-    {// 22
+    lamech2: {
       names: ['Lamech'],
       gender: 'male',
-      spouses: [],
-      children: [23],
+      children: ['noah'],
       ageOfFatherAtBirth: 187,
       otherChildren: true,
       yearsLived: 777,
       references: {
         names: ['Gen 5:25'],
         gender: 'Gen 5:28',
-        spouses: [],
         children: ['Gen 5:28-29'],
         ageOfFatherAtBirth: 'Gen 5:25',
         otherChildren: 'Gen 5:30',
         yearsLived: 'Gen 5:31'
       }
     },
-    {// 23
+    noah: {
       names: ['Noah'],
       gender: 'male',
-      spouses: [],
-      children: [24, 25, 26],
+      spouses: ['wife_of_noah'],
+      children: ['shem', 'ham', 'japheth'],
       ageOfFatherAtBirth: 182,
       references: {
         names: ['Gen 5:28-29'],
         gender: 'Gen 5:28-29',
-        spouses: [],
+        spouses: ['Gen 6:18'],
         children: ['Gen 5:32', 'Gen 5:32', 'Gen 5:32'],
         ageOfFatherAtBirth: 'Gen 5:28-29'
       }
     },
-    {// 24
+    shem: {
       names: ['Shem'],
       gender: 'male',
+      spouses: ['wife_of_shem'],
       ageOfFatherAtBirth: 500,
       references: {
         names: ['Gen 5:32'],
         gender: 'Gen 6:10',
+        spouses: ['Gen 6:18'],
         ageOfFatherAtBirth: 'Gen 5:32'
       }
     },
-    {// 25
+    ham: {
       names: ['Ham'],
       gender: 'male',
+      spouses: ['wife_of_ham'],
       ageOfFatherAtBirth: 500,
       references: {
         names: ['Gen 5:32'],
         gender: 'Gen 6:10',
+        spouses: ['Gen 6:18'],
         ageOfFatherAtBirth: 'Gen 5:32'
       }
     },
-    {// 26
+    japheth: {
       names: ['Japheth'],
       gender: 'male',
+      spouses: ['wife_of_japheth'],
       ageOfFatherAtBirth: 500,
       references: {
         names: ['Gen 5:32'],
         gender: 'Gen 6:10',
+        spouses: ['Gen 6:18'],
         ageOfFatherAtBirth: 'Gen 5:32'
       }
+    },
+    wife_of_cain: {
+      title: 'Cain\'s wife',
+      gender: 'female',
+      spouses: ['cain'],
+      children: ['enoch'],
+      references: {
+        title: 'Gen 4:17',
+        gender: 'Gen 4:17',
+        spouses: ['Gen 4:17'],
+        children: ['Gen 4:17']
+      }
+    },
+    wife_of_noah: {
+      title: 'Noah\'s wife',
+      gender: 'female',
+      spouses: ['noah'],
+      children: ['shem', 'ham', 'japheth'],
+      references: {
+        title: 'Gen 6:18',
+        gender: 'Gen 6:18',
+        spouses: ['Gen 6:18'],
+        children: ['Gen 5:32', 'Gen 5:32', 'Gen 5:32']
+      }
+    },
+    wife_of_shem: {
+      title: 'Shem\'s wife',
+      gender: 'female',
+      spouses: ['shem'],
+      references: {
+        title: 'Gen 6:18',
+        gender: 'Gen 6:18',
+        spouses: ['Gen 6:18']
+      }
+    },
+    wife_of_ham: {
+      title: 'Ham\'s wife',
+      gender: 'female',
+      spouses: ['ham'],
+      references: {
+        title: 'Gen 6:18',
+        gender: 'Gen 6:18',
+        spouses: ['Gen 6:18']
+      }
+    },
+    wife_of_japheth: {
+      title: 'Japheth\'s wife',
+      gender: 'female',
+      spouses: ['japheth'],
+      references: {
+        title: 'Gen 6:18',
+        gender: 'Gen 6:18',
+        spouses: ['Gen 6:18']
+      }
     }
-  ]
+  }
 };
