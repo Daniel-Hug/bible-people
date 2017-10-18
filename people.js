@@ -68,6 +68,18 @@ var peopleData = {
         children: ['Gen 4:17']
       }
     },
+    wife_of_cain: {
+      title: 'Cain\'s wife',
+      gender: 'female',
+      spouses: ['cain'],
+      children: ['enoch'],
+      references: {
+        title: 'Gen 4:17',
+        gender: 'Gen 4:17',
+        spouses: ['Gen 4:17'],
+        children: ['Gen 4:17']
+      }
+    },
     abel: {
       names: ['Abel'],
       gender: 'male',
@@ -328,6 +340,18 @@ var peopleData = {
         ageOfFatherAtBirth: 'Gen 5:28-29'
       }
     },
+    wife_of_noah: {
+      title: 'Noah\'s wife',
+      gender: 'female',
+      spouses: ['noah'],
+      children: ['shem', 'ham', 'japheth'],
+      references: {
+        title: 'Gen 6:18',
+        gender: 'Gen 6:18',
+        spouses: ['Gen 6:18'],
+        children: ['Gen 5:32', 'Gen 5:32', 'Gen 5:32']
+      }
+    },
     shem: {
       names: ['Shem'],
       gender: 'male',
@@ -362,30 +386,6 @@ var peopleData = {
         gender: 'Gen 6:10',
         spouses: ['Gen 6:18'],
         ageOfFatherAtBirth: 'Gen 5:32'
-      }
-    },
-    wife_of_cain: {
-      title: 'Cain\'s wife',
-      gender: 'female',
-      spouses: ['cain'],
-      children: ['enoch'],
-      references: {
-        title: 'Gen 4:17',
-        gender: 'Gen 4:17',
-        spouses: ['Gen 4:17'],
-        children: ['Gen 4:17']
-      }
-    },
-    wife_of_noah: {
-      title: 'Noah\'s wife',
-      gender: 'female',
-      spouses: ['noah'],
-      children: ['shem', 'ham', 'japheth'],
-      references: {
-        title: 'Gen 6:18',
-        gender: 'Gen 6:18',
-        spouses: ['Gen 6:18'],
-        children: ['Gen 5:32', 'Gen 5:32', 'Gen 5:32']
       }
     },
     wife_of_shem: {
