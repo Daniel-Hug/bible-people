@@ -35,6 +35,7 @@ function setupRoutes() {
     var personKey = hash.slice(1);
     if (personKey && app.people[personKey]) {
       displayCard(personKey);
+      document.title = getName(personKey) + ' in the Bible';
       if (refTagger.tag) refTagger.tag();
     } else if (!personKey) {
       location.hash = '#!adam';
