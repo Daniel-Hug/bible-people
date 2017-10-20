@@ -356,36 +356,30 @@ var peopleData = {
       names: ['Shem'],
       gender: 'male',
       spouses: ['wife_of_shem'],
-      ageOfFatherAtBirth: 500,
       references: {
         names: ['Gen 5:32'],
         gender: 'Gen 6:10',
-        spouses: ['Gen 6:18'],
-        ageOfFatherAtBirth: 'Gen 5:32'
+        spouses: ['Gen 6:18']
       }
     },
     ham: {
       names: ['Ham'],
       gender: 'male',
       spouses: ['wife_of_ham'],
-      ageOfFatherAtBirth: 500,
       references: {
         names: ['Gen 5:32'],
         gender: 'Gen 6:10',
-        spouses: ['Gen 6:18'],
-        ageOfFatherAtBirth: 'Gen 5:32'
+        spouses: ['Gen 6:18']
       }
     },
     japheth: {
       names: ['Japheth'],
       gender: 'male',
       spouses: ['wife_of_japheth'],
-      ageOfFatherAtBirth: 500,
       references: {
         names: ['Gen 5:32'],
         gender: 'Gen 6:10',
-        spouses: ['Gen 6:18'],
-        ageOfFatherAtBirth: 'Gen 5:32'
+        spouses: ['Gen 6:18']
       }
     },
     wife_of_shem: {
