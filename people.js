@@ -25,6 +25,7 @@
 */
 
 var peopleData = {
+  scriptureCovered: 'Genesis 1-9',
   people: {
     adam: {
       names: ['Adam', 'Man'],
@@ -368,10 +369,12 @@ var peopleData = {
       names: ['Ham'],
       gender: 'male',
       spouses: ['wife_of_ham'],
+      children: ['canaan'],
       references: {
         names: ['Gen 5:32'],
         gender: 'Gen 6:10',
-        spouses: ['Gen 6:18']
+        spouses: ['Gen 6:18'],
+        children: ['Gen 9:18']
       }
     },
     japheth: {
@@ -398,10 +401,12 @@ var peopleData = {
       title: 'Ham\'s wife',
       gender: 'female',
       spouses: ['ham'],
+      children: ['canaan'],
       references: {
         title: 'Gen 6:18',
         gender: 'Gen 6:18',
-        spouses: ['Gen 6:18']
+        spouses: ['Gen 6:18'],
+        children: ['Gen 9:18']
       }
     },
     wife_of_japheth: {
@@ -412,6 +417,14 @@ var peopleData = {
         title: 'Gen 6:18',
         gender: 'Gen 6:18',
         spouses: ['Gen 6:18']
+      }
+    },
+    canaan: {
+      names: ['Canaan'],
+      gender: 'male',
+      references: {
+        names: ['Gen 9:18'],
+        gender: 'Gen 9:25'
       }
     }
   }
