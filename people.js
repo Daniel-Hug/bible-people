@@ -26,6 +26,40 @@
 
 var peopleData = {
   scriptureCovered: 'Genesis 1-9',
+  events: {
+    beginning: {
+      title: 'the beginning',
+      references: {
+        title: 'Gen 1:1'
+      }
+    },
+    creation: {
+      title: 'God created the heavens and the earth',
+      startMarkers: [
+        {
+          event: 'beginning',
+          offsetYears: 0
+        }
+      ],
+      references: {
+        title: 'Gen 1:1',
+        startMarkers: ['Gen 1:1']
+      }
+    },
+    flood: {
+      title: 'the flood of waters came on the earth',
+      startMarkers: [
+        {
+          event: 'birth_of_noah',
+          offsetYears: 600
+        }
+      ],
+      references: {
+        title: 'Gen 7:6',
+        startMarkers: ['Gen 7:6']
+      }
+    }
+  },
   people: {
     adam: {
       names: ['Adam', 'Man'],
