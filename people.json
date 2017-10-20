@@ -588,6 +588,7 @@
         "japheth"
       ],
       "ageOfFatherAtBirth": 182,
+      "yearsLived": 950,
       "references": {
         "names": [
           "Gen 5:28-29"
@@ -602,6 +603,7 @@
           "Gen 5:32"
         ],
         "ageOfFatherAtBirth": "Gen 5:28-29",
+        "yearsLived": "Gen 9:29",
         "father": "Gen 5:28-29"
       },
       "father": "lamech2"
@@ -638,7 +640,6 @@
       "spouses": [
         "wife_of_shem"
       ],
-      "ageOfFatherAtBirth": 500,
       "references": {
         "names": [
           "Gen 5:32"
@@ -647,7 +648,6 @@
         "spouses": [
           "Gen 6:18"
         ],
-        "ageOfFatherAtBirth": "Gen 5:32",
         "father": "Gen 5:32",
         "mother": "Gen 5:32"
       },
@@ -662,7 +662,6 @@
       "spouses": [
         "wife_of_ham"
       ],
-      "ageOfFatherAtBirth": 500,
       "references": {
         "names": [
           "Gen 5:32"
@@ -671,7 +670,6 @@
         "spouses": [
           "Gen 6:18"
         ],
-        "ageOfFatherAtBirth": "Gen 5:32",
         "father": "Gen 5:32",
         "mother": "Gen 5:32"
       },
@@ -686,7 +684,6 @@
       "spouses": [
         "wife_of_japheth"
       ],
-      "ageOfFatherAtBirth": 500,
       "references": {
         "names": [
           "Gen 5:32"
@@ -695,7 +692,6 @@
         "spouses": [
           "Gen 6:18"
         ],
-        "ageOfFatherAtBirth": "Gen 5:32",
         "father": "Gen 5:32",
         "mother": "Gen 5:32"
       },
