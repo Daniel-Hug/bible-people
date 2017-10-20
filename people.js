@@ -265,7 +265,7 @@ var peopleData = {
     jared: {
       names: ['Jared'],
       gender: 'male',
-      children: ['enoch'],
+      children: ['enoch2'],
       ageOfFatherAtBirth: 65,
       otherChildren: true,
       yearsLived: 962,
@@ -278,7 +278,7 @@ var peopleData = {
         yearsLived: 'Gen 5:20'
       }
     },
-    enoch: {
+    enoch2: {
       names: ['Enoch'],
       gender: 'male',
       children: ['methuselah'],

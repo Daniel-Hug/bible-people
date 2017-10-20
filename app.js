@@ -68,30 +68,35 @@ function renderCard(personKey) {
   var references = person.references;
 
 
-  var detailItems = [
-    // father
-    { el: 'li', kids: [
-      { el: 'strong', text: 'Father:' }, ' ', person.father !== undefined ? [
-        renderPersonLink(person.father),
-        renderReference(references.father)
-      ] : 'Not named'
-    ]},
-
-    // mother
-    { el: 'li', kids: [
-      { el: 'strong', text: 'Mother:' }, ' ',
-      person.mother !== undefined ? [
-        renderPersonLink(person.mother),
-        renderReference(references.mother)
-      ] : 'Not named'
-    ]},
-
-    renderSpousesItem(personKey),
-    renderChildrenItem(personKey)
-  ];
-  //if (person.spouses) detailItems.push(renderSpousesItem(personKey));
-  //if (person.children) detailItems.push(renderChildrenItem(personKey));
+  var detailItems = [];
   if (!person.names) detailItems.unshift({ el: 'li', text: 'No name mentioned' });
+
+  var father = { el: 'li', kids: [
+    { el: 'strong', text: 'Father:' }, ' ', person.father !== undefined ? [
+      renderPersonLink(person.father),
+      renderReference(references.father)
+    ] : 'None named'
+  ]};
+  detailItems.push(father);
+
+  if (person.ageOfFatherAtBirth) {
+    father.kids.push(
+      ' (' + person.ageOfFatherAtBirth + ' years old at birth',
+      renderReference(references.ageOfFatherAtBirth),
+      ')'
+    );
+  }
+
+  var mother = { el: 'li', kids: [
+    { el: 'strong', text: 'Mother:' }, ' ',
+    person.mother !== undefined ? [
+      renderPersonLink(person.mother),
+      renderReference(references.mother)
+    ] : 'None named'
+  ]};
+
+  detailItems.push(mother, renderSpousesItem(personKey), renderChildrenItem(personKey))
+
 
   var card = dom({ el: 'article', class_card: true, kids: [
     { el: 'h2', kids: [
@@ -120,7 +125,7 @@ function renderSpousesItem(personKey) {
     { el: 'strong', text: spouseName + ':' }, ' '
   ]}
   if (!person.spouses) {
-    spousesItem.kids.push('None named');
+    spousesItem.kids.push('None specified');
   }
   else if (person.spouses.length === 0) {
     spousesItem.kids.push('None');
@@ -132,7 +137,7 @@ function renderSpousesItem(personKey) {
     );
   } else {
     spousesItem.kids.push(
-      person.spouses.length + ' named',
+      person.spouses.length + ' specified',
       { el: 'ul', kids: person.spouses.map(function(indexInPeople, indexInSpouses) {
         return { el: 'li', kids: [
           renderPersonLink(indexInPeople),
@@ -148,30 +153,27 @@ function renderSpousesItem(personKey) {
 function renderChildrenItem(personKey) {
   var person = app.people[personKey];
   var references = person.references;
-  var numChildrenNamed = (person.children || []).length;
+  var numSpecified = (person.children || []).length;
 
   var childrenItem = { el: 'li', kids: [
     { el: 'strong', text: 'Children:' },
-    ' ' + (person.children ? (person.children.length + ' named' || 'None') : 'None named')
+    ' ' + (person.children ? (person.children.length + ' specified' || 'None') : 'None specified')
   ]};
+  if (person.otherChildren) {
+    childrenItem.kids.push(' (some went undistinguished', renderReference(references.otherChildren), ')');
+  }
   var ul;
-  if (numChildrenNamed || person.otherChildren) {
+  if (numSpecified > 0 || person.otherChildren) {
     ul = { el: 'ul', kids: []};
     childrenItem.kids.push(ul);
   }
-  if (numChildrenNamed) {
+  if (numSpecified > 0) {
     [].push.apply(ul.kids, person.children.map(function(indexInPeople, indexInChildren) {
       return { el: 'li', kids: [
         renderPersonLink(indexInPeople),
         renderReference(references.children[indexInChildren])
       ]};
     }));
-  }
-  if (person.otherChildren) {
-    ul.kids.push({ el: 'li', kids: [
-      'Some children went unnamed.',
-      renderReference(references.otherChildren)
-    ]});
   }
   return childrenItem;
 }
