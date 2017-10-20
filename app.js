@@ -69,7 +69,12 @@ function renderCard(personKey) {
 
 
   var detailItems = [];
-  if (!person.names) detailItems.unshift({ el: 'li', text: 'No name mentioned' });
+  if (!person.names) detailItems.push({ el: 'li', text: 'No name mentioned' });
+
+  if (person.yearsLived) detailItems.push({ el: 'li', kids: [
+    'Lived ' + person.yearsLived + ' years',
+    renderReference(references.yearsLived)
+  ]});
 
   var father = { el: 'li', kids: [
     { el: 'strong', text: 'Father:' }, ' ', person.father !== undefined ? [
