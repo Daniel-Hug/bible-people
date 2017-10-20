@@ -80,7 +80,7 @@ function renderCard(personKey) {
     { el: 'strong', text: 'Father:' }, ' ', person.father !== undefined ? [
       renderPersonLink(person.father),
       renderReference(references.father)
-    ] : 'None named'
+    ] : 'None specified'
   ]};
   detailItems.push(father);
 
@@ -97,7 +97,7 @@ function renderCard(personKey) {
     person.mother !== undefined ? [
       renderPersonLink(person.mother),
       renderReference(references.mother)
-    ] : 'None named'
+    ] : 'None specified'
   ]};
 
   detailItems.push(mother, renderSpousesItem(personKey), renderChildrenItem(personKey))
