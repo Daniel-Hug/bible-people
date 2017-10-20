@@ -332,12 +332,14 @@ var peopleData = {
       spouses: ['wife_of_noah'],
       children: ['shem', 'ham', 'japheth'],
       ageOfFatherAtBirth: 182,
+      yearsLived: 950,
       references: {
         names: ['Gen 5:28-29'],
         gender: 'Gen 5:28-29',
         spouses: ['Gen 6:18'],
         children: ['Gen 5:32', 'Gen 5:32', 'Gen 5:32'],
-        ageOfFatherAtBirth: 'Gen 5:28-29'
+        ageOfFatherAtBirth: 'Gen 5:28-29',
+        yearsLived: 'Gen 9:29'
       }
     },
     wife_of_noah: {
