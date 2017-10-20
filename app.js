@@ -107,7 +107,8 @@ function renderCard(personKey) {
     { el: 'h2', kids: [
       { el: 'strong', class_name: true, text: getName(personKey) },
       ' in the Bible'
-    ]},
+    ]}, ' ',
+    { el: 'strong', _className: 'source-ref', text: 'Data from ' + app.scriptureCovered },
     { el: 'ul', kids: detailItems}
   ]});
   card.classList.add(person.gender);
@@ -300,8 +301,7 @@ function initReftagger() {
   // config
   window.refTagger = {
       settings: {
-          noSearchClassNames: ['editor-content', 'navbar'],           
-          tagChapters: true
+          noSearchClassNames: ['editor-content', 'navbar']
       }
   };
 
