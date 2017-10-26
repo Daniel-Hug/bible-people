@@ -1,5 +1,5 @@
 {
-  "scriptureCovered": "Genesis 1-9",
+  "scriptureCovered": "Genesis 1-10",
   "events": {
     "beginning": {
       "title": "the beginning",
@@ -882,6 +882,15 @@
       "spouses": [
         "wife_of_japheth"
       ],
+      "children": [
+        "gomer",
+        "magog",
+        "madai",
+        "javan",
+        "tubal2",
+        "meshech",
+        "tiras"
+      ],
       "references": {
         "names": [
           "Gen 5:32"
@@ -889,6 +898,15 @@
         "gender": "Gen 6:10",
         "spouses": [
           "Gen 6:18"
+        ],
+        "children": [
+          "Gen 10:2",
+          "Gen 10:2",
+          "Gen 10:2",
+          "Gen 10:2",
+          "Gen 10:2",
+          "Gen 10:2",
+          "Gen 10:2"
         ],
         "father": "Gen 5:32",
         "mother": "Gen 5:32"
@@ -959,6 +977,224 @@
       },
       "father": "ham",
       "mother": "wife_of_ham"
+    },
+    "gomer": {
+      "names": [
+        "Gomer"
+      ],
+      "gender": "male",
+      "children": [
+        "ashkenaz",
+        "riphath",
+        "togarmah"
+      ],
+      "references": {
+        "names": [
+          "Gen 10:2"
+        ],
+        "gender": "Gen 10:2",
+        "children": [
+          "Gen 10:3",
+          "Gen 10:3",
+          "Gen 10:3"
+        ],
+        "father": "Gen 10:2"
+      },
+      "father": "japheth"
+    },
+    "magog": {
+      "names": [
+        "Magog"
+      ],
+      "gender": "male",
+      "references": {
+        "names": [
+          "Gen 10:2"
+        ],
+        "gender": "Gen 10:2",
+        "father": "Gen 10:2"
+      },
+      "father": "japheth"
+    },
+    "madai": {
+      "names": [
+        "Madai"
+      ],
+      "gender": "male",
+      "references": {
+        "names": [
+          "Gen 10:2"
+        ],
+        "gender": "Gen 10:2",
+        "father": "Gen 10:2"
+      },
+      "father": "japheth"
+    },
+    "javan": {
+      "names": [
+        "Javan"
+      ],
+      "gender": "male",
+      "children": [
+        "elishah",
+        "tarshish",
+        "kittim",
+        "dodanim"
+      ],
+      "references": {
+        "names": [
+          "Gen 10:2"
+        ],
+        "gender": "Gen 10:2",
+        "children": [
+          "Gen 10:4",
+          "Gen 10:4",
+          "Gen 10:4",
+          "Gen 10:4"
+        ],
+        "father": "Gen 10:2"
+      },
+      "father": "japheth"
+    },
+    "tubal2": {
+      "names": [
+        "Tubal"
+      ],
+      "gender": "male",
+      "references": {
+        "names": [
+          "Gen 10:2"
+        ],
+        "gender": "Gen 10:2",
+        "father": "Gen 10:2"
+      },
+      "father": "japheth"
+    },
+    "meshech": {
+      "names": [
+        "Meshech"
+      ],
+      "gender": "male",
+      "references": {
+        "names": [
+          "Gen 10:2"
+        ],
+        "gender": "Gen 10:2",
+        "father": "Gen 10:2"
+      },
+      "father": "japheth"
+    },
+    "tiras": {
+      "names": [
+        "Tiras"
+      ],
+      "gender": "male",
+      "references": {
+        "names": [
+          "Gen 10:2"
+        ],
+        "gender": "Gen 10:2",
+        "father": "Gen 10:2"
+      },
+      "father": "japheth"
+    },
+    "ashkenaz": {
+      "names": [
+        "Ashkenaz"
+      ],
+      "gender": "male",
+      "references": {
+        "names": [
+          "Gen 10:3"
+        ],
+        "gender": "Gen 10:3",
+        "father": "Gen 10:3"
+      },
+      "father": "gomer"
+    },
+    "riphath": {
+      "names": [
+        "Riphath"
+      ],
+      "gender": "male",
+      "references": {
+        "names": [
+          "Gen 10:3"
+        ],
+        "gender": "Gen 10:3",
+        "father": "Gen 10:3"
+      },
+      "father": "gomer"
+    },
+    "togarmah": {
+      "names": [
+        "Togarmah"
+      ],
+      "gender": "male",
+      "references": {
+        "names": [
+          "Gen 10:3"
+        ],
+        "gender": "Gen 10:3",
+        "father": "Gen 10:3"
+      },
+      "father": "gomer"
+    },
+    "elishah": {
+      "names": [
+        "Elishah"
+      ],
+      "gender": "male",
+      "references": {
+        "names": [
+          "Gen 10:4"
+        ],
+        "gender": "Gen 10:4",
+        "father": "Gen 10:4"
+      },
+      "father": "javan"
+    },
+    "tarshish": {
+      "names": [
+        "Tarshish"
+      ],
+      "gender": "male",
+      "references": {
+        "names": [
+          "Gen 10:4"
+        ],
+        "gender": "Gen 10:4",
+        "father": "Gen 10:4"
+      },
+      "father": "javan"
+    },
+    "kittim": {
+      "names": [
+        "Kittim"
+      ],
+      "gender": "male",
+      "references": {
+        "names": [
+          "Gen 10:4"
+        ],
+        "gender": "Gen 10:4",
+        "father": "Gen 10:4"
+      },
+      "father": "javan"
+    },
+    "dodanim": {
+      "names": [
+        "Dodanim"
+      ],
+      "gender": "male",
+      "references": {
+        "names": [
+          "Gen 10:4"
+        ],
+        "gender": "Gen 10:4",
+        "father": "Gen 10:4"
+      },
+      "father": "javan"
     }
   }
 }

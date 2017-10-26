@@ -25,7 +25,7 @@
 */
 
 var peopleData = {
-  scriptureCovered: 'Genesis 1-9',
+  scriptureCovered: 'Genesis 1-10',
   events: {
     beginning: {
       title: 'the beginning',
@@ -527,10 +527,12 @@ var peopleData = {
       names: ['Japheth'],
       gender: 'male',
       spouses: ['wife_of_japheth'],
+      children: ['gomer', 'magog', 'madai', 'javan', 'tubal2', 'meshech', 'tiras'],
       references: {
         names: ['Gen 5:32'],
         gender: 'Gen 6:10',
         spouses: ['Gen 6:18'],
+        children: ['Gen 10:2', 'Gen 10:2', 'Gen 10:2', 'Gen 10:2', 'Gen 10:2', 'Gen 10:2', 'Gen 10:2']
       }
     },
     wife_of_shem: {
@@ -571,6 +573,122 @@ var peopleData = {
       references: {
         names: ['Gen 9:18'],
         gender: 'Gen 9:25'
+      }
+    },
+    gomer: {
+      names: ['Gomer'],
+      gender: 'male',
+      children: ['ashkenaz', 'riphath', 'togarmah'],
+      references: {
+        names: ['Gen 10:2'],
+        gender: 'Gen 10:2',
+        children: ['Gen 10:3', 'Gen 10:3', 'Gen 10:3']
+      }
+    },
+    magog: {
+      names: ['Magog'],
+      gender: 'male',
+      references: {
+        names: ['Gen 10:2'],
+        gender: 'Gen 10:2'
+      }
+    },
+    madai: {
+      names: ['Madai'],
+      gender: 'male',
+      references: {
+        names: ['Gen 10:2'],
+        gender: 'Gen 10:2'
+      }
+    },
+    javan: {
+      names: ['Javan'],
+      gender: 'male',
+      children: ['elishah', 'tarshish', 'kittim', 'dodanim'],
+      references: {
+        names: ['Gen 10:2'],
+        gender: 'Gen 10:2',
+        children: ['Gen 10:4', 'Gen 10:4', 'Gen 10:4', 'Gen 10:4']
+      }
+    },
+    tubal2: {
+      names: ['Tubal'],
+      gender: 'male',
+      references: {
+        names: ['Gen 10:2'],
+        gender: 'Gen 10:2'
+      }
+    },
+    meshech: {
+      names: ['Meshech'],
+      gender: 'male',
+      references: {
+        names: ['Gen 10:2'],
+        gender: 'Gen 10:2'
+      }
+    },
+    tiras: {
+      names: ['Tiras'],
+      gender: 'male',
+      references: {
+        names: ['Gen 10:2'],
+        gender: 'Gen 10:2'
+      }
+    },
+    ashkenaz: {
+      names: ['Ashkenaz'],
+      gender: 'male',
+      references: {
+        names: ['Gen 10:3'],
+        gender: 'Gen 10:3'
+      }
+    },
+    riphath: {
+      names: ['Riphath'],
+      gender: 'male',
+      references: {
+        names: ['Gen 10:3'],
+        gender: 'Gen 10:3'
+      }
+    },
+    togarmah: {
+      names: ['Togarmah'],
+      gender: 'male',
+      references: {
+        names: ['Gen 10:3'],
+        gender: 'Gen 10:3'
+      }
+    },
+    elishah: {
+      names: ['Elishah'],
+      gender: 'male',
+      references: {
+        names: ['Gen 10:4'],
+        gender: 'Gen 10:4'
+      }
+    },
+    tarshish: {
+      names: ['Tarshish'],
+      gender: 'male',
+      references: {
+        names: ['Gen 10:4'],
+        gender: 'Gen 10:4'
+      }
+    },
+    kittim: {
+      names: ['Kittim'],
+      gender: 'male',
+      references: {
+        names: ['Gen 10:4'],
+        gender: 'Gen 10:4'
+      }
+    },
+    dodanim: {
+      names: ['Dodanim'],
+      gender: 'male',
+      references: {
+        names: ['Gen 10:4'],
+        gender: 'Gen 10:4'
       }
     }
   }
