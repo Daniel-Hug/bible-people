@@ -505,10 +505,12 @@ var peopleData = {
       names: ['Shem'],
       gender: 'male',
       spouses: ['wife_of_shem'],
+      children: ['elam', 'asshur', 'arpachshad', 'lud', 'aram'],
       references: {
         names: ['Gen 5:32'],
         gender: 'Gen 6:10',
-        spouses: ['Gen 6:18']
+        spouses: ['Gen 6:18'],
+        children: ['Gen 10:22', 'Gen 10:22', 'Gen 10:22', 'Gen 10:22', 'Gen 10:22']
       }
     },
     ham: {
@@ -839,6 +841,224 @@ var peopleData = {
       names: ['Heth'],
       references: {
         names: ['Gen 10:15']
+      }
+    },
+    elam: {
+      names: ['Elam'],
+      gender: 'male',
+      references: {
+        names: ['Gen 10:22'],
+        gender: 'Gen 10:22'
+      }
+    },
+    asshur: {
+      names: ['Asshur'],
+      gender: 'male',
+      references: {
+        names: ['Gen 10:22'],
+        gender: 'Gen 10:22'
+      }
+    },
+    arpachshad: {
+      names: ['Arpachshad'],
+      gender: 'male',
+      children: ['shelah'],
+      references: {
+        names: ['Gen 10:22'],
+        gender: 'Gen 10:22',
+        children: ['Gen 10:24']
+      }
+    },
+    lud: {
+      names: ['Lud'],
+      gender: 'male',
+      references: {
+        names: ['Gen 10:22'],
+        gender: 'Gen 10:22'
+      }
+    },
+    aram: {
+      names: ['Aram'],
+      gender: 'male',
+      children: ['uz', 'hul', 'gether', 'mash'],
+      references: {
+        names: ['Gen 10:22'],
+        gender: 'Gen 10:22',
+        children: ['Gen 10:23', 'Gen 10:23', 'Gen 10:23', 'Gen 10:23']
+      }
+    },
+    uz: {
+      names: ['Uz'],
+      gender: 'male',
+      references: {
+        names: ['Gen 10:23'],
+        gender: 'Gen 10:23'
+      }
+    },
+    hul: {
+      names: ['Hul'],
+      gender: 'male',
+      references: {
+        names: ['Gen 10:23'],
+        gender: 'Gen 10:23'
+      }
+    },
+    gether: {
+      names: ['Gether'],
+      gender: 'male',
+      references: {
+        names: ['Gen 10:23'],
+        gender: 'Gen 10:23'
+      }
+    },
+    mash: {
+      names: ['Mash'],
+      gender: 'male',
+      references: {
+        names: ['Gen 10:23'],
+        gender: 'Gen 10:23'
+      }
+    },
+    shelah: {
+      names: ['Shelah'],
+      gender: 'male',
+      children: ['eber'],
+      references: {
+        names: ['Gen 10:24'],
+        gender: 'Gen 10:24',
+        children: ['Gen 10:24']
+      }
+    },
+    eber: {
+      names: ['Eber'],
+      gender: 'male',
+      children: ['peleg', 'joktan'],
+      references: {
+        names: ['Gen 10:24'],
+        gender: 'Gen 11:16',
+        children: ['Gen 10:25', 'Gen 10:25']
+      }
+    },
+    peleg: {
+      names: ['Peleg'],
+      gender: 'male',
+      references: {
+        names: ['Gen 10:25'],
+        gender: 'Gen 10:25'
+      }
+    },
+    joktan: {
+      names: ['Joktan'],
+      gender: 'male',
+      children: ['almodad', 'sheleph', 'hazarmaveth', 'jerah', 'hadoram', 'uzal', 'diklah', 'obal', 'abimael', 'sheba2', 'ophir', 'havilah', 'jobab'],
+      references: {
+        names: ['Gen 10:25'],
+        gender: 'Gen 10:25',
+        children: ['Gen 10:26-29', 'Gen 10:26-29', 'Gen 10:26-29', 'Gen 10:26-29', 'Gen 10:26-29', 'Gen 10:26-29', 'Gen 10:26-29', 'Gen 10:26-29', 'Gen 10:26-29', 'Gen 10:26-29', 'Gen 10:26-29', 'Gen 10:26-29', 'Gen 10:26-29']
+      }
+    },
+    almodad: {
+      names: ['Almodad'],
+      gender: 'male',
+      references: {
+        names: ['Gen 10:26-29'],
+        gender: 'Gen 10:26-29'
+      }
+    },
+    sheleph: {
+      names: ['Sheleph'],
+      gender: 'male',
+      references: {
+        names: ['Gen 10:26-29'],
+        gender: 'Gen 10:26-29'
+      }
+    },
+    hazarmaveth: {
+      names: ['Hazarmaveth'],
+      gender: 'male',
+      references: {
+        names: ['Gen 10:26-29'],
+        gender: 'Gen 10:26-29'
+      }
+    },
+    jerah: {
+      names: ['Jerah'],
+      gender: 'male',
+      references: {
+        names: ['Gen 10:26-29'],
+        gender: 'Gen 10:26-29'
+      }
+    },
+    hadoram: {
+      names: ['Hadoram'],
+      gender: 'male',
+      references: {
+        names: ['Gen 10:26-29'],
+        gender: 'Gen 10:26-29'
+      }
+    },
+    uzal: {
+      names: ['Uzal'],
+      gender: 'male',
+      references: {
+        names: ['Gen 10:26-29'],
+        gender: 'Gen 10:26-29'
+      }
+    },
+    diklah: {
+      names: ['Diklah'],
+      gender: 'male',
+      references: {
+        names: ['Gen 10:26-29'],
+        gender: 'Gen 10:26-29'
+      }
+    },
+    obal: {
+      names: ['Obal'],
+      gender: 'male',
+      references: {
+        names: ['Gen 10:26-29'],
+        gender: 'Gen 10:26-29'
+      }
+    },
+    abimael: {
+      names: ['Abimael'],
+      gender: 'male',
+      references: {
+        names: ['Gen 10:26-29'],
+        gender: 'Gen 10:26-29'
+      }
+    },
+    sheba2: {
+      names: ['Sheba'],
+      gender: 'male',
+      references: {
+        names: ['Gen 10:26-29'],
+        gender: 'Gen 10:26-29'
+      }
+    },
+    ophir: {
+      names: ['Ophir'],
+      gender: 'male',
+      references: {
+        names: ['Gen 10:26-29'],
+        gender: 'Gen 10:26-29'
+      }
+    },
+    havilah: {
+      names: ['Havilah'],
+      gender: 'male',
+      references: {
+        names: ['Gen 10:26-29'],
+        gender: 'Gen 10:26-29'
+      }
+    },
+    jobab: {
+      names: ['Jobab'],
+      gender: 'male',
+      references: {
+        names: ['Gen 10:26-29'],
+        gender: 'Gen 10:26-29'
       }
     }
   }

@@ -123,9 +123,11 @@ function renderReference(referenceString) {
 function renderSpousesItem(personKey) {
   var person = app.people[personKey];
   var references = person.references;
+  var spouseName = person.gender === 'male' ? 'Wife' :
+    (person.gender === 'female' ? 'Husband' : 'Spouse');
   var spouseName = !person.spouses || person.spouses.length <= 1 ?
-    person.gender === 'male' ? 'Wife' : 'Husband' :
-    person.gender === 'male' ? 'Wives' : 'Husbands';
+    spouseName :
+    getPlural(spouseName);
 
   var spousesItem = { el: 'li', kids: [
     { el: 'strong', text: spouseName + ':' }, ' '
@@ -295,6 +297,35 @@ function getProperties(obj) {
     newObj[key] = true;
   }
   return newObj;
+}
+
+//  Accepts a singular noun:
+//    getPlural('box')
+//  Returns the noun in plural form:
+//    "boxes"
+//  false positives: "ox", "potato", "goose", "deer", etc.
+function getPlural(noun) {
+  var lastChar = noun.slice(-1);
+  var last2;
+
+  // if ends with 's', 'x', 'z', 'ch', or 'sh', add 'es'
+  if ('sxz'.indexOf(lastChar) >= 0 ||
+    ['ch', 'sh'].indexOf(last2 = noun.slice(-2)) >= 0) return noun + 'es';
+
+  // else, if ends with 'y', replace with 'ies'
+  if (lastChar === 'y') return noun.slice(0, -1) + 'ies';
+
+  // else, if ends with 'fe' or 'lf', replace f+ with 'ves'
+  if (['fe', 'lf'].indexOf(last2) >= 0) {
+    var fi = noun.lastIndexOf('f');
+    return noun.slice(0, fi) + 'ves';
+  }
+
+  // else, if ends with 'man' replace with 'men'
+  if (noun.slice(-3) === 'man') return noun.slice(0, -3) + 'men';
+
+  // else add 's'
+  return noun + 's';
 }
 
 function initReftagger() {
