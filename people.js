@@ -36,15 +36,127 @@ var peopleData = {
     creation: {
       title: 'God created the heavens and the earth',
       startMarkers: [
-        {
-          event: 'beginning',
-          offsetYears: 0
-        }
+        { event: 'beginning' }
+      ],
+      endMarkers: [
+        { event: 'day6', offsetDays: 1 }
       ],
       references: {
         title: 'Gen 1:1',
-        startMarkers: ['Gen 1:1']
+        startMarkers: ['Gen 1:1'],
+        endMarkers: ['Gen 1:31-2:1'],
+        all: [
+          'Gen 1-2'
+        ]
       }
+    },
+    day1: {
+      title: 'the first day',
+      startMarkers: [
+        { event: 'creation' }
+      ],
+      durationDays: 1,
+      references: {
+        title: 'Gen 1:5',
+        startMarkers: ['Gen 1:1'],
+        durationDays: 'Gen 1:5',
+        all: [
+          'Gen 1:1-5'
+        ]
+      }
+    },
+    day2: {
+      title: 'the second day',
+      startMarkers: [
+        { event: 'creation', offsetDays: 1 }
+      ],
+      durationDays: 2,
+      references: {
+        title: 'Gen 1:8',
+        startMarkers: ['Gen 1:5-6'],
+        durationDays: 'Gen 1:8',
+        all: [
+          'Gen 1:6-8'
+        ]
+      }
+    },
+    day3: {
+      title: 'the third day',
+      startMarkers: [
+        { event: 'creation', offsetDays: 2 }
+      ],
+      durationDays: 3,
+      references: {
+        title: 'Gen 1:13',
+        startMarkers: ['Gen 1:8-9'],
+        durationDays: 'Gen 1:13',
+        all: [
+          'Gen 1:9-13'
+        ]
+      }
+    },
+    day4: {
+      title: 'the fourth day',
+      startMarkers: [
+        { event: 'creation', offsetDays: 3 }
+      ],
+      durationDays: 4,
+      references: {
+        title: 'Gen 1:19',
+        startMarkers: ['Gen 1:13-14'],
+        durationDays: 'Gen 1:19',
+        all: [
+          'Gen 1:14-19'
+        ]
+      }
+    },
+    day5: {
+      title: 'the fifth day',
+      startMarkers: [
+        { event: 'creation', offsetDays: 4 }
+      ],
+      durationDays: 5,
+      references: {
+        title: 'Gen 1:23',
+        startMarkers: ['Gen 1:19-20'],
+        durationDays: 'Gen 1:23',
+        all: [
+          'Gen 1:20-23'
+        ]
+      }
+    },
+    day6: {
+      title: 'the sixth day',
+      startMarkers: [
+        { event: 'creation', offsetDays: 5 }
+      ],
+      durationDays: 6,
+      references: {
+        title: 'Gen 1:31',
+        startMarkers: ['Gen 1:23-24'],
+        durationDays: 'Gen 1:31-2:2',
+        all: [
+          'Gen 1:24-2:1'
+        ]
+      }
+    },
+    day7: {
+      title: 'the seventh day',
+      startMarkers: [
+        { event: 'creation', offsetDays: 6 }
+      ],
+      durationDays: 7,
+      references: {
+        title: 'Gen 2:2',
+        startMarkers: ['Gen 2:2'],
+        durationDays: 'Gen 2:2',
+        all: [
+          'Gen 2:2-3'
+        ]
+      }
+    },
+    men_call: {
+      title: 'men began to call on Yahweh’s name'
     },
     flood: {
       title: 'the flood of waters came on the earth',
@@ -418,7 +530,7 @@ var peopleData = {
       references: {
         names: ['Gen 5:32'],
         gender: 'Gen 6:10',
-        spouses: ['Gen 6:18']
+        spouses: ['Gen 6:18'],
       }
     },
     wife_of_shem: {
