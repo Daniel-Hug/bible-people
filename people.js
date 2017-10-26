@@ -515,12 +515,12 @@ var peopleData = {
       names: ['Ham'],
       gender: 'male',
       spouses: ['wife_of_ham'],
-      children: ['canaan'],
+      children: ['canaan', 'cush', 'mizraim', 'put'],
       references: {
         names: ['Gen 5:32'],
         gender: 'Gen 6:10',
         spouses: ['Gen 6:18'],
-        children: ['Gen 9:18']
+        children: ['Gen 9:18', 'Gen 10:6', 'Gen 10:6', 'Gen 10:6']
       }
     },
     japheth: {
@@ -570,9 +570,11 @@ var peopleData = {
     canaan: {
       names: ['Canaan'],
       gender: 'male',
+      children: ['sidon', 'heth'],
       references: {
         names: ['Gen 9:18'],
-        gender: 'Gen 9:25'
+        gender: 'Gen 9:25',
+        children: ['Gen 10:15', 'Gen 10:15']
       }
     },
     gomer: {
@@ -689,6 +691,154 @@ var peopleData = {
       references: {
         names: ['Gen 10:4'],
         gender: 'Gen 10:4'
+      }
+    },
+    cush: {
+      names: ['Cush'],
+      gender: 'male',
+      children: ['seba', 'havilah', 'sabtah', 'raamah', 'sabteca', 'nimrod'],
+      references: {
+        names: ['Gen 10:6'],
+        gender: 'Gen 10:6',
+        children: ['Gen 10:7', 'Gen 10:7', 'Gen 10:7', 'Gen 10:7', 'Gen 10:7', 'Gen 10:8']
+      }
+    },
+    mizraim: {
+      names: ['Mizraim'],
+      gender: 'male',
+      children: ['ludim','anamim','lehabim','naphtuhim','pathrusim','casluhim','caphtorim'],
+      references: {
+        names: ['Gen 10:6'],
+        gender: 'Gen 10:6',
+        children: ['Gen 10:13', 'Gen 10:13', 'Gen 10:13', 'Gen 10:13', 'Gen 10:13-14', 'Gen 10:13-14', 'Gen 10:13-14']
+      }
+    },
+    put: {
+      names: ['Put'],
+      gender: 'male',
+      references: {
+        names: ['Gen 10:6'],
+        gender: 'Gen 10:6'
+      }
+    },
+    seba: {
+      names: ['Seba'],
+      gender: 'male',
+      references: {
+        names: ['Gen 10:7'],
+        gender: 'Gen 10:7'
+      }
+    },
+    havilah: {
+      names: ['Havilah'],
+      gender: 'male',
+      references: {
+        names: ['Gen 10:7'],
+        gender: 'Gen 10:7'
+      }
+    },
+    sabtah: {
+      names: ['Sabtah'],
+      gender: 'male',
+      references: {
+        names: ['Gen 10:7'],
+        gender: 'Gen 10:7'
+      }
+    },
+    raamah: {
+      names: ['Raamah'],
+      gender: 'male',
+      children: ['sheba', 'dedan'],
+      references: {
+        names: ['Gen 10:7'],
+        gender: 'Gen 10:7',
+        children: ['Gen 10:7', 'Gen 10:7']
+      }
+    },
+    sabteca: {
+      names: ['Sabteca'],
+      gender: 'male',
+      references: {
+        names: ['Gen 10:7'],
+        gender: 'Gen 10:7'
+      }
+    },
+    sheba: {
+      names: ['Sheba'],
+      gender: 'male',
+      references: {
+        names: ['Gen 10:7'],
+        gender: 'Gen 10:7'
+      }
+    },
+    dedan: {
+      names: ['Dedan'],
+      gender: 'male',
+      references: {
+        names: ['Gen 10:7'],
+        gender: 'Gen 10:7'
+      }
+    },
+    nimrod: {
+      names: ['Nimrod'],
+      gender: 'male',
+      references: {
+        names: ['Gen 10:8'],
+        gender: 'Gen 10:8'
+      }
+    },
+    ludim: {
+      names: ['Ludim'],
+      references: {
+        names: ['Gen 10:13']
+      }
+    },
+    anamim: {
+      names: ['Anamim'],
+      references: {
+        names: ['Gen 10:13']
+      }
+    },
+    lehabim: {
+      names: ['Lehabim'],
+      references: {
+        names: ['Gen 10:13']
+      }
+    },
+    naphtuhim: {
+      names: ['Naphtuhim'],
+      references: {
+        names: ['Gen 10:13']
+      }
+    },
+    pathrusim: {
+      names: ['Pathrusim'],
+      references: {
+        names: ['Gen 10:14']
+      }
+    },
+    casluhim: {
+      names: ['Casluhim'],
+      references: {
+        names: ['Gen 10:14']
+      }
+    },
+    caphtorim: {
+      names: ['Caphtorim'],
+      references: {
+        names: ['Gen 10:14']
+      }
+    },
+    sidon: {
+      names: ['Sidon'],
+      references: {
+        names: ['Gen 10:15']
+      }
+    },
+    heth: {
+      names: ['Heth'],
+      references: {
+        names: ['Gen 10:15']
       }
     }
   }

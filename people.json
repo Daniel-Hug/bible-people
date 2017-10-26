@@ -855,7 +855,10 @@
         "wife_of_ham"
       ],
       "children": [
-        "canaan"
+        "canaan",
+        "cush",
+        "mizraim",
+        "put"
       ],
       "references": {
         "names": [
@@ -866,7 +869,10 @@
           "Gen 6:18"
         ],
         "children": [
-          "Gen 9:18"
+          "Gen 9:18",
+          "Gen 10:6",
+          "Gen 10:6",
+          "Gen 10:6"
         ],
         "father": "Gen 5:32",
         "mother": "Gen 5:32"
@@ -967,11 +973,19 @@
         "Canaan"
       ],
       "gender": "male",
+      "children": [
+        "sidon",
+        "heth"
+      ],
       "references": {
         "names": [
           "Gen 9:18"
         ],
         "gender": "Gen 9:25",
+        "children": [
+          "Gen 10:15",
+          "Gen 10:15"
+        ],
         "father": "Gen 9:18",
         "mother": "Gen 9:18"
       },
@@ -1195,6 +1209,310 @@
         "father": "Gen 10:4"
       },
       "father": "javan"
+    },
+    "cush": {
+      "names": [
+        "Cush"
+      ],
+      "gender": "male",
+      "children": [
+        "seba",
+        "havilah",
+        "sabtah",
+        "raamah",
+        "sabteca",
+        "nimrod"
+      ],
+      "references": {
+        "names": [
+          "Gen 10:6"
+        ],
+        "gender": "Gen 10:6",
+        "children": [
+          "Gen 10:7",
+          "Gen 10:7",
+          "Gen 10:7",
+          "Gen 10:7",
+          "Gen 10:7",
+          "Gen 10:8"
+        ],
+        "father": "Gen 10:6"
+      },
+      "father": "ham"
+    },
+    "mizraim": {
+      "names": [
+        "Mizraim"
+      ],
+      "gender": "male",
+      "children": [
+        "ludim",
+        "anamim",
+        "lehabim",
+        "naphtuhim",
+        "pathrusim",
+        "casluhim",
+        "caphtorim"
+      ],
+      "references": {
+        "names": [
+          "Gen 10:6"
+        ],
+        "gender": "Gen 10:6",
+        "children": [
+          "Gen 10:13",
+          "Gen 10:13",
+          "Gen 10:13",
+          "Gen 10:13",
+          "Gen 10:13-14",
+          "Gen 10:13-14",
+          "Gen 10:13-14"
+        ],
+        "father": "Gen 10:6"
+      },
+      "father": "ham"
+    },
+    "put": {
+      "names": [
+        "Put"
+      ],
+      "gender": "male",
+      "references": {
+        "names": [
+          "Gen 10:6"
+        ],
+        "gender": "Gen 10:6",
+        "father": "Gen 10:6"
+      },
+      "father": "ham"
+    },
+    "seba": {
+      "names": [
+        "Seba"
+      ],
+      "gender": "male",
+      "references": {
+        "names": [
+          "Gen 10:7"
+        ],
+        "gender": "Gen 10:7",
+        "father": "Gen 10:7"
+      },
+      "father": "cush"
+    },
+    "havilah": {
+      "names": [
+        "Havilah"
+      ],
+      "gender": "male",
+      "references": {
+        "names": [
+          "Gen 10:7"
+        ],
+        "gender": "Gen 10:7",
+        "father": "Gen 10:7"
+      },
+      "father": "cush"
+    },
+    "sabtah": {
+      "names": [
+        "Sabtah"
+      ],
+      "gender": "male",
+      "references": {
+        "names": [
+          "Gen 10:7"
+        ],
+        "gender": "Gen 10:7",
+        "father": "Gen 10:7"
+      },
+      "father": "cush"
+    },
+    "raamah": {
+      "names": [
+        "Raamah"
+      ],
+      "gender": "male",
+      "children": [
+        "sheba",
+        "dedan"
+      ],
+      "references": {
+        "names": [
+          "Gen 10:7"
+        ],
+        "gender": "Gen 10:7",
+        "children": [
+          "Gen 10:7",
+          "Gen 10:7"
+        ],
+        "father": "Gen 10:7"
+      },
+      "father": "cush"
+    },
+    "sabteca": {
+      "names": [
+        "Sabteca"
+      ],
+      "gender": "male",
+      "references": {
+        "names": [
+          "Gen 10:7"
+        ],
+        "gender": "Gen 10:7",
+        "father": "Gen 10:7"
+      },
+      "father": "cush"
+    },
+    "sheba": {
+      "names": [
+        "Sheba"
+      ],
+      "gender": "male",
+      "references": {
+        "names": [
+          "Gen 10:7"
+        ],
+        "gender": "Gen 10:7",
+        "father": "Gen 10:7"
+      },
+      "father": "raamah"
+    },
+    "dedan": {
+      "names": [
+        "Dedan"
+      ],
+      "gender": "male",
+      "references": {
+        "names": [
+          "Gen 10:7"
+        ],
+        "gender": "Gen 10:7",
+        "father": "Gen 10:7"
+      },
+      "father": "raamah"
+    },
+    "nimrod": {
+      "names": [
+        "Nimrod"
+      ],
+      "gender": "male",
+      "references": {
+        "names": [
+          "Gen 10:8"
+        ],
+        "gender": "Gen 10:8",
+        "father": "Gen 10:8"
+      },
+      "father": "cush"
+    },
+    "ludim": {
+      "names": [
+        "Ludim"
+      ],
+      "references": {
+        "names": [
+          "Gen 10:13"
+        ],
+        "father": "Gen 10:13"
+      },
+      "father": "mizraim"
+    },
+    "anamim": {
+      "names": [
+        "Anamim"
+      ],
+      "references": {
+        "names": [
+          "Gen 10:13"
+        ],
+        "father": "Gen 10:13"
+      },
+      "father": "mizraim"
+    },
+    "lehabim": {
+      "names": [
+        "Lehabim"
+      ],
+      "references": {
+        "names": [
+          "Gen 10:13"
+        ],
+        "father": "Gen 10:13"
+      },
+      "father": "mizraim"
+    },
+    "naphtuhim": {
+      "names": [
+        "Naphtuhim"
+      ],
+      "references": {
+        "names": [
+          "Gen 10:13"
+        ],
+        "father": "Gen 10:13"
+      },
+      "father": "mizraim"
+    },
+    "pathrusim": {
+      "names": [
+        "Pathrusim"
+      ],
+      "references": {
+        "names": [
+          "Gen 10:14"
+        ],
+        "father": "Gen 10:13-14"
+      },
+      "father": "mizraim"
+    },
+    "casluhim": {
+      "names": [
+        "Casluhim"
+      ],
+      "references": {
+        "names": [
+          "Gen 10:14"
+        ],
+        "father": "Gen 10:13-14"
+      },
+      "father": "mizraim"
+    },
+    "caphtorim": {
+      "names": [
+        "Caphtorim"
+      ],
+      "references": {
+        "names": [
+          "Gen 10:14"
+        ],
+        "father": "Gen 10:13-14"
+      },
+      "father": "mizraim"
+    },
+    "sidon": {
+      "names": [
+        "Sidon"
+      ],
+      "references": {
+        "names": [
+          "Gen 10:15"
+        ],
+        "father": "Gen 10:15"
+      },
+      "father": "canaan"
+    },
+    "heth": {
+      "names": [
+        "Heth"
+      ],
+      "references": {
+        "names": [
+          "Gen 10:15"
+        ],
+        "father": "Gen 10:15"
+      },
+      "father": "canaan"
     }
   }
 }
