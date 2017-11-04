@@ -211,58 +211,54 @@ function removeChilds(el) {
 }
 
 function validatePersonData(personKey) {
-  var parent = app.people[personKey];
-  var references = parent.references;
-  var name = getName(personKey);
-  // ensure properties in reference object match those in the person object
-  var personProperties = ['references', 'names', 'gender', 'spouses', 'children', 'father', 'mother', 'ageOfFatherAtBirth', 'yearsLived', 'otherChildren', 'title'];
-  for (var prop in parent) {
+  var person = app.people[personKey];
+  var references = person.references;
+  if (typeof references !== 'object') {
+    console.error(personKey + ': missing references object');
+  }
+
+  var referenceProperties = ['names', 'gender', 'spouses', 'children', 'father', 'mother', 'ageOfFatherAtBirth', 'yearsLived', 'otherChildren', 'title'];
+  var personProperties = referenceProperties.concat('references');
+
+  // ensure the reference object has the same properties as the person object
+  if ('' + Object.keys(references).concat('references').sort() !== '' + Object.keys(person).sort()) {
+    console.error(personKey + ': properties don\'t match those in reference object');
+  }
+
+  // go through properties in the person object
+  for (var prop in person) {
+    // ensure each is allowed
     if (personProperties.indexOf(prop) < 0) {
-      console.error(name + ': property ' + prop + ' on person not allowed');
+      console.error(personKey + ': property ' + prop + ' on person not allowed');
     }
+
+    // ensure each has a corresponding reference property to a string or array
     if (
       prop !== 'references' &&
       typeof references[prop] !== 'string' &&
       !Array.isArray(references[prop])
     ) {
-      console.error(name + ': property ' + prop + ' needs a reference');
+      console.error(personKey + ': property ' + prop + ' needs a reference');
     }
-    if (Array.isArray(parent[prop])) {
-      if (Array.isArray(references[prop])) {
-        if (parent[prop].length !== references[prop].length) {
-          console.error(name + ': property ' + prop + ' needs references to match'); 
-        }
-      } else {
-        console.error(name + ': property ' + prop + ' needs references to match');
+
+    // ensure the reference for each is an array iff it's an array itself
+    if (Array.isArray(person[prop])) {
+      if (!Array.isArray(references[prop])) {
+        console.error(personKey + ': property ' + prop + ' needs references to match');
       }
     }
     else if (Array.isArray(references[prop])) {
-      console.error(name + ': property ' + prop + ' needs references to match');
+      console.error(personKey + ': property ' + prop + ' needs references to match');
     }
   }
 
-  var referenceProperties = ['names', 'gender', 'spouses', 'children', 'father', 'mother', 'ageOfFatherAtBirth', 'yearsLived', 'otherChildren', 'title'];
-  for (prop in references) {
-    if (referenceProperties.indexOf(prop) < 0) {
-      console.error(name + ': property ' + prop + ' not allowed on reference object');
+  // ensure right number of references for arrays
+  var arrayProperties = ['children', 'names', 'spouses'];
+  arrayProperties.forEach(function(arrayProperty) {
+    if (person[arrayProperty] && person[arrayProperty].length !== references[arrayProperty].length) {
+      console.error(personKey + ': ' + arrayProperty + ' references do not line up');
     }
-    if (typeof parent[prop] === 'undefined') {
-      console.error(name + ': reference for property ' + prop + ' not found in person');
-    }
-  }
-
-  // ensure right number of references for children
-  if (parent.children && parent.children.length !== references.children.length) {
-    console.error(name + ': children references do not line up');
-  }
-  // ensure right number of references for names
-  if (parent.names && parent.names.length !== references.names.length) {
-    console.error(name + ': names references do not line up');
-  }
-  // ensure right number of references for spouses
-  if (parent.spouses && parent.spouses.length !== references.spouses.length) {
-    console.error(name + ': spouses references do not line up');
-  }
+  });
 }
 
 function addParents(people) {

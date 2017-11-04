@@ -25,7 +25,7 @@
 */
 
 var peopleData = {
-  scriptureCovered: 'Genesis 1-10',
+  scriptureCovered: 'Genesis 1-11',
   events: {
     beginning: {
       title: 'the beginning',
@@ -506,11 +506,15 @@ var peopleData = {
       gender: 'male',
       spouses: ['wife_of_shem'],
       children: ['elam', 'asshur', 'arpachshad', 'lud', 'aram'],
+      otherChildren: true,
+      yearsLived: 600,
       references: {
         names: ['Gen 5:32'],
         gender: 'Gen 6:10',
         spouses: ['Gen 6:18'],
-        children: ['Gen 10:22', 'Gen 10:22', 'Gen 10:22', 'Gen 10:22', 'Gen 10:22']
+        children: ['Gen 10:22', 'Gen 10:22', 'Gen 10:22', 'Gen 10:22', 'Gen 10:22'],
+        otherChildren: 'Gen 11:11',
+        yearsLived: 'Gen 11:10-11'
       }
     },
     ham: {
@@ -863,10 +867,16 @@ var peopleData = {
       names: ['Arpachshad'],
       gender: 'male',
       children: ['shelah'],
+      otherChildren: true,
+      ageOfFatherAtBirth: 100,
+      yearsLived: 438,
       references: {
         names: ['Gen 10:22'],
         gender: 'Gen 10:22',
-        children: ['Gen 10:24']
+        children: ['Gen 10:24'],
+        otherChildren: 'Gen 11:13',
+        ageOfFatherAtBirth: 'Gen 11:10',
+        yearsLived: 'Gen 11:12-13'
       }
     },
     lud: {
@@ -923,28 +933,48 @@ var peopleData = {
       names: ['Shelah'],
       gender: 'male',
       children: ['eber'],
+      otherChildren: true,
+      ageOfFatherAtBirth: 35,
+      yearsLived: 433,
       references: {
         names: ['Gen 10:24'],
         gender: 'Gen 10:24',
-        children: ['Gen 10:24']
+        children: ['Gen 10:24'],
+        otherChildren: 'Gen 11:15',
+        ageOfFatherAtBirth: 'Gen 11:12',
+        yearsLived: 'Gen 11:14-15'
       }
     },
     eber: {
       names: ['Eber'],
       gender: 'male',
       children: ['peleg', 'joktan'],
+      otherChildren: true,
+      yearsLived: 464,
+      ageOfFatherAtBirth: 30,
       references: {
         names: ['Gen 10:24'],
         gender: 'Gen 11:16',
-        children: ['Gen 10:25', 'Gen 10:25']
+        children: ['Gen 10:25', 'Gen 10:25'],
+        otherChildren: 'Gen 11:17',
+        yearsLived: 'Gen 11:16-17',
+        ageOfFatherAtBirth: 'Gen 11:14'
       }
     },
     peleg: {
       names: ['Peleg'],
       gender: 'male',
+      children: ['reu'],
+      otherChildren: true,
+      ageOfFatherAtBirth: 34,
+      yearsLived: 239,
       references: {
         names: ['Gen 10:25'],
-        gender: 'Gen 10:25'
+        gender: 'Gen 10:25',
+        children: ['Gen 11:18'],
+        otherChildren: 'Gen 11:19',
+        ageOfFatherAtBirth: 'Gen 11:16',
+        yearsLived: 'Gen 11:18-19'
       }
     },
     joktan: {
@@ -1059,6 +1089,142 @@ var peopleData = {
       references: {
         names: ['Gen 10:26-29'],
         gender: 'Gen 10:26-29'
+      }
+    },
+    reu: {
+      names: ['Reu'],
+      gender: 'male',
+      children: ['serug'],
+      otherChildren: true,
+      yearsLived: 239,
+      ageOfFatherAtBirth: 30,
+      references: {
+        names: ['Gen 11:18'],
+        gender: 'Gen 11:20',
+        children: ['Gen 11:20'],
+        otherChildren: 'Gen 11:21',
+        yearsLived: 'Gen 11:20-21',
+        ageOfFatherAtBirth: 'Gen 11:18'
+      }
+    },
+    serug: {
+      names: ['Serug'],
+      gender: 'male',
+      children: ['nahor'],
+      otherChildren: true,
+      yearsLived: 230,
+      ageOfFatherAtBirth: 32,
+      references: {
+        names: ['Gen 11:20'],
+        gender: 'Gen 11:22',
+        children: ['Gen 11:22'],
+        otherChildren: 'Gen 11:23',
+        yearsLived: 'Gen 11:22-23',
+        ageOfFatherAtBirth: 'Gen 11:20'
+      }
+    },
+    nahor: {
+      names: ['Nahor'],
+      gender: 'male',
+      children: ['terah'],
+      otherChildren: true,
+      yearsLived: 148,
+      ageOfFatherAtBirth: 30,
+      references: {
+        names: ['Gen 11:22'],
+        gender: 'Gen 11:24',
+        children: ['Gen 11:24'],
+        otherChildren: 'Gen 11:25',
+        yearsLived: 'Gen 11:24-25',
+        ageOfFatherAtBirth: 'Gen 11:22'
+      }
+    },
+    terah: {
+      names: ['Terah'],
+      gender: 'male',
+      children: ['abram', 'nahor2', 'haran'],
+      yearsLived: 205,
+      ageOfFatherAtBirth: 29,
+      references: {
+        names: ['Gen 11:24'],
+        gender: 'Gen 11:26',
+        children: ['Gen 11:26', 'Gen 11:26', 'Gen 11:26'],
+        yearsLived: 'Gen 11:32',
+        ageOfFatherAtBirth: 'Gen 11:24'
+      }
+    },
+    abram: {
+      names: ['Abram'],
+      gender: 'male',
+      spouses: ['sarai'],
+      references: {
+        names: ['Gen 11:26'],
+        gender: 'Gen 11:29',
+        spouses: ['Gen 11:29']
+      }
+    },
+    nahor2: {
+      names: ['Nahor'],
+      gender: 'male',
+      spouses: ['milcah'],
+      references: {
+        names: ['Gen 11:26'],
+        gender: 'Gen 11:29',
+        spouses: ['Gen 11:29']
+      }
+    },
+    haran: {
+      names: ['Haran'],
+      gender: 'male',
+      children: ['lot'],
+      references: {
+        names: ['Gen 11:26'],
+        gender: 'Gen 11:27',
+        children: ['Gen 11:27']
+      }
+    },
+    lot: {
+      names: ['Lot'],
+      gender: 'male',
+      references: {
+        names: ['Gen 11:27'],
+        gender: 'Gen 11:31'
+      }
+    },
+    sarai: {
+      names: ['Sarai'],
+      gender: 'female',
+      spouses: ['abram'],
+      references: {
+        names: ['Gen 11:29'],
+        gender: 'Gen 11:29',
+        spouses: ['Gen 11:29']
+      }
+    },
+    milcah: {
+      names: ['Milcah'],
+      gender: 'female',
+      spouses: ['nahor2'],
+      references: {
+        names: ['Gen 11:29'],
+        gender: 'Gen 11:29',
+        spouses: ['Gen 11:29']
+      }
+    },
+    haran2: {
+      names: ['Haran'],
+      gender: 'male',
+      children: ['milcah', 'iscah'],
+      references: {
+        names: ['Gen 11:29'],
+        gender: 'Gen 11:29',
+        children: ['Gen 11:29', 'Gen 11:29']
+      }
+    },
+    iscah: {
+      names: ['Iscah'],
+      references: {
+        names: ['Gen 11:29']
       }
     }
   }
