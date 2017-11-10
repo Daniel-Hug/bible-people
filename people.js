@@ -25,7 +25,7 @@
 */
 
 var peopleData = {
-  scriptureCovered: 'Genesis 1-11',
+  scriptureCovered: 'Genesis 1-14',
   events: {
     beginning: {
       title: 'the beginning',
@@ -1229,6 +1229,108 @@ var peopleData = {
       names: ['Iscah'],
       references: {
         names: ['Gen 11:29']
+      }
+    },
+    pharaoh: {
+      names: ['Pharaoh'],
+      gender: 'male',
+      references: {
+        names: ['Gen 12:15'],
+        gender: 'Gen 12:16'
+      }
+    },
+    amraphel: {
+      names: ['Amraphel'],
+      references: {
+        names: ['Gen 14:1']
+      }
+    },
+    arioch: {
+      names: ['Arioch'],
+      references: {
+        names: ['Gen 14:1']
+      }
+    },
+    chedorlaomer: {
+      names: ['Chedorlaomer'],
+      gender: 'male',
+      references: {
+        names: ['Gen 14:1'],
+        gender: 'Gen 14:5'
+      }
+    },
+    tidal: {
+      names: ['Tidal'],
+      references: {
+        names: ['Gen 14:1']
+      }
+    },
+    bera: {
+      names: ['Bera'],
+      references: {
+        names: ['Gen 14:2']
+      }
+    },
+    birsha: {
+      names: ['Birsha'],
+      references: {
+        names: ['Gen 14:2']
+      }
+    },
+    shinab: {
+      names: ['Shinab'],
+      references: {
+        names: ['Gen 14:2']
+      }
+    },
+    shemeber: {
+      names: ['Shemeber'],
+      references: {
+        names: ['Gen 14:2']
+      }
+    },
+    king_of_bela: {
+      title: 'king_of_bela',
+      references: {
+        title: 'Gen 14:2'
+      }
+    },
+    fugitive: {
+      title: 'a fugitive',
+      references: {
+        title: 'Gen 14:13'
+      }
+    },
+    mamre: {
+      names: ['Mamre'],
+      gender: 'male',
+      references: {
+        names: ['Gen 14:13'],
+        gender: 'Gen 14:13'
+      }
+    },
+    eshcol: {
+      names: ['Eshcol'],
+      gender: 'male',
+      references: {
+        names: ['Gen 14:13'],
+        gender: 'Gen 14:24'
+      }
+    },
+    aner: {
+      names: ['Aner'],
+      gender: 'male',
+      references: {
+        names: ['Gen 14:13'],
+        gender: 'Gen 14:24'
+      }
+    },
+    melchizedek: {
+      names: ['Melchizedek'],
+      gender: 'male',
+      references: {
+        names: ['Gen 14:18'],
+        gender: 'Gen 14:18'
       }
     }
   }
