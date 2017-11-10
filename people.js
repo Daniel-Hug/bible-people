@@ -507,6 +507,7 @@ var peopleData = {
       spouses: ['wife_of_shem'],
       children: ['elam', 'asshur', 'arpachshad', 'lud', 'aram'],
       otherChildren: true,
+      ageOfFatherAtBirth: 503,
       yearsLived: 600,
       references: {
         names: ['Gen 5:32'],
@@ -514,6 +515,7 @@ var peopleData = {
         spouses: ['Gen 6:18'],
         children: ['Gen 10:22', 'Gen 10:22', 'Gen 10:22', 'Gen 10:22', 'Gen 10:22'],
         otherChildren: 'Gen 11:11',
+        ageOfFatherAtBirth: 'Gen 8:13, 11:10',
         yearsLived: 'Gen 11:10-11'
       }
     },
@@ -533,11 +535,13 @@ var peopleData = {
       names: ['Japheth'],
       gender: 'male',
       spouses: ['wife_of_japheth'],
+      ageOfFatherAtBirth: 500,
       children: ['gomer', 'magog', 'madai', 'javan', 'tubal2', 'meshech', 'tiras'],
       references: {
         names: ['Gen 5:32'],
         gender: 'Gen 6:10',
         spouses: ['Gen 6:18'],
+        ageOfFatherAtBirth: 'Gen 5:32, 9:24; Gen 8:13, 11:10',
         children: ['Gen 10:2', 'Gen 10:2', 'Gen 10:2', 'Gen 10:2', 'Gen 10:2', 'Gen 10:2', 'Gen 10:2']
       }
     },
