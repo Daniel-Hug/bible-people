@@ -840,6 +840,7 @@
         "aram"
       ],
       "otherChildren": true,
+      "ageOfFatherAtBirth": 503,
       "yearsLived": 600,
       "references": {
         "names": [
@@ -857,6 +858,7 @@
           "Gen 10:22"
         ],
         "otherChildren": "Gen 11:11",
+        "ageOfFatherAtBirth": "Gen 7:11, 8:13; Gen 11:10",
         "yearsLived": "Gen 11:10-11",
         "father": "Gen 5:32",
         "mother": "Gen 5:32"
@@ -906,6 +908,7 @@
       "spouses": [
         "wife_of_japheth"
       ],
+      "ageOfFatherAtBirth": 500,
       "children": [
         "gomer",
         "magog",
@@ -923,6 +926,7 @@
         "spouses": [
           "Gen 6:18"
         ],
+        "ageOfFatherAtBirth": "Gen 5:32; Gen 9:22, 24; Gen 7:11, 8:13; Gen 11:10",
         "children": [
           "Gen 10:2",
           "Gen 10:2",

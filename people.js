@@ -515,7 +515,7 @@ var peopleData = {
         spouses: ['Gen 6:18'],
         children: ['Gen 10:22', 'Gen 10:22', 'Gen 10:22', 'Gen 10:22', 'Gen 10:22'],
         otherChildren: 'Gen 11:11',
-        ageOfFatherAtBirth: 'Gen 8:13, 11:10',
+        ageOfFatherAtBirth: 'Gen 7:11, 8:13; Gen 11:10',
         yearsLived: 'Gen 11:10-11'
       }
     },
@@ -541,7 +541,7 @@ var peopleData = {
         names: ['Gen 5:32'],
         gender: 'Gen 6:10',
         spouses: ['Gen 6:18'],
-        ageOfFatherAtBirth: 'Gen 5:32, 9:24; Gen 8:13, 11:10',
+        ageOfFatherAtBirth: 'Gen 5:32; Gen 9:22, 24; Gen 7:11, 8:13; Gen 11:10',
         children: ['Gen 10:2', 'Gen 10:2', 'Gen 10:2', 'Gen 10:2', 'Gen 10:2', 'Gen 10:2', 'Gen 10:2']
       }
     },
