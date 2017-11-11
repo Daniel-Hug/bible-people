@@ -175,7 +175,7 @@ Card.prototype.renderChildrenItem = function renderChildrenItem() {
 };
 
 Card.prototype.renderPersonLink = function renderPersonLink(personKey) {
-  return dom({ el: 'a', text: getName(personKey), _href: '/#!/' + personKey });
+  return dom({ el: 'a', text: getName(personKey), _href: '#!/' + personKey });
 };
 
 function getName(personKey) {
