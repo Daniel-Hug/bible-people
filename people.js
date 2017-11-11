@@ -515,7 +515,7 @@ var peopleData = {
         spouses: ['Gen 6:18'],
         children: ['Gen 10:22', 'Gen 10:22', 'Gen 10:22', 'Gen 10:22', 'Gen 10:22'],
         otherChildren: 'Gen 11:11',
-        ageOfFatherAtBirth: 'When Shem was 100 years old, he fathered Arpachshad two years after the flood: Gen 11:10. By "after the flood", what is meant is after the flood commenced in noah\'s 600th year (Gen 7:11, 8:13, 9:28-29). Therefore, when Shem was 100 years old, Noah was 602, and Noah was 502 when Shem was born.',
+        ageOfFatherAtBirth: 'When Shem was 100 years old, he fathered Arpachshad two years after the flood: Gen 11:10. By "after the flood", what is meant is after the flood commenced in Noah\'s 600th year (Gen 7:11, 8:13, 9:28-29). Therefore, when Shem was 100 years old, Noah was 602, and Noah was 502 when Shem was born.',
         yearsLived: 'Gen 11:10-11'
       }
     },
@@ -1184,11 +1184,11 @@ var peopleData = {
     haran: {
       names: ['Haran'],
       gender: 'male',
-      children: ['lot'],
+      children: ['lot', 'milcah', 'iscah'],
       references: {
         names: ['Gen 11:26'],
         gender: 'Gen 11:27',
-        children: ['Gen 11:27']
+        children: ['Gen 11:27', 'Gen 11:29', 'Gen 11:29']
       }
     },
     lot: {
@@ -1217,16 +1217,6 @@ var peopleData = {
         names: ['Gen 11:29'],
         gender: 'Gen 11:29',
         spouses: ['Gen 11:29']
-      }
-    },
-    haran2: {
-      names: ['Haran'],
-      gender: 'male',
-      children: ['milcah', 'iscah'],
-      references: {
-        names: ['Gen 11:29'],
-        gender: 'Gen 11:29',
-        children: ['Gen 11:29', 'Gen 11:29']
       }
     },
     iscah: {
