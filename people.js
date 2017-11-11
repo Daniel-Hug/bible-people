@@ -1146,7 +1146,7 @@ var peopleData = {
     terah: {
       names: ['Terah'],
       gender: 'male',
-      children: ['abram', 'nahor2', 'haran'],
+      children: ['abraham', 'nahor2', 'haran'],
       yearsLived: 205,
       ageOfFatherAtBirth: 29,
       references: {
@@ -1157,17 +1157,19 @@ var peopleData = {
         ageOfFatherAtBirth: 'Gen 11:24'
       }
     },
-    abram: {
-      names: ['Abram'],
+    abraham: {
+      names: ['Abraham', 'Abram'],
       gender: 'male',
-      spouses: ['sarai'],
+      spouses: ['sarah'],
       ageOfFatherAtBirth: 130,
+      children: ['isaac'],
       yearsLived: 175,
       references: {
-        names: ['Gen 11:26'],
+        names: ['Gen 17:5', 'Gen 11:26'],
         gender: 'Gen 11:29',
         spouses: ['Gen 11:29'],
         ageOfFatherAtBirth: 'Gen 11:32-12:4',
+        children: ['Gen 21:3'],
         yearsLived: 'Gen 25:7',
       }
     },
@@ -1199,14 +1201,16 @@ var peopleData = {
         gender: 'Gen 11:31'
       }
     },
-    sarai: {
-      names: ['Sarai'],
+    sarah: {
+      names: ['Sarah', 'Sarai'],
       gender: 'female',
-      spouses: ['abram'],
+      spouses: ['abraham'],
+      children: ['isaac'],
       references: {
-        names: ['Gen 11:29'],
+        names: ['Gen 17:15', 'Gen 11:29'],
         gender: 'Gen 11:29',
-        spouses: ['Gen 11:29']
+        spouses: ['Gen 11:29'],
+        children: ['Gen 21:3']
       }
     },
     milcah: {
@@ -1325,6 +1329,44 @@ var peopleData = {
       references: {
         names: ['Gen 14:18'],
         gender: 'Gen 14:18'
+      }
+    },
+    isaac: {
+      names: ['Isaac'],
+      gender: 'male',
+      ageOfFatherAtBirth: 100,
+      children: ['israel'],
+      yearsLived: 180,
+      references: {
+        names: ['Gen 21:3'],
+        gender: 'Gen 21:3',
+        ageOfFatherAtBirth: 'Gen 21:5',
+        children: ['Gen 25:26'],
+        yearsLived: 'Gen 35:28'
+      }
+    },
+    israel: {
+      names: ['Israel', 'Jacob'],
+      gender: 'male',
+      ageOfFatherAtBirth: 60,
+      children: ['joseph'],
+      yearsLived: 147,
+      references: {
+        names: ['Gen 32:28', 'Gen 25:26'],
+        gender: 'Gen 25:26',
+        ageOfFatherAtBirth: 'Gen 25:26',
+        children: ['Gen 30:24'],
+        yearsLived: 'Gen 47:28'
+      }
+    },
+    joseph: {
+      names: ['Joseph'],
+      gender: 'male',
+      yearsLived: 110,
+      references: {
+        names: ['Gen 30:24'],
+        gender: 'Gen 30:24',
+        yearsLived: 'Gen 50:26'
       }
     }
   }

@@ -858,7 +858,7 @@
           "Gen 10:22"
         ],
         "otherChildren": "Gen 11:11",
-        "ageOfFatherAtBirth": "When Shem was 100 years old, he fathered Arpachshad two years after the flood: Gen 11:10. By \"after the flood\", what is meant is after the flood commenced in noah's 600th year (Gen 7:11, 8:13, 9:28-29). Therefore, when Shem was 100 years old, Noah was 602, and Noah was 502 when Shem was born.",
+        "ageOfFatherAtBirth": "When Shem was 100 years old, he fathered Arpachshad two years after the flood: Gen 11:10. By \"after the flood\", what is meant is after the flood commenced in Noah's 600th year (Gen 7:11, 8:13, 9:28-29). Therefore, when Shem was 100 years old, Noah was 602, and Noah was 502 when Shem was born.",
         "yearsLived": "Gen 11:10-11",
         "father": "Gen 5:32",
         "mother": "Gen 5:32"
@@ -2062,7 +2062,7 @@
       ],
       "gender": "male",
       "children": [
-        "abram",
+        "abraham",
         "nahor2",
         "haran"
       ],
@@ -2084,18 +2084,23 @@
       },
       "father": "nahor"
     },
-    "abram": {
+    "abraham": {
       "names": [
+        "Abraham",
         "Abram"
       ],
       "gender": "male",
       "spouses": [
-        "sarai"
+        "sarah"
       ],
       "ageOfFatherAtBirth": 130,
+      "children": [
+        "isaac"
+      ],
       "yearsLived": 175,
       "references": {
         "names": [
+          "Gen 17:5",
           "Gen 11:26"
         ],
         "gender": "Gen 11:29",
@@ -2103,6 +2108,9 @@
           "Gen 11:29"
         ],
         "ageOfFatherAtBirth": "Gen 11:32-12:4",
+        "children": [
+          "Gen 21:3"
+        ],
         "yearsLived": "Gen 25:7",
         "father": "Gen 11:26"
       },
@@ -2134,7 +2142,9 @@
       ],
       "gender": "male",
       "children": [
-        "lot"
+        "lot",
+        "milcah",
+        "iscah"
       ],
       "references": {
         "names": [
@@ -2142,7 +2152,9 @@
         ],
         "gender": "Gen 11:27",
         "children": [
-          "Gen 11:27"
+          "Gen 11:27",
+          "Gen 11:29",
+          "Gen 11:29"
         ],
         "father": "Gen 11:26"
       },
@@ -2162,16 +2174,18 @@
       },
       "father": "haran"
     },
-    "sarai": {
+    "sarah": {
       "names": [
+        "Sarah",
         "Sarai"
       ],
       "gender": "female",
       "spouses": [
-        "abram"
+        "abraham"
       ],
       "references": {
         "names": [
+          "Gen 17:15",
           "Gen 11:29"
         ],
         "gender": "Gen 11:29",
@@ -2198,27 +2212,7 @@
         ],
         "father": "Gen 11:29"
       },
-      "father": "haran2"
-    },
-    "haran2": {
-      "names": [
-        "Haran"
-      ],
-      "gender": "male",
-      "children": [
-        "milcah",
-        "iscah"
-      ],
-      "references": {
-        "names": [
-          "Gen 11:29"
-        ],
-        "gender": "Gen 11:29",
-        "children": [
-          "Gen 11:29",
-          "Gen 11:29"
-        ]
-      }
+      "father": "haran"
     },
     "iscah": {
       "names": [
@@ -2230,7 +2224,7 @@
         ],
         "father": "Gen 11:29"
       },
-      "father": "haran2"
+      "father": "haran"
     },
     "pharaoh": {
       "names": [
@@ -2385,6 +2379,72 @@
         ],
         "gender": "Gen 14:18"
       }
+    },
+    "isaac": {
+      "names": [
+        "Isaac"
+      ],
+      "gender": "male",
+      "ageOfFatherAtBirth": 100,
+      "children": [
+        "israel"
+      ],
+      "yearsLived": 180,
+      "references": {
+        "names": [
+          "Gen 21:3"
+        ],
+        "gender": "Gen 21:3",
+        "ageOfFatherAtBirth": "Gen 21:5",
+        "children": [
+          "Gen 25:26"
+        ],
+        "yearsLived": "Gen 35:28",
+        "father": "Gen 21:3"
+      },
+      "father": "abraham"
+    },
+    "israel": {
+      "names": [
+        "Israel",
+        "Jacob"
+      ],
+      "gender": "male",
+      "ageOfFatherAtBirth": 60,
+      "children": [
+        "joseph"
+      ],
+      "yearsLived": 147,
+      "references": {
+        "names": [
+          "Gen 32:28",
+          "Gen 25:26"
+        ],
+        "gender": "Gen 25:26",
+        "ageOfFatherAtBirth": "Gen 25:26",
+        "children": [
+          "Gen 30:24"
+        ],
+        "yearsLived": "Gen 47:28",
+        "father": "Gen 25:26"
+      },
+      "father": "isaac"
+    },
+    "joseph": {
+      "names": [
+        "Joseph"
+      ],
+      "gender": "male",
+      "yearsLived": 110,
+      "references": {
+        "names": [
+          "Gen 30:24"
+        ],
+        "gender": "Gen 30:24",
+        "yearsLived": "Gen 50:26",
+        "father": "Gen 30:24"
+      },
+      "father": "israel"
     }
   }
 }
