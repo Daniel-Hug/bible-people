@@ -108,7 +108,7 @@ function renderCard(personKey) {
       { el: 'strong', class_name: true, text: getName(personKey) },
       ' in the Bible'
     ]}, ' ',
-    { el: 'strong', _className: 'source-ref', text: 'Data from ' + app.scriptureCovered },
+    { el: 'strong', _className: 'source-ref', text: 'Includes all data from ' + app.scriptureCovered },
     { el: 'ul', kids: detailItems}
   ]});
   card.classList.add(person.gender);

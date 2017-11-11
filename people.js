@@ -1161,10 +1161,14 @@ var peopleData = {
       names: ['Abram'],
       gender: 'male',
       spouses: ['sarai'],
+      ageOfFatherAtBirth: 130,
+      yearsLived: 175,
       references: {
         names: ['Gen 11:26'],
         gender: 'Gen 11:29',
-        spouses: ['Gen 11:29']
+        spouses: ['Gen 11:29'],
+        ageOfFatherAtBirth: 'Gen 11:32-12:4',
+        yearsLived: 'Gen 25:7',
       }
     },
     nahor2: {
