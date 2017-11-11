@@ -7,12 +7,15 @@
 function Card(personKey) {
   var card = this;
   this.personKey = personKey;
+  this.longReferenceNumbersByString = {};
+  this.card = card.render();
+  this.renderReferenceList();
 
   var cardParent = document.querySelector('#card-parent');
   removeChilds(cardParent);
   dom({
     el: cardParent,
-    kids: [card.render()]
+    kids: [this.card]
   });
 }
 
@@ -71,8 +74,38 @@ Card.prototype.render = function renderCard() {
 };
 
 Card.prototype.renderReference = function renderReference(referenceString) {
+  var card = this;
+  if (referenceString.length > 12) {
+    var longRefCount = Object.keys(this.longReferenceNumbersByString).length;
+    if (!this.longReferenceNumbersByString[referenceString]) {
+      this.longReferenceNumbersByString[referenceString] = ++longRefCount;
+    }
+    var sup = dom({ el: 'sup', kids: ['[', {
+      el: 'a', _href: location.hash + '#ref-' + longRefCount, text: longRefCount
+    }, ']'] });
+    
+    return sup;
+  }
   var sup = dom({ el: 'sup', text: '[' + referenceString + ']' });
   return sup;
+};
+
+Card.prototype.renderReferenceList = function renderReferenceList() {
+  var people = app.people;
+  var personKey = this.personKey;
+  var person = people[personKey];
+  var references = person.references;
+  var card = this.card;
+
+  var longReferenceParent = dom({ el: 'ol' });
+  dom({ el: card, kids: [longReferenceParent]})
+
+  for (var referenceString in this.longReferenceNumbersByString) {
+    var referenceNum = this.longReferenceNumbersByString[referenceString];
+    dom({ el: longReferenceParent, kids: [{
+      el: 'li', _id: location.hash.slice(1) + '#ref-' + referenceNum, text: referenceString
+    }]});
+  }
 };
 
 Card.prototype.renderSpousesItem = function renderSpousesItem() {
@@ -142,7 +175,7 @@ Card.prototype.renderChildrenItem = function renderChildrenItem() {
 };
 
 Card.prototype.renderPersonLink = function renderPersonLink(personKey) {
-  return dom({ el: 'a', text: getName(personKey), _href: '#!' + personKey });
+  return dom({ el: 'a', text: getName(personKey), _href: '/#!/' + personKey });
 };
 
 function getName(personKey) {
@@ -243,9 +276,12 @@ var handlePeople = (function() {
 
   return function handlePeople(data) {
     window.app = data;
-    var people = app.people;
 
-    addParents(people);
+    addParents(app.people);
+
+    window.json = JSON.stringify(app, null, 2);
+    console.log('run this: copy(json)');
+
     // graphTree(getGraphData(people))
 
     // if ( (personKey = getRoute()) ) {
@@ -274,29 +310,30 @@ function addParents(people) {
       people[childKey].references[relation] = references.children[siblingIndex];
     });
   }
+}
 
-  window.json = JSON.stringify(app, null, 2);
-  console.log('run this: copy(json)');
+function routeToPerson(personKey, refNum) {
+  if (personKey && app.people[personKey]) {
+    new Card(personKey);
+    document.title = getName(personKey) + ' in the Bible';
+    if (refTagger.tag) refTagger.tag();
+  } else if (!personKey) {
+    app.router.navigate('!/adam');
+  } else {
+    console.error('Invalid person key: ' + personKey + '.');
+  }
 }
 
 function setupRoutes() {
   var root = null;
   var useHash = true;
-  var router = new Navigo(root, useHash);
+  app.router = new Navigo(root, useHash);
 
-  router
-  .on('*', function (params) {
-    var hash = location.hash.slice(1);
-    var personKey = hash.slice(1);
-    if (personKey && app.people[personKey]) {
-      new Card(personKey);
-      document.title = getName(personKey) + ' in the Bible';
-      if (refTagger.tag) refTagger.tag();
-    } else if (!personKey) {
-      location.hash = '#!adam';
-    } else {
-      console.error('Invalid person key: ' + personKey + '.');
-    }
+
+  app.router
+  .on(/!\/([^/#]+)(?:#ref-(\d+))?/, routeToPerson)
+  .notFound(function () {
+    app.router.navigate('!/adam');
   })
   .resolve();
 }
