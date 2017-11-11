@@ -507,7 +507,7 @@ var peopleData = {
       spouses: ['wife_of_shem'],
       children: ['elam', 'asshur', 'arpachshad', 'lud', 'aram'],
       otherChildren: true,
-      ageOfFatherAtBirth: 503,
+      ageOfFatherAtBirth: 502,
       yearsLived: 600,
       references: {
         names: ['Gen 5:32'],
@@ -515,7 +515,7 @@ var peopleData = {
         spouses: ['Gen 6:18'],
         children: ['Gen 10:22', 'Gen 10:22', 'Gen 10:22', 'Gen 10:22', 'Gen 10:22'],
         otherChildren: 'Gen 11:11',
-        ageOfFatherAtBirth: 'Gen 7:11, 8:13; Gen 11:10',
+        ageOfFatherAtBirth: 'When Shem was 100 years old, he fathered Arpachshad two years after the flood: Gen 11:10. By "after the flood", what is meant is after the flood commenced in noah\'s 600th year (Gen 7:11, 8:13, 9:28-29). Therefore, when Shem was 100 years old, Noah was 602, and Noah was 502 when Shem was born.',
         yearsLived: 'Gen 11:10-11'
       }
     },
