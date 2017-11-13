@@ -1,9 +1,9 @@
 /*
   Format
     - People are listed in the order they're mentioned in Genesis.
-    - Each number in a 'spouses' or 'children' array is the index of another person.
+    - Each string in a 'spouses' or 'children' array is the key of another person.
     - If a property is omitted, it is unknown.
-    - Every data point present for each person cites a scripture reference under "references".
+    - Every property present on a person has a corresponding scripture reference under "references".
 
   people.json
     - This file (people.js) is a concise version of
@@ -13,11 +13,11 @@
     - So these are all the properties which can appear in a person object in people.json:
       - names: array of strings
       - title: string
-      - gender: string
-      - spouses: array of person indices
-      - children: array of person indices
-      - father: person index
-      - mother: person index
+      - gender: string: 'male' or 'female'
+      - spouses: array of person keys
+      - children: array of person keys
+      - father: person key
+      - mother: person key
       - ageOfFatherAtBirth: integer
       - yearsLived: integer
       - otherChildren: boolean
