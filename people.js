@@ -493,12 +493,10 @@ var peopleData = {
       title: 'Noah\'s wife',
       gender: 'female',
       spouses: ['noah'],
-      children: ['shem', 'ham', 'japheth'],
       references: {
         title: 'Gen 6:18',
         gender: 'Gen 6:18',
-        spouses: ['Gen 6:18'],
-        children: ['Gen 5:32', 'Gen 5:32', 'Gen 5:32']
+        spouses: ['Gen 6:18']
       }
     },
     shem: {

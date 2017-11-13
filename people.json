@@ -806,21 +806,11 @@
       "spouses": [
         "noah"
       ],
-      "children": [
-        "shem",
-        "ham",
-        "japheth"
-      ],
       "references": {
         "title": "Gen 6:18",
         "gender": "Gen 6:18",
         "spouses": [
           "Gen 6:18"
-        ],
-        "children": [
-          "Gen 5:32",
-          "Gen 5:32",
-          "Gen 5:32"
         ]
       }
     },
@@ -860,11 +850,9 @@
         "otherChildren": "Gen 11:11",
         "ageOfFatherAtBirth": "When Shem was 100 years old, he fathered Arpachshad two years after the flood: Gen 11:10. By \"after the flood\", what is meant is after the flood commenced in Noah's 600th year (Gen 7:11, 8:13, 9:28-29). Therefore, when Shem was 100 years old, Noah was 602, and Noah was 502 when Shem was born.",
         "yearsLived": "Gen 11:10-11",
-        "father": "Gen 5:32",
-        "mother": "Gen 5:32"
+        "father": "Gen 5:32"
       },
-      "father": "noah",
-      "mother": "wife_of_noah"
+      "father": "noah"
     },
     "ham": {
       "names": [
@@ -894,11 +882,9 @@
           "Gen 10:6",
           "Gen 10:6"
         ],
-        "father": "Gen 5:32",
-        "mother": "Gen 5:32"
+        "father": "Gen 5:32"
       },
-      "father": "noah",
-      "mother": "wife_of_noah"
+      "father": "noah"
     },
     "japheth": {
       "names": [
@@ -936,11 +922,9 @@
           "Gen 10:2",
           "Gen 10:2"
         ],
-        "father": "Gen 5:32",
-        "mother": "Gen 5:32"
+        "father": "Gen 5:32"
       },
-      "father": "noah",
-      "mother": "wife_of_noah"
+      "father": "noah"
     },
     "wife_of_shem": {
       "title": "Shem's wife",
