@@ -559,12 +559,10 @@ var peopleData = {
       title: 'Ham\'s wife',
       gender: 'female',
       spouses: ['ham'],
-      children: ['canaan'],
       references: {
         title: 'Gen 6:18',
         gender: 'Gen 6:18',
-        spouses: ['Gen 6:18'],
-        children: ['Gen 9:18']
+        spouses: ['Gen 6:18']
       }
     },
     wife_of_japheth: {

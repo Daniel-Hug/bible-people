@@ -962,17 +962,11 @@
       "spouses": [
         "ham"
       ],
-      "children": [
-        "canaan"
-      ],
       "references": {
         "title": "Gen 6:18",
         "gender": "Gen 6:18",
         "spouses": [
           "Gen 6:18"
-        ],
-        "children": [
-          "Gen 9:18"
         ]
       }
     },
@@ -1008,11 +1002,9 @@
           "Gen 10:15",
           "Gen 10:15"
         ],
-        "father": "Gen 9:18",
-        "mother": "Gen 9:18"
+        "father": "Gen 9:18"
       },
-      "father": "ham",
-      "mother": "wife_of_ham"
+      "father": "ham"
     },
     "gomer": {
       "names": [
@@ -2183,6 +2175,9 @@
       "spouses": [
         "abraham"
       ],
+      "children": [
+        "isaac"
+      ],
       "references": {
         "names": [
           "Gen 17:15",
@@ -2191,6 +2186,9 @@
         "gender": "Gen 11:29",
         "spouses": [
           "Gen 11:29"
+        ],
+        "children": [
+          "Gen 21:3"
         ]
       }
     },
@@ -2400,9 +2398,11 @@
           "Gen 25:26"
         ],
         "yearsLived": "Gen 35:28",
-        "father": "Gen 21:3"
+        "father": "Gen 21:3",
+        "mother": "Gen 21:3"
       },
-      "father": "abraham"
+      "father": "abraham",
+      "mother": "sarah"
     },
     "israel": {
       "names": [
