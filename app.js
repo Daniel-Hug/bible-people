@@ -20,20 +20,37 @@ function Card(personKey) {
 }
 
 Card.prototype.render = function renderCard() {
-  var people = app.people;
   var personKey = this.personKey;
-  var person = people[personKey];
+  var person = app.people[personKey];
   var references = person.references;
 
 
   var detailItems = [];
+
+  // nameless
   if (!person.names) detailItems.push({ el: 'li', text: 'No name mentioned' });
 
+  // more than one name
+  else if (person.names.length > 1) {
+    var liKids = [
+      { el: 'strong', text: 'Other names:' },
+      ' '
+    ];
+    liKids.push(zipArrays(
+      person.names.slice(1),
+      references.names.slice(1).map(this.renderReference, this),
+      fillArray(person.names.length - 2, ', ')
+    ));
+    detailItems.push({ el: 'li', kids: liKids });
+  }
+
+  // years lived
   if (person.yearsLived) detailItems.push({ el: 'li', kids: [
     'Lived ' + person.yearsLived + ' years',
     this.renderReference(references.yearsLived)
   ]});
 
+  // father
   var father = { el: 'li', kids: [
     { el: 'strong', text: 'Father:' }, ' ', person.father !== undefined ? [
       this.renderPersonLink(person.father),
@@ -42,6 +59,7 @@ Card.prototype.render = function renderCard() {
   ]};
   detailItems.push(father);
 
+  // age of father at birth
   if (person.ageOfFatherAtBirth) {
     father.kids.push(
       ' (' + person.ageOfFatherAtBirth + ' years old at birth',
@@ -50,6 +68,7 @@ Card.prototype.render = function renderCard() {
     );
   }
 
+  // mother
   var mother = { el: 'li', kids: [
     { el: 'strong', text: 'Mother:' }, ' ',
     person.mother !== undefined ? [
@@ -115,7 +134,7 @@ Card.prototype.renderSpousesItem = function renderSpousesItem() {
     (person.gender === 'female' ? 'Husband' : 'Spouse');
   var spouseName = !person.spouses || person.spouses.length <= 1 ?
     spouseName :
-    getPlural(spouseName);
+    verbalize.getPlural(spouseName);
 
   var spousesItem = { el: 'li', kids: [
     { el: 'strong', text: spouseName + ':' }, ' '
@@ -164,9 +183,9 @@ Card.prototype.renderChildrenItem = function renderChildrenItem() {
     childrenItem.kids.push(ul);
   }
   if (numSpecified > 0) {
-    [].push.apply(ul.kids, person.children.map(function(indexInPeople, indexInChildren) {
+    [].push.apply(ul.kids, person.children.map(function(childKey, indexInChildren) {
       return { el: 'li', kids: [
-        this.renderPersonLink(indexInPeople),
+        this.renderPersonLink(childKey),
         this.renderReference(references.children[indexInChildren])
       ]};
     }, this));
@@ -185,7 +204,7 @@ function getName(personKey) {
   if (person.gender && person.spouses.length === 1) {
     var spouse = app.people[person.spouses[0]];
     if (spouse.names) {
-      var title = givePossession(spouse.names[0]) + ' ' +
+      var title = verbalize.givePossession(spouse.names[0]) + ' ' +
       (person.gender === 'male' ? 'husband' : 'wife');
       return title;
     }
@@ -213,41 +232,65 @@ function getProperties(obj) {
   return newObj;
 }
 
-//  Accepts a singular noun:
-//    getPlural('box')
-//  Returns the noun in plural form:
-//    "boxes"
-//  false positives: "ox", "potato", "goose", "deer", etc.
-function getPlural(noun) {
-  var lastChar = noun.slice(-1);
-  var last2;
+var verbalize = {
+  //  Accepts a singular noun:
+  //    getPlural('box')
+  //  Returns the noun in plural form:
+  //    "boxes"
+  //  false positives: "ox", "potato", "goose", "deer", etc.
+  getPlural: function getPlural(noun) {
+    var lastChar = noun.slice(-1);
+    var last2;
 
-  // if ends with 's', 'x', 'z', 'ch', or 'sh', add 'es'
-  if ('sxz'.indexOf(lastChar) >= 0 ||
-    ['ch', 'sh'].indexOf(last2 = noun.slice(-2)) >= 0) return noun + 'es';
+    // if ends with 's', 'x', 'z', 'ch', or 'sh', add 'es'
+    if ('sxz'.indexOf(lastChar) >= 0 ||
+      ['ch', 'sh'].indexOf(last2 = noun.slice(-2)) >= 0) return noun + 'es';
 
-  // else, if ends with 'y', replace with 'ies'
-  if (lastChar === 'y') return noun.slice(0, -1) + 'ies';
+    // else, if ends with 'y', replace with 'ies'
+    if (lastChar === 'y') return noun.slice(0, -1) + 'ies';
 
-  // else, if ends with 'fe' or 'lf', replace f+ with 'ves'
-  if (['fe', 'lf'].indexOf(last2) >= 0) {
-    var fi = noun.lastIndexOf('f');
-    return noun.slice(0, fi) + 'ves';
+    // else, if ends with 'fe' or 'lf', replace f+ with 'ves'
+    if (['fe', 'lf'].indexOf(last2) >= 0) {
+      var fi = noun.lastIndexOf('f');
+      return noun.slice(0, fi) + 'ves';
+    }
+
+    // else, if ends with 'man' replace with 'men'
+    if (noun.slice(-3) === 'man') return noun.slice(0, -3) + 'men';
+
+    // else add 's'
+    return noun + 's';
+  },
+
+  givePossession: function givePossession(nounStr) {
+    return nounStr + (nounStr[nounStr.length - 1] === 's' ? '\'' : '\'s');
   }
+};
 
-  // else, if ends with 'man' replace with 'men'
-  if (noun.slice(-3) === 'man') return noun.slice(0, -3) + 'men';
 
-  // else add 's'
-  return noun + 's';
+// val can be a function that returns a value or a value
+function fillArray(len, val) {
+  var arr = [], i;
+  if (typeof val === 'function') {
+    for (i = 0; i < len; i++) {
+      arr.push(val(i));
+    }
+  } else {
+    for (i = 0; i < len; i++) {
+      arr.push(val);
+    }
+  }
+  return arr;
 }
 
-function givePossession(nounStr) {
-  return nounStr + (nounStr[nounStr.length - 1] === 's' ? '\'' : '\'s');
+// zip two arrays into one: value 0 from a, value 0 from b, value 1 from a, etc.
+function zipArrays(array1, array2) {
+  var zipped = [];
+  for (var i = 0; i < array1.length; i++) {
+    zipped.push(array1[i], array2[i]);
+  }
+  return zipped;
 }
-
-
-
 
 // init
 
