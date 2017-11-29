@@ -59,11 +59,19 @@ function fillArray(len, val) {
   return arr;
 }
 
-// zip two arrays into one: value 0 from a, value 0 from b, value 1 from a, etc.
-function zipArrays(array1, array2) {
+// Zip arrays into one
+// Example with two arrays: value 0 from a, value 0 from b, value 1 from a, etc.
+function zipArrays() {
   var zipped = [];
-  for (var i = 0; i < array1.length; i++) {
-    zipped.push(array1[i], array2[i]);
+  var arrays = [].slice.call(arguments);
+  for (var valueI = 0; arrays.length > 0; valueI++) {
+    for (var arrayI = 0; arrayI < arrays.length; arrayI++) {
+      if (arrays[arrayI].length - 1 < valueI) {
+        arrays.splice(arrayI, 1);
+        continue;
+      }
+      zipped.push(arrays[arrayI][valueI]);
+    }
   }
   return zipped;
 }

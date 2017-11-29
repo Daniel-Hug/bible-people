@@ -39,7 +39,12 @@ Card.prototype.render = function renderCard() {
       { el: 'strong', class_name: true, text: getName(personKey) },
       ' in the Bible'
     ]}, ' ',
-    { el: 'strong', _className: 'source-ref', text: 'Includes all data from ' + app.scriptureCovered },
+    { el: 'strong', _className: 'source-ref', kids: [
+      'Includes all data from ' + app.scriptureCovered,
+      { el: 'span', _className: 'action-bar', kids: [
+        { el: 'a', text: 'Contribute', _className: 'contribute-link', href: 'https://github.com/Daniel-Hug/bible-people' }
+      ]}
+    ]},
     { el: 'ul', kids: detailItems}
   ]});
   card.classList.add(person.gender);
@@ -47,25 +52,31 @@ Card.prototype.render = function renderCard() {
 };
 
 Card.prototype.renderNames = function renderNames() {
+  var personKey = this.personKey;
+  var person = app.people[personKey];
+  var references = person.references;
   // nameless
-  if (!person.names) return { el: 'li', text: 'No name mentioned' };
+  if (!person.names || person.names.length === 0) return { el: 'li', text: 'No name mentioned' };
 
-  // more than one name
-  else if (person.names.length > 1) {
+  // one or more names
+  else {
     var liKids = [
-      { el: 'strong', text: 'Other names:' },
+      { el: 'strong', text: 'Names:' },
       ' '
     ];
-    liKids.push(zipArrays(
-      person.names.slice(1),
-      references.names.slice(1).map(this.renderReference, this),
-      fillArray(person.names.length - 2, ', ')
+    liKids.push.apply(liKids, zipArrays(
+      person.names,
+      references.names.map(this.renderReference, this),
+      fillArray(person.names.length - 1, ', ')
     ));
     return { el: 'li', kids: liKids };
   }
 };
 
 Card.prototype.renderFather = function renderFather() {
+  var personKey = this.personKey;
+  var person = app.people[personKey];
+  var references = person.references;
   var father = { el: 'li', kids: [
     { el: 'strong', text: 'Father:' }, ' ', person.father !== undefined ? [
       this.renderPersonLink(person.father),
@@ -86,6 +97,9 @@ Card.prototype.renderFather = function renderFather() {
 };
 
 Card.prototype.renderMother = function renderMother() {
+  var personKey = this.personKey;
+  var person = app.people[personKey];
+  var references = person.references;
   return { el: 'li', kids: [
     { el: 'strong', text: 'Mother:' }, ' ',
     person.mother !== undefined ? [

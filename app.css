@@ -48,6 +48,10 @@ sub {
     right: 14px;
 }
 
+.action-bar:before {
+	content: ' | ';
+}
+
 .card li {
     line-height: 1.7;
 }
