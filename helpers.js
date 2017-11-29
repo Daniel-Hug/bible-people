@@ -8,18 +8,6 @@ function removeChilds(el) {
   while ((last = el.lastChild)) el.removeChild(last);
 }
 
-function haveSameProperties(a, b) {
-  return JSON.stringify(getProperties(a)) === JSON.stringify(getProperties(b));
-}
-
-function getProperties(obj) {
-  var newObj = {};
-  for (var key in obj) {
-    newObj[key] = true;
-  }
-  return newObj;
-}
-
 var verbalize = {
   //  Accepts a singular noun:
   //    getPlural('box')
