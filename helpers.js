@@ -1,3 +1,7 @@
+/*
+  The functions in here have no purpose specific to this app.
+*/
+
 // removes all of an element's childNodes
 function removeChilds(el) {
   var last;

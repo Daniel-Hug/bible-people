@@ -19,10 +19,36 @@ Card.prototype.render = function renderCard() {
   var references = person.references;
 
 
-  var detailItems = [];
+  var detailItems = [this.renderNames()];
 
+  // years lived
+  if (person.yearsLived) detailItems.push({ el: 'li', kids: [
+    'Lived ' + person.yearsLived + ' years',
+    this.renderReference(references.yearsLived)
+  ]});
+
+  detailItems.push(
+    this.renderFather(),
+    this.renderMother(),
+    this.renderSpouses(),
+    this.renderChildren()
+  );
+
+  var card = dom({ el: 'article', class_card: true, kids: [
+    { el: 'h2', kids: [
+      { el: 'strong', class_name: true, text: getName(personKey) },
+      ' in the Bible'
+    ]}, ' ',
+    { el: 'strong', _className: 'source-ref', text: 'Includes all data from ' + app.scriptureCovered },
+    { el: 'ul', kids: detailItems}
+  ]});
+  card.classList.add(person.gender);
+  return card;
+};
+
+Card.prototype.renderNames = function renderNames() {
   // nameless
-  if (!person.names) detailItems.push({ el: 'li', text: 'No name mentioned' });
+  if (!person.names) return { el: 'li', text: 'No name mentioned' };
 
   // more than one name
   else if (person.names.length > 1) {
@@ -35,23 +61,17 @@ Card.prototype.render = function renderCard() {
       references.names.slice(1).map(this.renderReference, this),
       fillArray(person.names.length - 2, ', ')
     ));
-    detailItems.push({ el: 'li', kids: liKids });
+    return { el: 'li', kids: liKids };
   }
+};
 
-  // years lived
-  if (person.yearsLived) detailItems.push({ el: 'li', kids: [
-    'Lived ' + person.yearsLived + ' years',
-    this.renderReference(references.yearsLived)
-  ]});
-
-  // father
+Card.prototype.renderFather = function renderFather() {
   var father = { el: 'li', kids: [
     { el: 'strong', text: 'Father:' }, ' ', person.father !== undefined ? [
       this.renderPersonLink(person.father),
       this.renderReference(references.father)
     ] : 'None specified'
   ]};
-  detailItems.push(father);
 
   // age of father at birth
   if (person.ageOfFatherAtBirth) {
@@ -62,28 +82,17 @@ Card.prototype.render = function renderCard() {
     );
   }
 
-  // mother
-  var mother = { el: 'li', kids: [
+  return father;
+};
+
+Card.prototype.renderMother = function renderMother() {
+  return { el: 'li', kids: [
     { el: 'strong', text: 'Mother:' }, ' ',
     person.mother !== undefined ? [
       this.renderPersonLink(person.mother),
       this.renderReference(references.mother)
     ] : 'None specified'
   ]};
-
-  detailItems.push(mother, this.renderSpousesItem(), this.renderChildrenItem())
-
-
-  var card = dom({ el: 'article', class_card: true, kids: [
-    { el: 'h2', kids: [
-      { el: 'strong', class_name: true, text: getName(personKey) },
-      ' in the Bible'
-    ]}, ' ',
-    { el: 'strong', _className: 'source-ref', text: 'Includes all data from ' + app.scriptureCovered },
-    { el: 'ul', kids: detailItems}
-  ]});
-  card.classList.add(person.gender);
-  return card;
 };
 
 Card.prototype.renderReference = function renderReference(referenceString) {
@@ -121,7 +130,7 @@ Card.prototype.renderReferenceList = function renderReferenceList() {
   }
 };
 
-Card.prototype.renderSpousesItem = function renderSpousesItem() {
+Card.prototype.renderSpouses = function renderSpouses() {
   var person = app.people[this.personKey];
   var references = person.references;
   var spouseName = person.gender === 'male' ? 'Wife' :
@@ -159,7 +168,7 @@ Card.prototype.renderSpousesItem = function renderSpousesItem() {
   return spousesItem;
 };
 
-Card.prototype.renderChildrenItem = function renderChildrenItem() {
+Card.prototype.renderChildren = function renderChildren() {
   var person = app.people[this.personKey];
   var references = person.references;
   var numSpecified = (person.children || []).length;
