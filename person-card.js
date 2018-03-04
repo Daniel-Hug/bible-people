@@ -201,10 +201,17 @@ Card.prototype.renderChildren = function renderChildren() {
   }
   if (numSpecified > 0) {
     [].push.apply(ul.kids, person.children.map(function(childKey, indexInChildren) {
-      return { el: 'li', kids: [
+      var liKids = [
         this.renderPersonLink(childKey),
         this.renderReference(references.children[indexInChildren])
-      ]};
+      ];
+      if (person.gender === 'male') {
+        var child = app.people[childKey];
+        liKids.push(' (age ' + child.ageOfFatherAtBirth + ' at birth',
+          this.renderReference(child.references.ageOfFatherAtBirth),
+        ')');
+      }
+      return { el: 'li', kids: liKids};
     }, this));
   }
   return childrenItem;
