@@ -205,7 +205,7 @@ Card.prototype.renderChildren = function renderChildren() {
         this.renderPersonLink(childKey),
         this.renderReference(references.children[indexInChildren])
       ];
-      if (person.gender === 'male') {
+      if (person.gender === 'male' && child.ageOfFatherAtBirth !== undefined) {
         var child = app.people[childKey];
         liKids.push(' (age ' + child.ageOfFatherAtBirth + ' at birth',
           this.renderReference(child.references.ageOfFatherAtBirth),
