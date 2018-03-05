@@ -1164,7 +1164,7 @@ var peopleData = {
         names: ['Gen 17:5', 'Gen 11:26'],
         gender: 'Gen 11:29',
         spouses: ['Gen 11:29'],
-        ageOfFatherAtBirth: 'Gen 11:32-12:4',
+        ageOfFatherAtBirth: 'This assumes that another year did not pass between the events in Gen 11:32-12:4.',
         children: ['Gen 21:3'],
         yearsLived: 'Gen 25:7',
       }
